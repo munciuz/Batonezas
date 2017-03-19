@@ -1,0 +1,9 @@
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Batonezas.Database.dll
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Batonezas.Database.pdb
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\log4net.dll
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\roundhouse.dll
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\roundhouse.tasks.dll
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\log4net.xml
+C:\Web\Batonezas\Batonezas.Database\obj\Debug\Batonezas.Database.dll
+C:\Web\Batonezas\Batonezas.Database\obj\Debug\Batonezas.Database.pdb
+C:\Web\Batonezas\Batonezas.Database\obj\Debug\Batonezas.Database.csprojResolveAssemblyReference.cache
