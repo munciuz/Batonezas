@@ -1,7 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.Web.Http;
 using Batonezas.DataAccess;
 
@@ -17,7 +15,6 @@ namespace Batonezas.WebApi.Controllers
     public class TestController : ApiController
     {
         [HttpGet]
-        //[Authorize]
         public IHttpActionResult Test()
         {
             var a = new List<UserTest>();

@@ -8,13 +8,6 @@ using Microsoft.AspNet.Identity;
 
 namespace Batonezas.WebApi.DataAccess
 {
-    //public class BatonezasUserStore : UserStore<IdentityUser>
-    //{
-    //    public BatonezasUserStore() : base(new BatonezasContext())
-    //    {
-    //    }
-    //}
-
     public class BatonezasUserStore : IUserStore<User>, IUserPasswordStore<User>, IUserRoleStore<User>
     {
         private BatonezasContext context;

@@ -1,6 +1,5 @@
 ﻿using Batonezas.DataAccess;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Batonezas.WebApi.DataAccess
 {
