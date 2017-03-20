@@ -2,7 +2,7 @@
 
 namespace Batonezas.DataAccess
 {
-    public partial class User : IUser<string>
+    public partial class User : IUser<string>, ISBatonezasEntity
     {
     }
 }

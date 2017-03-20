@@ -74,6 +74,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BatonezasContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="ISBatonezasEntity.cs" />
     <Compile Include="Partials\Claim.cs" />
     <Compile Include="Partials\Role.cs" />
     <Compile Include="Partials\User.cs" />

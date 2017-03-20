@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Web.Http;
 using Batonezas.DataAccess;
+using Batonezas.WebApi.Repositories;
 
 namespace Batonezas.WebApi.Controllers
 {
@@ -14,9 +15,18 @@ namespace Batonezas.WebApi.Controllers
     
     public class TestController : ApiController
     {
+        private IUserRepository userRepository;
+
+        public TestController()
+        {
+            userRepository = new UserRepository();
+        }
+
         [HttpGet]
         public IHttpActionResult Test()
         {
+            var b = userRepository.CreateQuery().ToList();
+
             var a = new List<UserTest>();
 
             using (var c = new BatonezasContext())
