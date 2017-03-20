@@ -68,3 +68,11 @@ C:\Web\Batonezas\Batonezas.WebApi.Tests\obj\Debug\Batonezas.WebApi.Tests.dll
 C:\Web\Batonezas\Batonezas.WebApi.Tests\obj\Debug\Batonezas.WebApi.Tests.pdb
 C:\Web\Batonezas\Batonezas.WebApi.Tests\bin\Debug\Batonezas.DataAccess.dll
 C:\Web\Batonezas\Batonezas.WebApi.Tests\bin\Debug\Batonezas.DataAccess.pdb
+C:\Web\Batonezas\Batonezas.WebApi.Tests\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Web\Batonezas\Batonezas.WebApi.Tests\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Web\Batonezas\Batonezas.WebApi.Tests\bin\Debug\Unity.WebApi.dll
+C:\Web\Batonezas\Batonezas.WebApi.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Web\Batonezas\Batonezas.WebApi.Tests\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Web\Batonezas\Batonezas.WebApi.Tests\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Web\Batonezas\Batonezas.WebApi.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Web\Batonezas\Batonezas.WebApi.Tests\bin\Debug\Microsoft.Practices.ServiceLocation.xml

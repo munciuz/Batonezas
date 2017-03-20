@@ -11,6 +11,8 @@ namespace Batonezas.WebApi
     {
         protected void Application_Start()
         {
+            UnityConfig.RegisterComponents();
+
             GlobalConfiguration.Configure(WebApiConfig.Register);
             //Database.SetInitializer(new Initializer());
             //BundleConfig.RegisterBundles(BundleTable.Bundles);

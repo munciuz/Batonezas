@@ -2,6 +2,8 @@
 using System.Linq;
 using System.Web.Http;
 using Batonezas.DataAccess;
+using Batonezas.WebApi.BusinessRules.TestCommands;
+using Batonezas.WebApi.Infrastructure;
 using Batonezas.WebApi.Repositories;
 
 namespace Batonezas.WebApi.Controllers
@@ -13,32 +15,25 @@ namespace Batonezas.WebApi.Controllers
         public string Name { get; set; }
     }
     
-    public class TestController : ApiController
+    public class TestController : ApiControllerBase
     {
-        private IUserRepository userRepository;
+        private readonly IUserRepository userRepository;
 
-        public TestController()
+        public TestController(IUserRepository userRepository)
         {
-            userRepository = new UserRepository();
+            this.userRepository = userRepository;
         }
+
 
         [HttpGet]
         public IHttpActionResult Test()
         {
-            var b = userRepository.CreateQuery().ToList();
-
-            var a = new List<UserTest>();
-
-            using (var c = new BatonezasContext())
-            {
-                a = c.Users.Select(x => new UserTest
+            return Command<TestCommand>(
+                cmd =>
                 {
-                    Id = x.Id,
-                    Name = x.UserName
-                }).ToList();
-            }
-
-            return Ok(a);
+                    cmd.b = 3;
+                },
+                cmd => Ok(cmd.result));
         }
     }
 }

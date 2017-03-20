@@ -7,3 +7,12 @@ C:\Web\Batonezas\Batonezas.Database\bin\Debug\log4net.xml
 C:\Web\Batonezas\Batonezas.Database\obj\Debug\Batonezas.Database.dll
 C:\Web\Batonezas\Batonezas.Database\obj\Debug\Batonezas.Database.pdb
 C:\Web\Batonezas\Batonezas.Database\obj\Debug\Batonezas.Database.csprojResolveAssemblyReference.cache
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Microsoft.Practices.ServiceLocation.dll
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Microsoft.Practices.Unity.Configuration.dll
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Microsoft.Practices.Unity.dll
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Microsoft.Practices.ServiceLocation.pdb
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Microsoft.Practices.ServiceLocation.xml
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Microsoft.Practices.Unity.xml
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Microsoft.Practices.Unity.Configuration.xml
+C:\Web\Batonezas\Batonezas.Database\bin\Debug\Microsoft.Practices.Unity.RegistrationByConvention.xml

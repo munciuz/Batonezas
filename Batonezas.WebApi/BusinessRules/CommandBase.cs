@@ -4,7 +4,7 @@ using Batonezas.WebApi.Infrastructure;
 
 namespace Batonezas.WebApi.BusinessRules
 {
-    public abstract class CommandBase
+    public abstract class CommandBase : ICommand
     {
         protected ICollection<ErrorInfo> Errors { get; set; }
 

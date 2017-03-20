@@ -4,6 +4,7 @@ using System.Net.Http;
 using System.Web.Http;
 using Batonezas.WebApi.BusinessRules;
 using Batonezas.WebApi.Infrastructure.Helpers;
+using Microsoft.Practices.Unity;
 
 namespace Batonezas.WebApi.Infrastructure
 {
@@ -17,8 +18,12 @@ namespace Batonezas.WebApi.Infrastructure
 
             try
             {
-                // create command instace, execute
-                return Ok();
+                var command = (TCommand) UnityConfig.Container.Resolve(typeof(TCommand));
+
+                initCommand(command);
+                command.Execute();
+
+                return success(command);
             }
             catch (RulesException ex)
             {
