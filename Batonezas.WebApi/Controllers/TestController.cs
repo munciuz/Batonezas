@@ -17,14 +17,6 @@ namespace Batonezas.WebApi.Controllers
     
     public class TestController : ApiControllerBase
     {
-        private readonly IUserRepository userRepository;
-
-        public TestController(IUserRepository userRepository)
-        {
-            this.userRepository = userRepository;
-        }
-
-
         [HttpGet]
         public IHttpActionResult Test()
         {
