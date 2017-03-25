@@ -20,8 +20,8 @@ namespace Batonezas.WebApi
             var secret = TextEncodings.Base64Url.Decode(ConfigurationManager.AppSettings["secret"]);
 
             app.CreatePerOwinContext(() => new BatonezasContext());
-            //app.CreatePerOwinContext(() => new BatonezasUserManager());
             app.CreatePerOwinContext(() => new BatonezasUserManager(new BatonezasUserStore()));
+            app.CreatePerOwinContext(() => new BatonezasRoleManager(new BatonezasRoleStore()));
 
             app.UseJwtBearerAuthentication(new JwtBearerAuthenticationOptions
             {

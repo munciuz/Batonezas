@@ -228,7 +228,9 @@
     <Compile Include="BusinessRules\ICommand.cs" />
     <Compile Include="BusinessRules\TestCommands\TestCommand.cs" />
     <Compile Include="Controllers\TestController.cs" />
+    <Compile Include="DataAccess\BatonezasRoleStore.cs" />
     <Compile Include="DataAccess\BatonezasSignInManager.cs" />
+    <Compile Include="DataAccess\BatonezasRoleManager.cs" />
     <Compile Include="DataAccess\BatonezasUserManager.cs" />
     <Compile Include="DataAccess\BatonezasUserStore.cs" />
     <Compile Include="Global.asax.cs">
@@ -241,9 +243,10 @@
     <Compile Include="Infrastructure\Helpers\ModelStateExtension.cs" />
     <Compile Include="Infrastructure\RulesException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\ISRepository.cs" />
+    <Compile Include="Repositories\IRepository.cs" />
+    <Compile Include="Repositories\IRoleRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
-    <Compile Include="Repositories\SRepository.cs" />
+    <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>

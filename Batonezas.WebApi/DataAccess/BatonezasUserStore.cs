@@ -4,16 +4,20 @@ using System.Data.Entity;
 using System.Linq;
 using System.Threading.Tasks;
 using Batonezas.DataAccess;
+using Batonezas.WebApi.Repositories;
 using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Batonezas.WebApi.DataAccess
 {
-    public class BatonezasUserStore : IUserStore<User>, IUserPasswordStore<User>, IUserRoleStore<User>
+    public class BatonezasUserStore : IUserStore<User, int>, IUserPasswordStore<User, int>, IUserRoleStore<User, int>
     {
         private BatonezasContext context;
+        private IUserRepository userRepository;
 
         public BatonezasUserStore()
         {
+            //this.userRepository = new UserRepository();
             //context = new BatonezasContext();
         }
 
@@ -37,7 +41,7 @@ namespace Batonezas.WebApi.DataAccess
             throw new System.NotImplementedException();
         }
 
-        public async Task<User> FindByIdAsync(string userId)
+        public async Task<User> FindByIdAsync(int userId)
         {
             User user = await context.Users.Where(c => c.Id == userId).FirstOrDefaultAsync();
             return user;
@@ -46,7 +50,7 @@ namespace Batonezas.WebApi.DataAccess
         public async Task<User> FindByNameAsync(string userName)
         {
             var result = await context.Users.SingleOrDefaultAsync(x => x.UserName == userName);
-            
+
             return result;
         }
 
@@ -76,9 +80,14 @@ namespace Batonezas.WebApi.DataAccess
             throw new NotImplementedException();
         }
 
-        public Task<IList<string>> GetRolesAsync(User user)
+        public async Task<IList<string>> GetRolesAsync(User user)
         {
             throw new NotImplementedException();
+        }
+
+        public IList<string> GetRoles(User user)
+        {
+            return user.Role.Select(x => x.Name).ToList();
         }
 
         public Task<bool> IsInRoleAsync(User user, string roleName)

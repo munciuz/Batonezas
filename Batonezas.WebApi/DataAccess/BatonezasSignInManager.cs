@@ -5,9 +5,9 @@ using Microsoft.Owin.Security;
 
 namespace Batonezas.WebApi.DataAccess
 {
-    public class BatonezasSignInManager : SignInManager<User, string>
+    public class BatonezasSignInManager : SignInManager<User, int>
     {
-        public BatonezasSignInManager(UserManager<User, string> userManager,
+        public BatonezasSignInManager(UserManager<User, int> userManager,
             IAuthenticationManager authenticationManager) : base(userManager, authenticationManager)
         {
         }

@@ -3,9 +3,9 @@ using Microsoft.AspNet.Identity;
 
 namespace Batonezas.WebApi.DataAccess
 {
-    public class BatonezasUserManager : UserManager<User>
+    public class BatonezasUserManager : UserManager<User, int>
     {
-        public BatonezasUserManager(IUserStore<User> store) : base(store)
+        public BatonezasUserManager(IUserStore<User, int> store) : base(store)
         {
         }
     }

@@ -3,6 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Batonezas.DataAccess;
 using Batonezas.WebApi.DataAccess;
+using Batonezas.WebApi.Repositories;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
@@ -13,9 +14,11 @@ namespace Batonezas.WebApi.Identity
     public class CustomOAuthProvider : OAuthAuthorizationServerProvider
     {
         private BatonezasUserStore batonezasUserStore;
+        private readonly IUserRepository userRepository;
 
         public CustomOAuthProvider()
         {
+            userRepository = new UserRepository(new RoleRepository());
             batonezasUserStore = new BatonezasUserStore();
         }
 
@@ -49,12 +52,18 @@ namespace Batonezas.WebApi.Identity
             var identity = new ClaimsIdentity("JWT");
             identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
             identity.AddClaim(new Claim("sub", context.UserName));
+            
+            var urep = new UserRepository(new RoleRepository());
+            var userRoles = urep.GetRoles(user.Id);
 
             //var userRoles = context.OwinContext.Get<BatonezasUserManager>().GetRoles(user.Id);
-            //foreach (var role in userRoles)
-            //{
-            //    identity.AddClaim(new Claim(ClaimTypes.Role, role));
-            //}
+            foreach (var role in userRoles)
+            {
+                identity.AddClaim(new Claim(ClaimTypes.Role, role));
+            }
+
+            var a = 2;
+            var b = 3;
 
             return identity;
         }

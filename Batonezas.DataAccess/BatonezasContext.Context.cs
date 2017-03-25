@@ -15,7 +15,7 @@ namespace Batonezas.DataAccess
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BatonezasContext : IdentityDbContext
+    public partial class BatonezasContext : IdentityDbContext<User> //<User, Role, int, UserLogin, IdentityUserRole, UserClaim>
     {
         public BatonezasContext()
             : base("name=BatonezasContext")
@@ -27,9 +27,9 @@ namespace Batonezas.DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<Role> Roles { get; set; }
-        public virtual DbSet<UserClaim> UserClaims { get; set; }
-        public virtual DbSet<UserLogin> UserLogins { get; set; }
-        public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<UserClaim> UserClaim { get; set; }
+        public virtual DbSet<UserLogin> UserLogin { get; set; }
     }
 }

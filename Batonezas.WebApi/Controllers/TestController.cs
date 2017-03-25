@@ -15,6 +15,7 @@ namespace Batonezas.WebApi.Controllers
         public string Name { get; set; }
     }
     
+    [Authorize(Roles = "Admin")]
     public class TestController : ApiControllerBase
     {
         [HttpGet]
