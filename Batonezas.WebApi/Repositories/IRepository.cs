@@ -11,5 +11,6 @@ namespace Batonezas.WebApi.Repositories
         void Delete(string id);
         void Delete(TEntity entityToDelete);
         void Update(TEntity entityToUpdate);
+        void Save();
     }
 }

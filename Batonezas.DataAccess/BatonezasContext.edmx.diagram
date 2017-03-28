@@ -12,6 +12,8 @@
         <AssociationConnector Association="BatonezasModel.FK_UserClaim_User_UserId" />
         <AssociationConnector Association="BatonezasModel.FK_UserLogin_User_UserId" />
         <AssociationConnector Association="BatonezasModel.UserRole" />
+        <EntityTypeShape EntityType="BatonezasModel.DishType" Width="1.5" PointX="6.375" PointY="6.125" />
+        <AssociationConnector Association="BatonezasModel.FK_DishType_User" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

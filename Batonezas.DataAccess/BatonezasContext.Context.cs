@@ -15,7 +15,7 @@ namespace Batonezas.DataAccess
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BatonezasContext : IdentityDbContext<User> //<User, Role, int, UserLogin, IdentityUserRole, UserClaim>
+    public partial class BatonezasContext : IdentityDbContext<User>
     {
         public BatonezasContext()
             : base("name=BatonezasContext")
@@ -31,5 +31,6 @@ namespace Batonezas.DataAccess
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserClaim> UserClaim { get; set; }
         public virtual DbSet<UserLogin> UserLogin { get; set; }
+        public virtual DbSet<DishType> DishType { get; set; }
     }
 }

@@ -20,6 +20,7 @@ namespace Batonezas.DataAccess
             this.UserClaim = new HashSet<UserClaim>();
             this.UserLogin = new HashSet<UserLogin>();
             this.Role = new HashSet<Role>();
+            this.DishType = new HashSet<DishType>();
         }
     
         public int Id { get; set; }
@@ -42,5 +43,7 @@ namespace Batonezas.DataAccess
         public virtual ICollection<UserLogin> UserLogin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Role> Role { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DishType> DishType { get; set; }
     }
 }

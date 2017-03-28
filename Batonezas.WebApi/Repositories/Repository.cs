@@ -50,5 +50,10 @@ namespace Batonezas.WebApi.Repositories
             dbSet.Attach(entityToUpdate);
             context.Entry(entityToUpdate).State = EntityState.Modified;
         }
+
+        public virtual void Save()
+        {
+            context.SaveChanges();
+        }
     }
 }

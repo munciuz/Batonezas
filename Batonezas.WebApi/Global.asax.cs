@@ -2,6 +2,7 @@
 using System.Web.Http;
 using System.Web.Optimization;
 using Batonezas.WebApi.DataAccess;
+using Batonezas.WebApi.Infrastructure.ObjectMappings;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 
@@ -23,6 +24,8 @@ namespace Batonezas.WebApi
             settings.Formatting = Formatting.Indented;
             settings.ContractResolver = new CamelCasePropertyNamesContractResolver();
 
+
+            AutoMapperConfiguration.Configure();
         }
     }
 }

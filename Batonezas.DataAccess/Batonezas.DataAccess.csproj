@@ -74,7 +74,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BatonezasContext.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DishType.cs">
+      <DependentUpon>BatonezasContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="IBatonezasEntity.cs" />
+    <Compile Include="Partials\DishType.cs" />
     <Compile Include="Partials\UserClaim.cs" />
     <Compile Include="Partials\Role.cs" />
     <Compile Include="Partials\UserLogin.cs" />

@@ -17,6 +17,11 @@
       <End Role="Role" EntitySet="Role" />
       <End Role="User" EntitySet="User" />
     </AssociationSet>
+    <EntitySet Name="DishType" EntityType="BatonezasModel.DishType" />
+    <AssociationSet Name="FK_DishType_User" Association="BatonezasModel.FK_DishType_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="DishType" EntitySet="DishType" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -46,6 +51,7 @@
     <NavigationProperty Name="UserClaim" Relationship="BatonezasModel.FK_UserClaim_User_UserId" FromRole="User" ToRole="UserClaim" />
     <NavigationProperty Name="UserLogin" Relationship="BatonezasModel.FK_UserLogin_User_UserId" FromRole="User" ToRole="UserLogin" />
     <NavigationProperty Name="Role" Relationship="BatonezasModel.UserRole" FromRole="User" ToRole="Role" />
+    <NavigationProperty Name="DishType" Relationship="BatonezasModel.FK_DishType_User" FromRole="User" ToRole="DishType" />
   </EntityType>
   <EntityType Name="UserClaim">
     <Key>
@@ -99,5 +105,28 @@
   <Association Name="UserRole">
     <End Type="BatonezasModel.Role" Role="Role" Multiplicity="*" />
     <End Type="BatonezasModel.User" Role="User" Multiplicity="*" />
+  </Association>
+  <EntityType Name="DishType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="IsValid" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="User" Relationship="BatonezasModel.FK_DishType_User" FromRole="DishType" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_DishType_User">
+    <End Type="BatonezasModel.User" Role="User" Multiplicity="1" />
+    <End Type="BatonezasModel.DishType" Role="DishType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DishType">
+        <PropertyRef Name="CreatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
   </Association>
 </Schema>
