@@ -1,0 +1,10 @@
+CREATE TABLE DishType(
+	Id INT IDENTITY(1, 1) NOT NULL,
+	Name NVARCHAR(256) NULL,
+	IsValid BIT NOT NULL DEFAULT 1,
+	CreatedByUserId INT NOT NULL,
+	CreatedDateTime DATETIME NOT NULL,
+	CONSTRAINT PK_DishType PRIMARY KEY(Id)
+)
+
+EXEC FK 'DishType', 'CreatedByUserId', 'User'
