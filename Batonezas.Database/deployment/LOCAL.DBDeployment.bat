@@ -2,7 +2,7 @@
 
 SET DIR=%~d0%~p0%
 
-SET database.name="TestRoundhousE"
+SET database.name="Batonezas"
 SET sql.files.directory="%DIR%..\Scripts"
 SET server.database="(local)"
 SET repository.path="https://github.com/chucknorris/roundhouse.git"

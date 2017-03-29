@@ -12,22 +12,22 @@ namespace Batonezas.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class DishType
+    public partial class Image
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public DishType()
+        public Image()
         {
-            this.Dish = new HashSet<Dish>();
+            this.Review = new HashSet<Review>();
         }
     
         public int Id { get; set; }
-        public string Name { get; set; }
+        public byte[] Original { get; set; }
+        public byte[] Preview { get; set; }
         public bool IsValid { get; set; }
         public int CreatedByUserId { get; set; }
         public System.DateTime CreatedDateTime { get; set; }
     
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Dish> Dish { get; set; }
+        public virtual ICollection<Review> Review { get; set; }
     }
 }

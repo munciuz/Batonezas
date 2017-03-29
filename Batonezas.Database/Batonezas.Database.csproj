@@ -46,12 +46,21 @@
   <ItemGroup>
     <Content Include="deployment\Console\rh.exe" />
     <Content Include="deployment\_BuildInfo.xml" />
-    <Content Include="Scripts\up\000010_Create_AspNetUser.sql" />
-    <Content Include="Scripts\up\000020_Create_AspNetRole.sql" />
-    <Content Include="Scripts\up\000030_Create_AspNetUserRole.sql" />
-    <Content Include="Scripts\up\000040_Create_AspNetUserClaim.sql" />
-    <Content Include="Scripts\up\000050_Create_AspNetUserLogin.sql" />
+    <Content Include="Scripts\up\000011_Insert_User.sql" />
+    <Content Include="Scripts\up\000010_Create_User.sql" />
+    <Content Include="Scripts\up\000021_Insert_Role.sql" />
+    <Content Include="Scripts\up\000020_Create_Role.sql" />
+    <Content Include="Scripts\up\000031_Insert_UserRole.sql" />
+    <Content Include="Scripts\up\000030_Create_UserRole.sql" />
+    <Content Include="Scripts\up\000040_Create_UserClaim.sql" />
+    <Content Include="Scripts\up\000050_Create_UserLogin.sql" />
     <Content Include="Scripts\up\000060_Create_FK.sql" />
+    <Content Include="Scripts\up\000130_Create_PlaceReview.sql" />
+    <Content Include="Scripts\up\000120_Create_DishReview.sql" />
+    <Content Include="Scripts\up\000110_Create_Review.sql" />
+    <Content Include="Scripts\up\000100_Create_Place.sql" />
+    <Content Include="Scripts\up\000090_Create_Image.sql" />
+    <Content Include="Scripts\up\000080_Create_Dish.sql" />
     <Content Include="Scripts\up\000070_Create_DishType.sql" />
   </ItemGroup>
   <ItemGroup>

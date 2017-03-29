@@ -1,0 +1,13 @@
+CREATE TABLE Place(
+	Id INT IDENTITY(1, 1) NOT NULL,
+	Name NVARCHAR(256) NOT NULL,
+	Lat DECIMAL(10, 7) NOT NULL,
+	Lng DECIMAL(10, 7) NOT NULL,
+	IsValid BIT NOT NULL,
+	CreatedByUserId INT NOT NULL,
+	CreatedDateTime DATETIME NOT NULL,
+	CONSTRAINT PK_Place PRIMARY KEY(Id)
+)
+
+
+EXEC FK 'Place', 'CreatedByUserId', 'User'
