@@ -1,7 +1,7 @@
 ﻿using System;
 using System.ComponentModel.DataAnnotations;
 
-namespace Batonezas.WebApi.Models
+namespace Batonezas.WebApi.Models.DishTypeModels
 {
     public class DishTypeModel
     {

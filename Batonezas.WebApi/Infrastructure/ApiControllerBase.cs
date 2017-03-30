@@ -3,7 +3,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Batonezas.WebApi.BusinessRules;
-using Batonezas.WebApi.Infrastructure.Helpers;
+using Batonezas.WebApi.Infrastructure.Extensions;
 using Microsoft.Practices.Unity;
 
 namespace Batonezas.WebApi.Infrastructure

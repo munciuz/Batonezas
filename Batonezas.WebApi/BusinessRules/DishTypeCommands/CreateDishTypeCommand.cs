@@ -1,4 +1,4 @@
-﻿using Batonezas.WebApi.Models;
+﻿using Batonezas.WebApi.Models.DishTypeModels;
 using Batonezas.WebApi.Services;
 
 namespace Batonezas.WebApi.BusinessRules.DishTypeCommands

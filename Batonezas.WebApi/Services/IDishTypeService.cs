@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography.X509Certificates;
 using AutoMapper;
 using Batonezas.DataAccess;
-using Batonezas.WebApi.Infrastructure.Helpers;
-using Batonezas.WebApi.Models;
+using Batonezas.WebApi.Models.DishTypeModels;
 using Batonezas.WebApi.Repositories;
 
 namespace Batonezas.WebApi.Services
@@ -13,7 +11,7 @@ namespace Batonezas.WebApi.Services
     public interface IDishTypeService
     {
         DishTypeModel Get(int id);
-        IList<DishTypeModel> GetList(DishTypeListFilter filter);
+        IList<DishTypeListItemModel> GetList(DishTypeListFilterModel filter);
         void Create(DishTypeModel model);
         void Edit(DishTypeModel model);
         void Delete(int id);
@@ -37,7 +35,7 @@ namespace Batonezas.WebApi.Services
             return model;
         }
 
-        public IList<DishTypeModel> GetList(DishTypeListFilter filter)
+        public IList<DishTypeListItemModel> GetList(DishTypeListFilterModel filter)
         {
             var query = dishTypeRepository.CreateQuery();
 
@@ -45,18 +43,12 @@ namespace Batonezas.WebApi.Services
             {
                 if (filter.IsValid) query = query.Where(x => x.IsValid);
 
-                if (!string.IsNullOrEmpty(filter.Name)) query = query.Where(x => StringHelper.Contains(x.Name, filter.Name));
+                //if (!string.IsNullOrEmpty(filter.Name)) query = query.Where(x => StringHelper.Contains(x.Name, filter.Name));
 
                 if (filter.CreatedDateTime.HasValue) query = query.Where(x => x.CreatedDateTime > filter.CreatedDateTime.Value);
             }
 
-            var list = query.Select(x => new DishTypeModel
-            {
-                Id = x.Id,
-                Name = x.Name,
-                IsValid = x.IsValid,
-                CreatedDateTime = x.CreatedDateTime
-            }).ToList();
+            var list = query.AsEnumerable().Select(Mapper.Map<DishTypeListItemModel>).ToList();
 
             return list;
         }

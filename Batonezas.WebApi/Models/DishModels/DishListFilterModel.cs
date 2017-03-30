@@ -1,8 +1,8 @@
 ﻿using System;
 
-namespace Batonezas.WebApi.Models
+namespace Batonezas.WebApi.Models.DishModels
 {
-    public class DishTypeListFilter
+    public class DishListFilterModel
     {
         public string Name { get; set; }
 

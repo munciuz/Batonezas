@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Web.Http.ModelBinding;
 
-namespace Batonezas.WebApi.Infrastructure.Helpers
+namespace Batonezas.WebApi.Infrastructure.Extensions
 {
     public static class ModelStateExtension
     {

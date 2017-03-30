@@ -33,8 +33,6 @@ namespace Batonezas.WebApi
                 WithName.Default,
                 WithLifetime.PerResolve);
 
-            // e.g. container.RegisterType<ITestService, TestService>();
-
             GlobalConfiguration.Configuration.DependencyResolver = new UnityDependencyResolver(container);
         }
 

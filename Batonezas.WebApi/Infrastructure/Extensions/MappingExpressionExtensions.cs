@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using AutoMapper;
 
-namespace Batonezas.WebApi.Infrastructure.Helpers
+namespace Batonezas.WebApi.Infrastructure.Extensions
 {
     public static class MappingExpressionExtensions
     {
