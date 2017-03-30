@@ -1,40 +1,40 @@
 ﻿using System.Web.Http;
-using Batonezas.WebApi.BusinessRules.DishCommands;
+using Batonezas.WebApi.BusinessRules.PlaceCommands;
 using Batonezas.WebApi.Infrastructure;
-using Batonezas.WebApi.Models.DishModels;
+using Batonezas.WebApi.Models.PlaceModels;
 using Batonezas.WebApi.Services;
 
 namespace Batonezas.WebApi.Controllers
 {
-    public class DishController : ApiControllerBase
+    public class PlaceController : ApiControllerBase
     {
-        private readonly IDishService dishService;
+        private readonly IPlaceService placeService;
 
-        public DishController(IDishService dishService)
+        public PlaceController(IPlaceService placeService)
         {
-            this.dishService = dishService;
+            this.placeService = placeService;
         }
 
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            var model = dishService.Get(id);
+            var model = placeService.Get(id);
 
             return Ok(model);
         }
 
         [HttpPost]
-        public IHttpActionResult GetList(DishListFilterModel filter)
+        public IHttpActionResult GetList(PlaceListFilterModel filter)
         {
-            var model = dishService.GetList(filter);
+            var model = placeService.GetList(filter);
 
             return Ok(model);
         }
 
         [HttpPost]
-        public IHttpActionResult Create(DishEditModel model)
+        public IHttpActionResult Create(PlaceEditModel model)
         {
-            return Command<CreateDishCommand>(
+            return Command<CreatePlaceCommand>(
                 cmd =>
                 {
                     cmd.Model = model;
@@ -43,9 +43,9 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Edit(DishEditModel model)
+        public IHttpActionResult Edit(PlaceEditModel model)
         {
-            return Command<EditDishCommand>(
+            return Command<EditPlaceCommand>(
                 cmd =>
                 {
                     cmd.Model = model;
@@ -56,7 +56,7 @@ namespace Batonezas.WebApi.Controllers
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            return Command<DeleteDishCommand>(
+            return Command<DeletePlaceCommand>(
                 cmd =>
                 {
                     cmd.Id = id;

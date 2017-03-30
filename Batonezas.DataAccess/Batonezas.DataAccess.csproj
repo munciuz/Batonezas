@@ -87,6 +87,7 @@
     <Compile Include="Image.cs">
       <DependentUpon>BatonezasContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partials\Place.cs" />
     <Compile Include="Partials\Review.cs" />
     <Compile Include="Partials\Dish.cs" />
     <Compile Include="Partials\DishType.cs" />

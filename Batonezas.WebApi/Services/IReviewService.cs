@@ -11,7 +11,7 @@ namespace Batonezas.WebApi.Services
     public interface IReviewService
     {
         ReviewEditModel Get(int id);
-        IList<ReviewListItemModel> GetList(ReviewListItemFilterModel filter);
+        IList<ReviewListItemModel> GetList(ReviewListFilterModel filter);
         void Create(ReviewEditModel model);
         void Edit(ReviewEditModel model);
         void Delete(int id);
@@ -35,7 +35,7 @@ namespace Batonezas.WebApi.Services
             return model;
         }
 
-        public IList<ReviewListItemModel> GetList(ReviewListItemFilterModel filter)
+        public IList<ReviewListItemModel> GetList(ReviewListFilterModel filter)
         {
             var query = reviewRepository.CreateQuery();
 

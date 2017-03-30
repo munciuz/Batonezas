@@ -2,7 +2,7 @@
 
 namespace Batonezas.WebApi.Models.ReviewModels
 {
-    public class ReviewListItemFilterModel
+    public class ReviewListFilterModel
     {
         public bool IsValid { get; set; }
 
