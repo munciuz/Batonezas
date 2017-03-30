@@ -28,9 +28,22 @@ namespace Batonezas.WebApi.Repositories
         public virtual void Insert(TEntity entity)
         {
             dbSet.Add(entity);
+            Save();
         }
 
-        public virtual void Delete(string id)
+        public virtual void InsertOrUpdate(TEntity entity)
+        {
+            if (entity.Id == 0)
+            {
+                Insert(entity);
+            }
+            else
+            {
+                Update(entity);
+            }
+        }
+
+        public virtual void Delete(int id)
         {
             TEntity entityToDelete = dbSet.Find(id);
             Delete(entityToDelete);
@@ -43,12 +56,14 @@ namespace Batonezas.WebApi.Repositories
                 dbSet.Attach(entityToDelete);
             }
             dbSet.Remove(entityToDelete);
+            Save();
         }
 
         public virtual void Update(TEntity entityToUpdate)
         {
             dbSet.Attach(entityToUpdate);
             context.Entry(entityToUpdate).State = EntityState.Modified;
+            Save();
         }
 
         public virtual void Save()

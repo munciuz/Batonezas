@@ -229,6 +229,8 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BusinessRules\CommandBase.cs" />
+    <Compile Include="BusinessRules\DishTypeCommands\DeleteDishTypeCommand.cs" />
+    <Compile Include="BusinessRules\DishTypeCommands\CreateDishTypeCommand.cs" />
     <Compile Include="BusinessRules\DishTypeCommands\EditDishTypeCommand.cs" />
     <Compile Include="BusinessRules\ICommand.cs" />
     <Compile Include="BusinessRules\TestCommands\TestCommand.cs" />
@@ -246,10 +248,13 @@
     <Compile Include="Identity\CustomOAuthProvider.cs" />
     <Compile Include="Infrastructure\ApiControllerBase.cs" />
     <Compile Include="Infrastructure\ErrorInfo.cs" />
+    <Compile Include="Infrastructure\Helpers\MappingExpressionExtensions.cs" />
     <Compile Include="Infrastructure\Helpers\ModelStateExtension.cs" />
+    <Compile Include="Infrastructure\Helpers\StringHelper.cs" />
     <Compile Include="Infrastructure\ObjectMappings\AutoMapperConfiguration.cs" />
     <Compile Include="Infrastructure\ObjectMappings\AutoMapperModelsProfile.cs" />
     <Compile Include="Infrastructure\RulesException.cs" />
+    <Compile Include="Models\DishTypeListFilter.cs" />
     <Compile Include="Models\DishTypeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\IRepository.cs" />

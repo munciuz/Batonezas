@@ -8,7 +8,8 @@ namespace Batonezas.WebApi.Repositories
         TEntity Get(int id);
         IQueryable<TEntity> CreateQuery();
         void Insert(TEntity entity);
-        void Delete(string id);
+        void InsertOrUpdate(TEntity entity);
+        void Delete(int id);
         void Delete(TEntity entityToDelete);
         void Update(TEntity entityToUpdate);
         void Save();
