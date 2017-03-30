@@ -32,7 +32,7 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Create(DishModel model)
+        public IHttpActionResult Create(DishEditModel model)
         {
             return Command<CreateDishCommand>(
                 cmd =>
@@ -43,7 +43,7 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Edit(DishModel model)
+        public IHttpActionResult Edit(DishEditModel model)
         {
             return Command<EditDishCommand>(
                 cmd =>

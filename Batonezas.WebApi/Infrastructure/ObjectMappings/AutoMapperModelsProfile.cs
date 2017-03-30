@@ -40,7 +40,7 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
 
         private void CreateDishMappings()
         {
-            CreateMap<Dish, DishModel>()
+            CreateMap<Dish, DishEditModel>()
                    .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
                    .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
                    .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
@@ -59,7 +59,7 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
                    .ForMember(d => d.CreatedByUser, o => o.MapFrom(s => s.User.UserName))
                    .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
 
-            CreateMap<DishModel, Dish>()
+            CreateMap<DishEditModel, Dish>()
                 .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
                 .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
                 .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))

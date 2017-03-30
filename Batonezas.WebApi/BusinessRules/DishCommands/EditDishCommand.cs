@@ -12,7 +12,7 @@ namespace Batonezas.WebApi.BusinessRules.DishCommands
             this.dishService = dishService;
         }
 
-        public DishModel Model { get; set; }
+        public DishEditModel Model { get; set; }
 
         protected override void ExecuteCommand()
         {

@@ -10,10 +10,10 @@ namespace Batonezas.WebApi.Services
 {
     public interface IDishService
     {
-        DishModel Get(int id);
+        DishEditModel Get(int id);
         IList<DishListItemModel> GetList(DishListFilterModel filter);
-        void Create(DishModel model);
-        void Edit(DishModel model);
+        void Create(DishEditModel model);
+        void Edit(DishEditModel model);
         void Delete(int id);
     }
 
@@ -26,11 +26,11 @@ namespace Batonezas.WebApi.Services
             this.dishRepository = dishRepository;
         }
 
-        public DishModel Get(int id)
+        public DishEditModel Get(int id)
         {
             var entity = dishRepository.Get(id);
 
-            var model = Mapper.Map<DishModel>(entity);
+            var model = Mapper.Map<DishEditModel>(entity);
 
             return model;
         }
@@ -53,7 +53,7 @@ namespace Batonezas.WebApi.Services
             return list;
         }
 
-        public void Create(DishModel model)
+        public void Create(DishEditModel model)
         {
             var entity = Mapper.Map<Dish>(model);
 
@@ -66,7 +66,7 @@ namespace Batonezas.WebApi.Services
             model.Id = entity.Id;
         }
 
-        public void Edit(DishModel model)
+        public void Edit(DishEditModel model)
         {
             var entity = dishRepository.Get(model.Id);
 

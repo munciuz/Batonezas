@@ -2,7 +2,7 @@
 
 namespace Batonezas.WebApi.Models.DishModels
 {
-    public class DishModel
+    public class DishEditModel
     {
         public int Id { get; set; }
 
