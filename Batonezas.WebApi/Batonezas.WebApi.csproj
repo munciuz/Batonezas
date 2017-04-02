@@ -246,6 +246,7 @@
     <Compile Include="Controllers\DishController.cs" />
     <Compile Include="Controllers\DishTypeController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
+    <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="DataAccess\BatonezasRoleStore.cs" />
     <Compile Include="DataAccess\BatonezasSignInManager.cs" />
     <Compile Include="DataAccess\BatonezasRoleManager.cs" />
