@@ -229,6 +229,7 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BusinessRules\CommandBase.cs" />
+    <Compile Include="BusinessRules\DishReviewCommands\CreateDishReviewCommand.cs" />
     <Compile Include="BusinessRules\PlaceCommands\CreatePlaceCommand.cs" />
     <Compile Include="BusinessRules\PlaceCommands\DeletePlaceCommand.cs" />
     <Compile Include="BusinessRules\PlaceCommands\EditPlaceCommand.cs" />
@@ -242,6 +243,7 @@
     <Compile Include="BusinessRules\DishTypeCommands\CreateDishTypeCommand.cs" />
     <Compile Include="BusinessRules\DishTypeCommands\EditDishTypeCommand.cs" />
     <Compile Include="BusinessRules\ICommand.cs" />
+    <Compile Include="Controllers\DishReviewController.cs" />
     <Compile Include="Controllers\PlaceController.cs" />
     <Compile Include="Controllers\DishController.cs" />
     <Compile Include="Controllers\DishTypeController.cs" />
@@ -268,6 +270,7 @@
     <Compile Include="Models\DishModels\DishListFilterModel.cs" />
     <Compile Include="Models\DishModels\DishListItemModel.cs" />
     <Compile Include="Models\DishModels\DishEditModel.cs" />
+    <Compile Include="Models\DishReviewModels\DishReviewEditModel.cs" />
     <Compile Include="Models\DishTypeModels\DishTypeListFilterModel.cs" />
     <Compile Include="Models\DishTypeModels\DishTypeListItemModel.cs" />
     <Compile Include="Models\DishTypeModels\DishTypeModel.cs" />
@@ -278,6 +281,7 @@
     <Compile Include="Models\ReviewModels\ReviewListItemModel.cs" />
     <Compile Include="Models\ReviewModels\ReviewListFilterModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\IDishReviewRepository.cs" />
     <Compile Include="Repositories\IPlaceRepository.cs" />
     <Compile Include="Repositories\IReviewRepository.cs" />
     <Compile Include="Repositories\IDishRepository.cs" />
@@ -286,6 +290,7 @@
     <Compile Include="Repositories\IDishTypeRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
+    <Compile Include="Services\IDishReviewService.cs" />
     <Compile Include="Services\IPlaceService.cs" />
     <Compile Include="Services\IReviewService.cs" />
     <Compile Include="Services\IDishService.cs" />

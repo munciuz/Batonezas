@@ -14,7 +14,7 @@ namespace Batonezas.WebApi.Infrastructure
             where TCommand : ICommand
         {
             HttpError error;
-            if (!ModelState.IsValid) return BadRequest(ModelState);
+            //if (!ModelState.IsValid) return BadRequest(ModelState);
 
             try
             {

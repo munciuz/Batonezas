@@ -1,16 +1,18 @@
 ﻿using System.Web.Http;
+using Batonezas.WebApi.BusinessRules.DishReviewCommands;
 using Batonezas.WebApi.BusinessRules.DishTypeCommands;
 using Batonezas.WebApi.Infrastructure;
+using Batonezas.WebApi.Models.DishReviewModels;
 using Batonezas.WebApi.Models.DishTypeModels;
 using Batonezas.WebApi.Services;
 
 namespace Batonezas.WebApi.Controllers
 {
-    public class DishTypeController : ApiControllerBase
+    public class DishReviewController : ApiControllerBase
     {
         private readonly IDishTypeService dishTypeService;
 
-        public DishTypeController(IDishTypeService dishTypeService)
+        public DishReviewController(IDishTypeService dishTypeService)
         {
             this.dishTypeService = dishTypeService;
         }
@@ -40,9 +42,9 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Create(DishTypeModel model)
+        public IHttpActionResult Create(DishReviewEditModel model)
         {
-            return Command<CreateDishTypeCommand>(
+            return Command<CreateDishReviewCommand>(
                 cmd =>
                 {
                     cmd.Model = model;
