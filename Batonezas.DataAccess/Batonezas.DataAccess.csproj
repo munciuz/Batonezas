@@ -87,6 +87,7 @@
     <Compile Include="Image.cs">
       <DependentUpon>BatonezasContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partials\Tag.cs" />
     <Compile Include="Partials\DishReview.cs" />
     <Compile Include="Partials\Place.cs" />
     <Compile Include="Partials\Review.cs" />
@@ -107,6 +108,9 @@
       <DependentUpon>BatonezasContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Role.cs">
+      <DependentUpon>BatonezasContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tag.cs">
       <DependentUpon>BatonezasContext.tt</DependentUpon>
     </Compile>
     <Compile Include="User.cs">

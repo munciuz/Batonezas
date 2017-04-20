@@ -38,5 +38,6 @@ namespace Batonezas.DataAccess
         public virtual DbSet<Place> Place { get; set; }
         public virtual DbSet<PlaceReview> PlaceReview { get; set; }
         public virtual DbSet<Review> Review { get; set; }
+        public virtual DbSet<Tag> Tag { get; set; }
     }
 }

@@ -64,6 +64,7 @@
       <End Role="User" EntitySet="User" />
       <End Role="Review" EntitySet="Review" />
     </AssociationSet>
+    <EntitySet Name="Tag" EntityType="BatonezasModel.Tag" />
   </EntityContainer>
   <EntityType Name="Role">
     <Key>
@@ -360,4 +361,14 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="IsValid" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
 </Schema>

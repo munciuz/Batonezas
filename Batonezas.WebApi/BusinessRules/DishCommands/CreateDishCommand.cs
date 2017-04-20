@@ -3,11 +3,11 @@ using Batonezas.WebApi.Services;
 
 namespace Batonezas.WebApi.BusinessRules.DishCommands
 {
-    public class EditDishCommand : CommandBase
+    public class CreateDishCommand : CommandBase
     {
         private readonly IDishService dishService;
 
-        public EditDishCommand(IDishService dishService)
+        public CreateDishCommand(IDishService dishService)
         {
             this.dishService = dishService;
         }
@@ -16,7 +16,7 @@ namespace Batonezas.WebApi.BusinessRules.DishCommands
 
         protected override void ExecuteCommand()
         {
-            dishService.Edit(Model);
+            dishService.Create(Model);
         }
     }
 }

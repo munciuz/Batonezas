@@ -3,6 +3,7 @@ using Batonezas.DataAccess;
 using Batonezas.WebApi.Infrastructure.Extensions;
 using Batonezas.WebApi.Models.DishModels;
 using Batonezas.WebApi.Models.DishTypeModels;
+using Batonezas.WebApi.Models.TagModels;
 
 namespace Batonezas.WebApi.Infrastructure.ObjectMappings
 {
@@ -12,6 +13,7 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
         {
             CreateDishTypeMappings();
             CreateDishMappings();
+            CreateTagMappings();
         }
 
         private void CreateDishTypeMappings()
@@ -66,6 +68,35 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
                 .ForMember(d => d.IsConfirmed, o => o.MapFrom(s => s.IsConfirmed))
                 .ForMember(d => d.DishTypeId, o => o.MapFrom(s => s.DishTypeId))
                 .ForMember(d => d.CreatedByUserId, o => o.MapFrom(s => s.CreatedByUserId))
+                .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
+        }
+
+        private void CreateTagMappings()
+        {
+            CreateMap<Tag, TagEditModel>()
+                   .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
+                   .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
+                   .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
+                   .ForMember(d => d.CreatedByUserId, o => o.MapFrom(s => s.CreatedByUserId))
+                   .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
+
+            CreateMap<TagEditModel, Tag>()
+                   .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
+                   .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
+                   .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
+                   .ForMember(d => d.CreatedByUserId, o => o.MapFrom(s => s.CreatedByUserId))
+                   .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
+
+            CreateMap<Tag, TagListItemModel>()
+                   .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
+                   .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
+                   .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
+                   .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
+
+            CreateMap<TagListItemModel, Tag>()
+                .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
+                .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
+                .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
                 .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
         }
     }

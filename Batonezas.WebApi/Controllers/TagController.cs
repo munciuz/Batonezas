@@ -1,16 +1,16 @@
 ﻿using System.Web.Http;
-using Batonezas.WebApi.BusinessRules.DishCommands;
+using Batonezas.WebApi.BusinessRules.TagCommands;
 using Batonezas.WebApi.Infrastructure;
-using Batonezas.WebApi.Models.DishModels;
+using Batonezas.WebApi.Models.TagModels;
 using Batonezas.WebApi.Services;
 
 namespace Batonezas.WebApi.Controllers
 {
-    public class DishController : ApiControllerBase
+    public class TagController : ApiControllerBase
     {
-        private readonly IDishService dishService;
+        private readonly ITagService dishService;
 
-        public DishController(IDishService dishService)
+        public TagController(ITagService dishService)
         {
             this.dishService = dishService;
         }
@@ -24,7 +24,7 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetAll(DishListFilterModel filter)
+        public IHttpActionResult GetAll(TagListFilterModel filter)
         {
             var model = dishService.GetList(filter);
 
@@ -32,9 +32,9 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Create(DishEditModel model)
+        public IHttpActionResult Create(TagEditModel model)
         {
-            return Command<CreateDishCommand>(
+            return Command<CreateTagCommand>(
                 cmd =>
                 {
                     cmd.Model = model;
@@ -43,9 +43,9 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Edit(DishEditModel model)
+        public IHttpActionResult Edit(TagEditModel model)
         {
-            return Command<EditDishCommand>(
+            return Command<EditTagCommand>(
                 cmd =>
                 {
                     cmd.Model = model;
@@ -56,7 +56,7 @@ namespace Batonezas.WebApi.Controllers
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            return Command<DeleteDishCommand>(
+            return Command<DeleteTagCommand>(
                 cmd =>
                 {
                     cmd.Id = id;

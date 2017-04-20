@@ -11,16 +11,19 @@ namespace Batonezas.WebApi.Controllers
     public class DishReviewController : ApiControllerBase
     {
         private readonly IDishTypeService dishTypeService;
+        private readonly IDishReviewService dishReviewService;
 
-        public DishReviewController(IDishTypeService dishTypeService)
+        public DishReviewController(IDishTypeService dishTypeService, 
+            IDishReviewService dishReviewService)
         {
             this.dishTypeService = dishTypeService;
+            this.dishReviewService = dishReviewService;
         }
 
         [HttpGet]
         public IHttpActionResult GetAll()
         {
-            var model = dishTypeService.GetList(new DishTypeListFilterModel());
+            var model = dishReviewService.GetList(new DishReviewListFilterModel());
 
             return Ok(model);
         }

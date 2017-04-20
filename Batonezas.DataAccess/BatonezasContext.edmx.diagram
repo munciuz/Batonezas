@@ -29,6 +29,7 @@
         <AssociationConnector Association="BatonezasModel.FK_Review_Place" />
         <AssociationConnector Association="BatonezasModel.FK_PlaceReview_Review" />
         <AssociationConnector Association="BatonezasModel.FK_Review_User" />
+        <EntityTypeShape EntityType="BatonezasModel.Tag" Width="1.5" PointX="0.75" PointY="5.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
