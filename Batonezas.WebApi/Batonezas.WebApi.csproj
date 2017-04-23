@@ -239,9 +239,6 @@
     <Compile Include="BusinessRules\DishCommands\CreateDishCommand.cs" />
     <Compile Include="BusinessRules\DishCommands\DeleteDishCommand.cs" />
     <Compile Include="BusinessRules\DishCommands\EditDishCommand.cs" />
-    <Compile Include="BusinessRules\DishTypeCommands\DeleteDishTypeCommand.cs" />
-    <Compile Include="BusinessRules\DishTypeCommands\CreateDishTypeCommand.cs" />
-    <Compile Include="BusinessRules\DishTypeCommands\EditDishTypeCommand.cs" />
     <Compile Include="BusinessRules\ICommand.cs" />
     <Compile Include="BusinessRules\TagCommands\CreateTagCommand.cs" />
     <Compile Include="BusinessRules\TagCommands\DeleteTagCommand.cs" />
@@ -250,7 +247,6 @@
     <Compile Include="Controllers\DishReviewController.cs" />
     <Compile Include="Controllers\PlaceController.cs" />
     <Compile Include="Controllers\DishController.cs" />
-    <Compile Include="Controllers\DishTypeController.cs" />
     <Compile Include="Controllers\ReviewController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
     <Compile Include="DataAccess\BatonezasRoleStore.cs" />
@@ -277,9 +273,7 @@
     <Compile Include="Models\DishReviewModels\DishReviewEditModel.cs" />
     <Compile Include="Models\DishReviewModels\DishReviewListFilterModel.cs" />
     <Compile Include="Models\DishReviewModels\DishReviewListItemModel.cs" />
-    <Compile Include="Models\DishTypeModels\DishTypeListFilterModel.cs" />
-    <Compile Include="Models\DishTypeModels\DishTypeListItemModel.cs" />
-    <Compile Include="Models\DishTypeModels\DishTypeModel.cs" />
+    <Compile Include="Models\DishReviewModels\DishReviewPageModel.cs" />
     <Compile Include="Models\PlaceModels\PlaceEditModel.cs" />
     <Compile Include="Models\PlaceModels\PlaceListFilterModel.cs" />
     <Compile Include="Models\PlaceModels\PlaceListItemModel.cs" />
@@ -290,6 +284,7 @@
     <Compile Include="Models\TagModels\TagListFilterModel.cs" />
     <Compile Include="Models\TagModels\TagListItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\DishTagRepository.cs" />
     <Compile Include="Repositories\ITagRepository.cs" />
     <Compile Include="Repositories\IDishReviewRepository.cs" />
     <Compile Include="Repositories\IPlaceRepository.cs" />
@@ -297,7 +292,6 @@
     <Compile Include="Repositories\IDishRepository.cs" />
     <Compile Include="Repositories\IRepository.cs" />
     <Compile Include="Repositories\IRoleRepository.cs" />
-    <Compile Include="Repositories\IDishTypeRepository.cs" />
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Services\IDishReviewService.cs" />
@@ -305,7 +299,6 @@
     <Compile Include="Services\IPlaceService.cs" />
     <Compile Include="Services\IReviewService.cs" />
     <Compile Include="Services\IDishService.cs" />
-    <Compile Include="Services\IDishTypeService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -325,6 +318,7 @@
   <ItemGroup>
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+    <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Batonezas.DataAccess\Batonezas.DataAccess.csproj">

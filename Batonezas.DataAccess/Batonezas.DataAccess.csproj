@@ -80,19 +80,19 @@
     <Compile Include="DishReview.cs">
       <DependentUpon>BatonezasContext.tt</DependentUpon>
     </Compile>
-    <Compile Include="DishType.cs">
+    <Compile Include="DishTag.cs">
       <DependentUpon>BatonezasContext.tt</DependentUpon>
     </Compile>
     <Compile Include="IBatonezasEntity.cs" />
     <Compile Include="Image.cs">
       <DependentUpon>BatonezasContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partials\DishTag.cs" />
     <Compile Include="Partials\Tag.cs" />
     <Compile Include="Partials\DishReview.cs" />
     <Compile Include="Partials\Place.cs" />
     <Compile Include="Partials\Review.cs" />
     <Compile Include="Partials\Dish.cs" />
-    <Compile Include="Partials\DishType.cs" />
     <Compile Include="Partials\UserClaim.cs" />
     <Compile Include="Partials\Role.cs" />
     <Compile Include="Partials\UserLogin.cs" />

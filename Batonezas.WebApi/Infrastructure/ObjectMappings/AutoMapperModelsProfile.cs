@@ -2,7 +2,7 @@
 using Batonezas.DataAccess;
 using Batonezas.WebApi.Infrastructure.Extensions;
 using Batonezas.WebApi.Models.DishModels;
-using Batonezas.WebApi.Models.DishTypeModels;
+using Batonezas.WebApi.Models.PlaceModels;
 using Batonezas.WebApi.Models.TagModels;
 
 namespace Batonezas.WebApi.Infrastructure.ObjectMappings
@@ -11,33 +11,9 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
     {
         public AutoMapperModelsProfile()
         {
-            CreateDishTypeMappings();
             CreateDishMappings();
             CreateTagMappings();
-        }
-
-        private void CreateDishTypeMappings()
-        {
-            CreateMap<DishType, DishTypeModel>()
-                .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
-                .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
-                .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
-                .ForMember(d => d.CreatedByUserId, o => o.MapFrom(s => s.CreatedByUserId))
-                .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
-
-            CreateMap<DishType, DishTypeListItemModel>()
-                .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
-                .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
-                .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
-                .ForMember(d => d.CreatedByUser, o => o.MapFrom(s => s.User.UserName))
-                .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
-
-            CreateMap<DishTypeModel, DishType>()
-                .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
-                .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
-                .ForMember(d => d.CreatedByUserId, o => o.MapFrom(s => s.CreatedByUserId))
-                .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime))
-                .Ignore(d => d.Id);
+            CreatePlaceMappings();
         }
 
         private void CreateDishMappings()
@@ -47,7 +23,6 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
                    .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
                    .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
                    .ForMember(d => d.IsConfirmed, o => o.MapFrom(s => s.IsConfirmed))
-                   .ForMember(d => d.DishTypeId, o => o.MapFrom(s => s.DishTypeId))
                    .ForMember(d => d.CreatedByUserId, o => o.MapFrom(s => s.CreatedByUserId))
                    .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
 
@@ -56,8 +31,6 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
                    .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
                    .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
                    .ForMember(d => d.IsConfirmed, o => o.MapFrom(s => s.IsConfirmed))
-                   .ForMember(d => d.DishTypeId, o => o.MapFrom(s => s.DishTypeId))
-                   .ForMember(d => d.DishTypeName, o => o.MapFrom(s => s.DishType.Name))
                    .ForMember(d => d.CreatedByUser, o => o.MapFrom(s => s.User.UserName))
                    .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
 
@@ -66,7 +39,6 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
                 .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
                 .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
                 .ForMember(d => d.IsConfirmed, o => o.MapFrom(s => s.IsConfirmed))
-                .ForMember(d => d.DishTypeId, o => o.MapFrom(s => s.DishTypeId))
                 .ForMember(d => d.CreatedByUserId, o => o.MapFrom(s => s.CreatedByUserId))
                 .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
         }
@@ -96,6 +68,19 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
             CreateMap<TagListItemModel, Tag>()
                 .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
                 .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
+                .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
+                .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
+        }
+
+        public void CreatePlaceMappings()
+        {
+            CreateMap<PlaceEditModel, Place>()
+                .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
+                .ForMember(d => d.GId, o => o.MapFrom(s => s.GId))
+                .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
+                .ForMember(d => d.Address, o => o.MapFrom(s => s.Address))
+                .ForMember(d => d.Lat, o => o.MapFrom(s => s.Lat))
+                .ForMember(d => d.Lng, o => o.MapFrom(s => s.Lng))
                 .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
                 .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
         }

@@ -27,17 +27,17 @@ namespace Batonezas.DataAccess
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Dish> Dish { get; set; }
+        public virtual DbSet<DishReview> DishReview { get; set; }
+        public virtual DbSet<DishTag> DishTag { get; set; }
+        public virtual DbSet<Image> Image { get; set; }
+        public virtual DbSet<PlaceReview> PlaceReview { get; set; }
+        public virtual DbSet<Review> Review { get; set; }
         public virtual DbSet<Role> Role { get; set; }
+        public virtual DbSet<Tag> Tag { get; set; }
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<UserClaim> UserClaim { get; set; }
         public virtual DbSet<UserLogin> UserLogin { get; set; }
-        public virtual DbSet<DishType> DishType { get; set; }
-        public virtual DbSet<Dish> Dish { get; set; }
-        public virtual DbSet<DishReview> DishReview { get; set; }
-        public virtual DbSet<Image> Image { get; set; }
         public virtual DbSet<Place> Place { get; set; }
-        public virtual DbSet<PlaceReview> PlaceReview { get; set; }
-        public virtual DbSet<Review> Review { get; set; }
-        public virtual DbSet<Tag> Tag { get; set; }
     }
 }

@@ -1,0 +1,14 @@
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\Batonezas.DataAccess.dll.config
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\Batonezas.DataAccess.dll
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\Batonezas.DataAccess.pdb
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\EntityFramework.dll
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\EntityFramework.SqlServer.dll
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\Microsoft.AspNet.Identity.Core.dll
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\EntityFramework.xml
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\EntityFramework.SqlServer.xml
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\Microsoft.AspNet.Identity.Core.xml
+C:\Web\Batonezas\Batonezas.DataAccess\bin\Release\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Web\Batonezas\Batonezas.DataAccess\obj\Release\Batonezas.DataAccess.csprojResolveAssemblyReference.cache
+C:\Web\Batonezas\Batonezas.DataAccess\obj\Release\Batonezas.DataAccess.dll
+C:\Web\Batonezas\Batonezas.DataAccess\obj\Release\Batonezas.DataAccess.pdb

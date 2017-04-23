@@ -8,8 +8,6 @@ namespace Batonezas.WebApi.Models.DishModels
 
         public string Name { get; set; }
 
-        public int DishTypeId { get; set; }
-
         public bool IsValid { get; set; }
 
         public bool IsConfirmed { get; set; }

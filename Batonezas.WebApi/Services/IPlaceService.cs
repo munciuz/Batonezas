@@ -11,6 +11,7 @@ namespace Batonezas.WebApi.Services
     public interface IPlaceService
     {
         PlaceEditModel Get(int id);
+        int GetPlaceId(PlaceEditModel model);
         IList<PlaceListItemModel> GetList(PlaceListFilterModel filter);
         void Create(PlaceEditModel model);
         void Edit(PlaceEditModel model);
@@ -51,9 +52,19 @@ namespace Batonezas.WebApi.Services
 
         public void Create(PlaceEditModel model)
         {
+            if (model.Lat.Length >= 16)
+            {
+                model.Lat = model.Lat.Substring(0, 16);
+            }
+
+            if (model.Lng.Length >= 16)
+            {
+                model.Lng = model.Lng.Substring(0, 16);
+            }
+
             var entity = Mapper.Map<Place>(model);
 
-            entity.CreatedByUserId = model.CreatedByUserId;
+            entity.CreatedByUserId = 1;
             entity.CreatedDateTime = DateTime.Now;
             entity.IsValid = true;
 
@@ -75,6 +86,25 @@ namespace Batonezas.WebApi.Services
         public void Delete(int id)
         {
             placeRepository.Delete(id);
+        }
+
+        public int GetPlaceId(PlaceEditModel model)
+        {
+            int id;
+            var place = placeRepository.CreateQuery().SingleOrDefault(x => x.GId == model.GId);
+
+            if (place == null)
+            {
+                Create(model);
+
+                id = model.Id;
+            }
+            else
+            {
+                id = place.Id;
+            }
+
+            return id;
         }
     }
 }

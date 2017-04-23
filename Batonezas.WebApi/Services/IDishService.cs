@@ -15,15 +15,19 @@ namespace Batonezas.WebApi.Services
         void Create(DishEditModel model);
         void Edit(DishEditModel model);
         void Delete(int id);
+        void CreateDishTags(int[] tagIdList, int dishId);
     }
 
     public class DishService : IDishService
     {
         private readonly IDishRepository dishRepository;
+        private readonly IDishTagRepository dishTagRepository;
 
-        public DishService(IDishRepository dishRepository)
+        public DishService(IDishRepository dishRepository, 
+            IDishTagRepository dishTagRepository)
         {
             this.dishRepository = dishRepository;
+            this.dishTagRepository = dishTagRepository;
         }
 
         public DishEditModel Get(int id)
@@ -73,7 +77,6 @@ namespace Batonezas.WebApi.Services
             entity.Name = model.Name;
             entity.IsValid = model.IsValid;
             entity.IsConfirmed = model.IsConfirmed;
-            entity.DishTypeId = model.DishTypeId;
 
             dishRepository.Update(entity);
         }
@@ -81,6 +84,27 @@ namespace Batonezas.WebApi.Services
         public void Delete(int id)
         {
             dishRepository.Delete(id);
+        }
+
+        public void CreateDishTags(int[] tagIdList, int dishId)
+        {
+            var dish = dishRepository.Get(dishId);
+
+            foreach (var tagId in tagIdList)
+            {
+                if (dish.DishTag.All(x => x.TagId != tagId))
+                {
+                    var dishTag = new DishTag
+                    {
+                        DishId = dishId,
+                        TagId = tagId,
+                        CreatedByUserId = 1,
+                        CreatedDateTime = DateTime.Now
+                    };
+
+                    dishTagRepository.Insert(dishTag);
+                }
+            }
         }
     }
 }

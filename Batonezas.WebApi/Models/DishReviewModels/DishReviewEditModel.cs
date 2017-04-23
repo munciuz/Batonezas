@@ -1,4 +1,6 @@
-﻿namespace Batonezas.WebApi.Models.DishReviewModels
+﻿using Batonezas.WebApi.Models.PlaceModels;
+
+namespace Batonezas.WebApi.Models.DishReviewModels
 {
     public class DishReviewEditModel
     {
@@ -8,12 +10,14 @@
 
         public string DishName { get; set; }
 
-        public int? DishTypeId { get; set; }
+        public int[] TagIdList { get; set; }
 
         public string Review { get; set; }
 
         public int Rating { get; set; }
 
         public string ImageUri { get; set; }
+
+        public PlaceEditModel Place { get; set; }
     }
 }

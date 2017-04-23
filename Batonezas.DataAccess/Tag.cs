@@ -14,10 +14,19 @@ namespace Batonezas.DataAccess
     
     public partial class Tag
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public Tag()
+        {
+            this.DishTag = new HashSet<DishTag>();
+        }
+    
         public int Id { get; set; }
         public string Name { get; set; }
         public bool IsValid { get; set; }
         public int CreatedByUserId { get; set; }
         public System.DateTime CreatedDateTime { get; set; }
+    
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DishTag> DishTag { get; set; }
     }
 }

@@ -1,0 +1,385 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BatonezasModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Dish">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="DishTypeId" Type="int" Nullable="false" />
+    <Property Name="IsValid" Type="bit" Nullable="false" />
+    <Property Name="IsConfirmed" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DishReview">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReviewId" Type="int" Nullable="false" />
+    <Property Name="DishId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="DishType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="IsValid" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Image">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Original" Type="varbinary(max)" />
+    <Property Name="Preview" Type="varbinary(max)" />
+    <Property Name="IsValid" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Place">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Lat" Type="decimal" Precision="10" Scale="7" Nullable="false" />
+    <Property Name="Lng" Type="decimal" Precision="10" Scale="7" Nullable="false" />
+    <Property Name="IsValid" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlaceReview">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReviewId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="1024" Nullable="false" />
+    <Property Name="Rating" Type="int" Nullable="false" />
+    <Property Name="ImageId" Type="int" />
+    <Property Name="PlaceId" Type="int" Nullable="false" />
+    <Property Name="IsValid" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="IsValid" Type="bit" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="int" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Email" Type="nvarchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bit" Nullable="false" />
+    <Property Name="PasswordHash" Type="nvarchar(max)" />
+    <Property Name="SecurityStamp" Type="nvarchar(max)" />
+    <Property Name="PhoneNumber" Type="nvarchar(max)" />
+    <Property Name="PhoneNumberConfirmed" Type="bit" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bit" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="datetime" />
+    <Property Name="LockoutEnabled" Type="bit" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int" Nullable="false" />
+    <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
+    <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="ClaimType" Type="nvarchar(max)" />
+    <Property Name="ClaimValue" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ProviderKey" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserRole">
+    <Key>
+      <PropertyRef Name="UserId" />
+      <PropertyRef Name="RoleId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="RoleId" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_Dish_DishType">
+    <End Role="DishType" Type="Self.DishType" Multiplicity="1" />
+    <End Role="Dish" Type="Self.Dish" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DishType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dish">
+        <PropertyRef Name="DishTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Dish_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Dish" Type="Self.Dish" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Dish">
+        <PropertyRef Name="CreatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DishReview_Dish">
+    <End Role="Dish" Type="Self.Dish" Multiplicity="1" />
+    <End Role="DishReview" Type="Self.DishReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dish">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DishReview">
+        <PropertyRef Name="DishId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DishReview_Review">
+    <End Role="Review" Type="Self.Review" Multiplicity="1" />
+    <End Role="DishReview" Type="Self.DishReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Review">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DishReview">
+        <PropertyRef Name="ReviewId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DishType_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="DishType" Type="Self.DishType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DishType">
+        <PropertyRef Name="CreatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Place_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Place" Type="Self.Place" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Place">
+        <PropertyRef Name="CreatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlaceReview_Review">
+    <End Role="Review" Type="Self.Review" Multiplicity="1" />
+    <End Role="PlaceReview" Type="Self.PlaceReview" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Review">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlaceReview">
+        <PropertyRef Name="ReviewId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_Place">
+    <End Role="Place" Type="Self.Place" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="PlaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Review_User">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="CreatedByUserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserClaim_User_UserId">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserClaim" Type="Self.UserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserClaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLogin_User_UserId">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserLogin" Type="Self.UserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_Role_RoleId">
+    <End Role="Role" Type="Self.Role" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Role">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="RoleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserRole_User_UserId">
+    <End Role="User" Type="Self.User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="UserRole" Type="Self.UserRole" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserRole">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BatonezasModelStoreContainer">
+    <EntitySet Name="Dish" EntityType="Self.Dish" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DishReview" EntityType="Self.DishReview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="DishType" EntityType="Self.DishType" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceReview" EntityType="Self.PlaceReview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserClaim" EntityType="Self.UserClaim" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserLogin" EntityType="Self.UserLogin" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserRole" EntityType="Self.UserRole" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Dish_DishType" Association="Self.FK_Dish_DishType">
+      <End Role="DishType" EntitySet="DishType" />
+      <End Role="Dish" EntitySet="Dish" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Dish_User" Association="Self.FK_Dish_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Dish" EntitySet="Dish" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DishReview_Dish" Association="Self.FK_DishReview_Dish">
+      <End Role="Dish" EntitySet="Dish" />
+      <End Role="DishReview" EntitySet="DishReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DishReview_Review" Association="Self.FK_DishReview_Review">
+      <End Role="Review" EntitySet="Review" />
+      <End Role="DishReview" EntitySet="DishReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DishType_User" Association="Self.FK_DishType_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="DishType" EntitySet="DishType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Place_User" Association="Self.FK_Place_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Place" EntitySet="Place" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlaceReview_Review" Association="Self.FK_PlaceReview_Review">
+      <End Role="Review" EntitySet="Review" />
+      <End Role="PlaceReview" EntitySet="PlaceReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_Image" Association="Self.FK_Review_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_Place" Association="Self.FK_Review_Place">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Review_User" Association="Self.FK_Review_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserClaim_User_UserId" Association="Self.FK_UserClaim_User_UserId">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserClaim" EntitySet="UserClaim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLogin_User_UserId" Association="Self.FK_UserLogin_User_UserId">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserLogin" EntitySet="UserLogin" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_Role_RoleId" Association="Self.FK_UserRole_Role_RoleId">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserRole_User_UserId" Association="Self.FK_UserRole_User_UserId">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserRole" EntitySet="UserRole" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -6,18 +6,20 @@ namespace Batonezas.WebApi.Models.PlaceModels
     {
         public int Id { get; set; }
 
+        public string GId { get; set; }
+
         public string Name { get; set; }
+
+        public string Address { get; set; }
 
         public bool IsValid { get; set; }
 
-        public decimal Lat { get; set; }
+        public string Lat { get; set; }
 
-        public decimal Lng { get; set; }
+        public string Lng { get; set; }
 
         public int CreatedByUserId { get; set; }
 
         public DateTime CreatedDateTime { get; set; }
-
-        public string GPlaceId { get; set; }
     }
 }

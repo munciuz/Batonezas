@@ -18,19 +18,20 @@ namespace Batonezas.DataAccess
         public Dish()
         {
             this.DishReview = new HashSet<DishReview>();
+            this.DishTag = new HashSet<DishTag>();
         }
     
         public int Id { get; set; }
         public string Name { get; set; }
-        public int DishTypeId { get; set; }
         public bool IsValid { get; set; }
         public bool IsConfirmed { get; set; }
         public int CreatedByUserId { get; set; }
         public System.DateTime CreatedDateTime { get; set; }
     
-        public virtual DishType DishType { get; set; }
         public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DishReview> DishReview { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DishTag> DishTag { get; set; }
     }
 }

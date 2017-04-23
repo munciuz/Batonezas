@@ -2,11 +2,11 @@
 
 namespace Batonezas.WebApi.Repositories
 {
-    public interface IDishTypeRepository : IRepository<DishType>
+    public interface IDishReviewRepository : IRepository<DishReview>
     {
     }
 
-    public class DishTypeRepository : Repository<DishType>, IDishTypeRepository
+    public class DishReviewRepository : Repository<DishReview>, IDishReviewRepository
     {
     }
 }

@@ -1,22 +1,17 @@
 ﻿using System.Web.Http;
 using Batonezas.WebApi.BusinessRules.DishReviewCommands;
-using Batonezas.WebApi.BusinessRules.DishTypeCommands;
 using Batonezas.WebApi.Infrastructure;
 using Batonezas.WebApi.Models.DishReviewModels;
-using Batonezas.WebApi.Models.DishTypeModels;
 using Batonezas.WebApi.Services;
 
 namespace Batonezas.WebApi.Controllers
 {
     public class DishReviewController : ApiControllerBase
     {
-        private readonly IDishTypeService dishTypeService;
         private readonly IDishReviewService dishReviewService;
 
-        public DishReviewController(IDishTypeService dishTypeService, 
-            IDishReviewService dishReviewService)
+        public DishReviewController(IDishReviewService dishReviewService)
         {
-            this.dishTypeService = dishTypeService;
             this.dishReviewService = dishReviewService;
         }
 
@@ -31,15 +26,21 @@ namespace Batonezas.WebApi.Controllers
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            var model = dishTypeService.Get(id);
+            return Ok();
+        }
+
+        [HttpPost]
+        public IHttpActionResult GetList(DishReviewListFilterModel filter)
+        {
+            var model = dishReviewService.GetList(filter);
 
             return Ok(model);
         }
 
-        [HttpPost]
-        public IHttpActionResult GetList(DishTypeListFilterModel filter)
+        [HttpGet]
+        public IHttpActionResult GetPageModel()
         {
-            var model = dishTypeService.GetList(filter);
+            var model = dishReviewService.GetPageModel();
 
             return Ok(model);
         }
@@ -56,25 +57,15 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpPost]
-        public IHttpActionResult Edit(DishTypeModel model)
+        public IHttpActionResult Edit()
         {
-            return Command<EditDishTypeCommand>(
-                cmd =>
-                {
-                    cmd.Model = model;
-                },
-                cmd => Ok(cmd.Model.Id));
+            return Ok();
         }
 
         [HttpDelete]
         public IHttpActionResult Delete(int id)
         {
-            return Command<DeleteDishTypeCommand>(
-                cmd =>
-                {
-                    cmd.Id = id;
-                },
-                cmd => Ok());
+            return Ok();
         }
     }
 }
