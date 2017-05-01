@@ -12,8 +12,6 @@ namespace Batonezas.WebApi.Models.DishModels
 
         public bool IsConfirmed { get; set; }
 
-        public string DishTypeName { get; set; }
-
         public string CreatedByUser { get; set; }
 
         public DateTime? CreatedDateTime { get; set; }

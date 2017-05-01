@@ -16,9 +16,9 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpGet]
-        public IHttpActionResult GetAll()
+        public IHttpActionResult GetAll(int dishId, int placeId)
         {
-            var model = dishReviewService.GetList(new DishReviewListFilterModel());
+            var model = dishReviewService.GetList(new DishReviewListFilterModel { DishId = dishId, PlaceId = placeId });
 
             return Ok(model);
         }
@@ -26,13 +26,23 @@ namespace Batonezas.WebApi.Controllers
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            return Ok();
+            var model = dishReviewService.Get(id);
+
+            return Ok(model);
         }
 
         [HttpPost]
         public IHttpActionResult GetList(DishReviewListFilterModel filter)
         {
             var model = dishReviewService.GetList(filter);
+
+            return Ok(model);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetGroupedList(DishReviewListFilterModel filter)
+        {
+            var model = dishReviewService.GetGroupedList(filter);
 
             return Ok(model);
         }

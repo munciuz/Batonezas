@@ -243,6 +243,8 @@
     <Compile Include="BusinessRules\TagCommands\CreateTagCommand.cs" />
     <Compile Include="BusinessRules\TagCommands\DeleteTagCommand.cs" />
     <Compile Include="BusinessRules\TagCommands\EditTagCommand.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\PlaceReviewController.cs" />
     <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Controllers\DishReviewController.cs" />
     <Compile Include="Controllers\PlaceController.cs" />
@@ -273,6 +275,7 @@
     <Compile Include="Models\DishReviewModels\DishReviewEditModel.cs" />
     <Compile Include="Models\DishReviewModels\DishReviewListFilterModel.cs" />
     <Compile Include="Models\DishReviewModels\DishReviewListItemModel.cs" />
+    <Compile Include="Models\DishReviewModels\GroupedDishReviewListItemModel.cs" />
     <Compile Include="Models\DishReviewModels\DishReviewPageModel.cs" />
     <Compile Include="Models\PlaceModels\PlaceEditModel.cs" />
     <Compile Include="Models\PlaceModels\PlaceListFilterModel.cs" />
@@ -285,6 +288,7 @@
     <Compile Include="Models\TagModels\TagListItemModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DishTagRepository.cs" />
+    <Compile Include="Repositories\IImageRepository.cs" />
     <Compile Include="Repositories\ITagRepository.cs" />
     <Compile Include="Repositories\IDishReviewRepository.cs" />
     <Compile Include="Repositories\IPlaceRepository.cs" />
@@ -295,6 +299,8 @@
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Services\IDishReviewService.cs" />
+    <Compile Include="Services\IPlaceReviewService.cs" />
+    <Compile Include="Services\IImageService.cs" />
     <Compile Include="Services\ITagService.cs" />
     <Compile Include="Services\IPlaceService.cs" />
     <Compile Include="Services\IReviewService.cs" />
@@ -314,6 +320,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

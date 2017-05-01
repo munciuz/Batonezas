@@ -9,6 +9,6 @@ C:\Web\Batonezas\Batonezas.DataAccess\bin\Debug\EntityFramework.xml
 C:\Web\Batonezas\Batonezas.DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Web\Batonezas\Batonezas.DataAccess\bin\Debug\Microsoft.AspNet.Identity.Core.xml
 C:\Web\Batonezas\Batonezas.DataAccess\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
-C:\Web\Batonezas\Batonezas.DataAccess\obj\Debug\Batonezas.DataAccess.csprojResolveAssemblyReference.cache
 C:\Web\Batonezas\Batonezas.DataAccess\obj\Debug\Batonezas.DataAccess.dll
 C:\Web\Batonezas\Batonezas.DataAccess\obj\Debug\Batonezas.DataAccess.pdb
+C:\Web\Batonezas\Batonezas.DataAccess\obj\Debug\Batonezas.DataAccess.csprojResolveAssemblyReference.cache

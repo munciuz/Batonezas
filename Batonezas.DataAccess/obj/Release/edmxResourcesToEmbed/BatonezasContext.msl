@@ -1,9 +1,101 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="BatonezasModelStoreContainer" CdmEntityContainer="BatonezasContext">
+    <EntitySetMapping Name="Dish">
+      <EntityTypeMapping TypeName="BatonezasModel.Dish">
+        <MappingFragment StoreEntitySet="Dish">
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+          <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DishReview">
+      <EntityTypeMapping TypeName="BatonezasModel.DishReview">
+        <MappingFragment StoreEntitySet="DishReview">
+          <ScalarProperty Name="DishId" ColumnName="DishId" />
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="DishTag">
+      <EntityTypeMapping TypeName="BatonezasModel.DishTag">
+        <MappingFragment StoreEntitySet="DishTag">
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+          <ScalarProperty Name="TagId" ColumnName="TagId" />
+          <ScalarProperty Name="DishId" ColumnName="DishId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Image">
+      <EntityTypeMapping TypeName="BatonezasModel.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="Preview" ColumnName="Preview" />
+          <ScalarProperty Name="Original" ColumnName="Original" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Place">
+      <EntityTypeMapping TypeName="BatonezasModel.Place">
+        <MappingFragment StoreEntitySet="Place">
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="Lng" ColumnName="Lng" />
+          <ScalarProperty Name="Lat" ColumnName="Lat" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="GId" ColumnName="GId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlaceReview">
+      <EntityTypeMapping TypeName="BatonezasModel.PlaceReview">
+        <MappingFragment StoreEntitySet="PlaceReview">
+          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Review">
+      <EntityTypeMapping TypeName="BatonezasModel.Review">
+        <MappingFragment StoreEntitySet="Review">
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
+          <ScalarProperty Name="Rating" ColumnName="Rating" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="Role">
       <EntityTypeMapping TypeName="BatonezasModel.Role">
         <MappingFragment StoreEntitySet="Role">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tag">
+      <EntityTypeMapping TypeName="BatonezasModel.Tag">
+        <MappingFragment StoreEntitySet="Tag">
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
@@ -55,96 +147,5 @@
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
-    <EntitySetMapping Name="DishType">
-      <EntityTypeMapping TypeName="BatonezasModel.DishType">
-        <MappingFragment StoreEntitySet="DishType">
-          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
-          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Dish">
-      <EntityTypeMapping TypeName="BatonezasModel.Dish">
-        <MappingFragment StoreEntitySet="Dish">
-          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
-          <ScalarProperty Name="IsConfirmed" ColumnName="IsConfirmed" />
-          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
-          <ScalarProperty Name="DishTypeId" ColumnName="DishTypeId" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="DishReview">
-      <EntityTypeMapping TypeName="BatonezasModel.DishReview">
-        <MappingFragment StoreEntitySet="DishReview">
-          <ScalarProperty Name="DishId" ColumnName="DishId" />
-          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Image">
-      <EntityTypeMapping TypeName="BatonezasModel.Image">
-        <MappingFragment StoreEntitySet="Image">
-          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
-          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
-          <ScalarProperty Name="Preview" ColumnName="Preview" />
-          <ScalarProperty Name="Original" ColumnName="Original" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Place">
-      <EntityTypeMapping TypeName="BatonezasModel.Place">
-        <MappingFragment StoreEntitySet="Place">
-          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
-          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
-          <ScalarProperty Name="Lng" ColumnName="Lng" />
-          <ScalarProperty Name="Lat" ColumnName="Lat" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="PlaceReview">
-      <EntityTypeMapping TypeName="BatonezasModel.PlaceReview">
-        <MappingFragment StoreEntitySet="PlaceReview">
-          <ScalarProperty Name="ReviewId" ColumnName="ReviewId" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Review">
-      <EntityTypeMapping TypeName="BatonezasModel.Review">
-        <MappingFragment StoreEntitySet="Review">
-          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
-          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
-          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
-          <ScalarProperty Name="ImageId" ColumnName="ImageId" />
-          <ScalarProperty Name="Rating" ColumnName="Rating" />
-          <ScalarProperty Name="Text" ColumnName="Text" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Tag">
-      <EntityTypeMapping TypeName="BatonezasModel.Tag">
-        <MappingFragment StoreEntitySet="Tag">
-          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
-          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
-          <ScalarProperty Name="Name" ColumnName="Name" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -1,37 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="BatonezasModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="BatonezasContext" annotation:LazyLoadingEnabled="true">
-    <EntitySet Name="Role" EntityType="BatonezasModel.Role" />
-    <EntitySet Name="User" EntityType="BatonezasModel.User" />
-    <EntitySet Name="UserClaim" EntityType="BatonezasModel.UserClaim" />
-    <EntitySet Name="UserLogin" EntityType="BatonezasModel.UserLogin" />
-    <AssociationSet Name="FK_UserClaim_User_UserId" Association="BatonezasModel.FK_UserClaim_User_UserId">
-      <End Role="User" EntitySet="User" />
-      <End Role="UserClaim" EntitySet="UserClaim" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserLogin_User_UserId" Association="BatonezasModel.FK_UserLogin_User_UserId">
-      <End Role="User" EntitySet="User" />
-      <End Role="UserLogin" EntitySet="UserLogin" />
-    </AssociationSet>
-    <AssociationSet Name="UserRole" Association="BatonezasModel.UserRole">
-      <End Role="Role" EntitySet="Role" />
-      <End Role="User" EntitySet="User" />
-    </AssociationSet>
-    <EntitySet Name="DishType" EntityType="BatonezasModel.DishType" />
-    <AssociationSet Name="FK_DishType_User" Association="BatonezasModel.FK_DishType_User">
-      <End Role="User" EntitySet="User" />
-      <End Role="DishType" EntitySet="DishType" />
-    </AssociationSet>
     <EntitySet Name="Dish" EntityType="BatonezasModel.Dish" />
     <EntitySet Name="DishReview" EntityType="BatonezasModel.DishReview" />
+    <EntitySet Name="DishTag" EntityType="BatonezasModel.DishTag" />
     <EntitySet Name="Image" EntityType="BatonezasModel.Image" />
     <EntitySet Name="Place" EntityType="BatonezasModel.Place" />
     <EntitySet Name="PlaceReview" EntityType="BatonezasModel.PlaceReview" />
     <EntitySet Name="Review" EntityType="BatonezasModel.Review" />
-    <AssociationSet Name="FK_Dish_DishType" Association="BatonezasModel.FK_Dish_DishType">
-      <End Role="DishType" EntitySet="DishType" />
-      <End Role="Dish" EntitySet="Dish" />
-    </AssociationSet>
+    <EntitySet Name="Role" EntityType="BatonezasModel.Role" />
+    <EntitySet Name="Tag" EntityType="BatonezasModel.Tag" />
+    <EntitySet Name="User" EntityType="BatonezasModel.User" />
+    <EntitySet Name="UserClaim" EntityType="BatonezasModel.UserClaim" />
+    <EntitySet Name="UserLogin" EntityType="BatonezasModel.UserLogin" />
     <AssociationSet Name="FK_Dish_User" Association="BatonezasModel.FK_Dish_User">
       <End Role="User" EntitySet="User" />
       <End Role="Dish" EntitySet="Dish" />
@@ -40,9 +21,21 @@
       <End Role="Dish" EntitySet="Dish" />
       <End Role="DishReview" EntitySet="DishReview" />
     </AssociationSet>
+    <AssociationSet Name="FK_DishTag_Dish" Association="BatonezasModel.FK_DishTag_Dish">
+      <End Role="Dish" EntitySet="Dish" />
+      <End Role="DishTag" EntitySet="DishTag" />
+    </AssociationSet>
     <AssociationSet Name="FK_DishReview_Review" Association="BatonezasModel.FK_DishReview_Review">
       <End Role="Review" EntitySet="Review" />
       <End Role="DishReview" EntitySet="DishReview" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DishTag_Tag" Association="BatonezasModel.FK_DishTag_Tag">
+      <End Role="Tag" EntitySet="Tag" />
+      <End Role="DishTag" EntitySet="DishTag" />
+    </AssociationSet>
+    <AssociationSet Name="FK_DishTag_User" Association="BatonezasModel.FK_DishTag_User">
+      <End Role="User" EntitySet="User" />
+      <End Role="DishTag" EntitySet="DishTag" />
     </AssociationSet>
     <AssociationSet Name="FK_Review_Image" Association="BatonezasModel.FK_Review_Image">
       <End Role="Image" EntitySet="Image" />
@@ -64,132 +57,32 @@
       <End Role="User" EntitySet="User" />
       <End Role="Review" EntitySet="Review" />
     </AssociationSet>
-    <EntitySet Name="Tag" EntityType="BatonezasModel.Tag" />
+    <AssociationSet Name="FK_UserClaim_User_UserId" Association="BatonezasModel.FK_UserClaim_User_UserId">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserClaim" EntitySet="UserClaim" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserLogin_User_UserId" Association="BatonezasModel.FK_UserLogin_User_UserId">
+      <End Role="User" EntitySet="User" />
+      <End Role="UserLogin" EntitySet="UserLogin" />
+    </AssociationSet>
+    <AssociationSet Name="UserRole" Association="BatonezasModel.UserRole">
+      <End Role="Role" EntitySet="Role" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
   </EntityContainer>
-  <EntityType Name="Role">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="User" Relationship="BatonezasModel.UserRole" FromRole="Role" ToRole="User" />
-  </EntityType>
-  <EntityType Name="User">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
-    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
-    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
-    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
-    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
-    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
-    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="UserClaim" Relationship="BatonezasModel.FK_UserClaim_User_UserId" FromRole="User" ToRole="UserClaim" />
-    <NavigationProperty Name="UserLogin" Relationship="BatonezasModel.FK_UserLogin_User_UserId" FromRole="User" ToRole="UserLogin" />
-    <NavigationProperty Name="Role" Relationship="BatonezasModel.UserRole" FromRole="User" ToRole="Role" />
-    <NavigationProperty Name="DishType" Relationship="BatonezasModel.FK_DishType_User" FromRole="User" ToRole="DishType" />
-    <NavigationProperty Name="Dish" Relationship="BatonezasModel.FK_Dish_User" FromRole="User" ToRole="Dish" />
-    <NavigationProperty Name="Place" Relationship="BatonezasModel.FK_Place_User" FromRole="User" ToRole="Place" />
-    <NavigationProperty Name="Review" Relationship="BatonezasModel.FK_Review_User" FromRole="User" ToRole="Review" />
-  </EntityType>
-  <EntityType Name="UserClaim">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="UserId" Type="Int32" Nullable="false" />
-    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <NavigationProperty Name="User" Relationship="BatonezasModel.FK_UserClaim_User_UserId" FromRole="UserClaim" ToRole="User" />
-  </EntityType>
-  <EntityType Name="UserLogin">
-    <Key>
-      <PropertyRef Name="LoginProvider" />
-      <PropertyRef Name="ProviderKey" />
-      <PropertyRef Name="UserId" />
-    </Key>
-    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="UserId" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="User" Relationship="BatonezasModel.FK_UserLogin_User_UserId" FromRole="UserLogin" ToRole="User" />
-  </EntityType>
-  <Association Name="FK_UserClaim_User_UserId">
-    <End Type="BatonezasModel.User" Role="User" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="BatonezasModel.UserClaim" Role="UserClaim" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="UserClaim">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_UserLogin_User_UserId">
-    <End Type="BatonezasModel.User" Role="User" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Type="BatonezasModel.UserLogin" Role="UserLogin" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="UserLogin">
-        <PropertyRef Name="UserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="UserRole">
-    <End Type="BatonezasModel.Role" Role="Role" Multiplicity="*" />
-    <End Type="BatonezasModel.User" Role="User" Multiplicity="*" />
-  </Association>
-  <EntityType Name="DishType">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" MaxLength="256" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="IsValid" Type="Boolean" Nullable="false" />
-    <Property Name="CreatedByUserId" Type="Int32" Nullable="false" />
-    <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="User" Relationship="BatonezasModel.FK_DishType_User" FromRole="DishType" ToRole="User" />
-    <NavigationProperty Name="Dish" Relationship="BatonezasModel.FK_Dish_DishType" FromRole="DishType" ToRole="Dish" />
-  </EntityType>
-  <Association Name="FK_DishType_User">
-    <End Type="BatonezasModel.User" Role="User" Multiplicity="1" />
-    <End Type="BatonezasModel.DishType" Role="DishType" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="User">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="DishType">
-        <PropertyRef Name="CreatedByUserId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityType Name="Dish">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="DishTypeId" Type="Int32" Nullable="false" />
     <Property Name="IsValid" Type="Boolean" Nullable="false" />
     <Property Name="IsConfirmed" Type="Boolean" Nullable="false" />
     <Property Name="CreatedByUserId" Type="Int32" Nullable="false" />
     <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
-    <NavigationProperty Name="DishType" Relationship="BatonezasModel.FK_Dish_DishType" FromRole="Dish" ToRole="DishType" />
     <NavigationProperty Name="User" Relationship="BatonezasModel.FK_Dish_User" FromRole="Dish" ToRole="User" />
     <NavigationProperty Name="DishReview" Relationship="BatonezasModel.FK_DishReview_Dish" FromRole="Dish" ToRole="DishReview" />
+    <NavigationProperty Name="DishTag" Relationship="BatonezasModel.FK_DishTag_Dish" FromRole="Dish" ToRole="DishTag" />
   </EntityType>
   <EntityType Name="DishReview">
     <Key>
@@ -200,6 +93,19 @@
     <Property Name="DishId" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Dish" Relationship="BatonezasModel.FK_DishReview_Dish" FromRole="DishReview" ToRole="Dish" />
     <NavigationProperty Name="Review" Relationship="BatonezasModel.FK_DishReview_Review" FromRole="DishReview" ToRole="Review" />
+  </EntityType>
+  <EntityType Name="DishTag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DishId" Type="Int32" Nullable="false" />
+    <Property Name="TagId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="Dish" Relationship="BatonezasModel.FK_DishTag_Dish" FromRole="DishTag" ToRole="Dish" />
+    <NavigationProperty Name="Tag" Relationship="BatonezasModel.FK_DishTag_Tag" FromRole="DishTag" ToRole="Tag" />
+    <NavigationProperty Name="User" Relationship="BatonezasModel.FK_DishTag_User" FromRole="DishTag" ToRole="User" />
   </EntityType>
   <EntityType Name="Image">
     <Key>
@@ -218,9 +124,11 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="GId" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
     <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="Lat" Type="Decimal" Nullable="false" Precision="10" Scale="7" />
-    <Property Name="Lng" Type="Decimal" Nullable="false" Precision="10" Scale="7" />
+    <Property Name="Address" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="Lat" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="Lng" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
     <Property Name="IsValid" Type="Boolean" Nullable="false" />
     <Property Name="CreatedByUserId" Type="Int32" Nullable="false" />
     <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
@@ -253,18 +161,71 @@
     <NavigationProperty Name="PlaceReview" Relationship="BatonezasModel.FK_PlaceReview_Review" FromRole="Review" ToRole="PlaceReview" />
     <NavigationProperty Name="User" Relationship="BatonezasModel.FK_Review_User" FromRole="Review" ToRole="User" />
   </EntityType>
-  <Association Name="FK_Dish_DishType">
-    <End Type="BatonezasModel.DishType" Role="DishType" Multiplicity="1" />
-    <End Type="BatonezasModel.Dish" Role="Dish" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="DishType">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="Dish">
-        <PropertyRef Name="DishTypeId" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
+  <EntityType Name="Role">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="BatonezasModel.UserRole" FromRole="Role" ToRole="User" />
+  </EntityType>
+  <EntityType Name="Tag">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="IsValid" Type="Boolean" Nullable="false" />
+    <Property Name="CreatedByUserId" Type="Int32" Nullable="false" />
+    <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
+    <NavigationProperty Name="DishTag" Relationship="BatonezasModel.FK_DishTag_Tag" FromRole="Tag" ToRole="DishTag" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Email" Type="String" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="EmailConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="PasswordHash" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SecurityStamp" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="PhoneNumberConfirmed" Type="Boolean" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="DateTime" Precision="3" />
+    <Property Name="LockoutEnabled" Type="Boolean" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="Int32" Nullable="false" />
+    <Property Name="UserName" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
+    <Property Name="Discriminator" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Dish" Relationship="BatonezasModel.FK_Dish_User" FromRole="User" ToRole="Dish" />
+    <NavigationProperty Name="DishTag" Relationship="BatonezasModel.FK_DishTag_User" FromRole="User" ToRole="DishTag" />
+    <NavigationProperty Name="Place" Relationship="BatonezasModel.FK_Place_User" FromRole="User" ToRole="Place" />
+    <NavigationProperty Name="Review" Relationship="BatonezasModel.FK_Review_User" FromRole="User" ToRole="Review" />
+    <NavigationProperty Name="UserClaim" Relationship="BatonezasModel.FK_UserClaim_User_UserId" FromRole="User" ToRole="UserClaim" />
+    <NavigationProperty Name="UserLogin" Relationship="BatonezasModel.FK_UserLogin_User_UserId" FromRole="User" ToRole="UserLogin" />
+    <NavigationProperty Name="Role" Relationship="BatonezasModel.UserRole" FromRole="User" ToRole="Role" />
+  </EntityType>
+  <EntityType Name="UserClaim">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <Property Name="ClaimType" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="ClaimValue" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="User" Relationship="BatonezasModel.FK_UserClaim_User_UserId" FromRole="UserClaim" ToRole="User" />
+  </EntityType>
+  <EntityType Name="UserLogin">
+    <Key>
+      <PropertyRef Name="LoginProvider" />
+      <PropertyRef Name="ProviderKey" />
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="LoginProvider" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="ProviderKey" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="User" Relationship="BatonezasModel.FK_UserLogin_User_UserId" FromRole="UserLogin" ToRole="User" />
+  </EntityType>
   <Association Name="FK_Dish_User">
     <End Type="BatonezasModel.User" Role="User" Multiplicity="1" />
     <End Type="BatonezasModel.Dish" Role="Dish" Multiplicity="*" />
@@ -289,6 +250,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_DishTag_Dish">
+    <End Type="BatonezasModel.Dish" Role="Dish" Multiplicity="1" />
+    <End Type="BatonezasModel.DishTag" Role="DishTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Dish">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DishTag">
+        <PropertyRef Name="DishId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_DishReview_Review">
     <End Type="BatonezasModel.Review" Role="Review" Multiplicity="1" />
     <End Type="BatonezasModel.DishReview" Role="DishReview" Multiplicity="*" />
@@ -298,6 +271,30 @@
       </Principal>
       <Dependent Role="DishReview">
         <PropertyRef Name="ReviewId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DishTag_Tag">
+    <End Type="BatonezasModel.Tag" Role="Tag" Multiplicity="1" />
+    <End Type="BatonezasModel.DishTag" Role="DishTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tag">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DishTag">
+        <PropertyRef Name="TagId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_DishTag_User">
+    <End Type="BatonezasModel.User" Role="User" Multiplicity="1" />
+    <End Type="BatonezasModel.DishTag" Role="DishTag" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="DishTag">
+        <PropertyRef Name="CreatedByUserId" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -361,14 +358,36 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityType Name="Tag">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" MaxLength="256" FixedLength="false" Unicode="true" />
-    <Property Name="IsValid" Type="Boolean" Nullable="false" />
-    <Property Name="CreatedByUserId" Type="Int32" Nullable="false" />
-    <Property Name="CreatedDateTime" Type="DateTime" Nullable="false" Precision="3" />
-  </EntityType>
+  <Association Name="FK_UserClaim_User_UserId">
+    <End Type="BatonezasModel.User" Role="User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BatonezasModel.UserClaim" Role="UserClaim" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserClaim">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserLogin_User_UserId">
+    <End Type="BatonezasModel.User" Role="User" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Type="BatonezasModel.UserLogin" Role="UserLogin" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="UserLogin">
+        <PropertyRef Name="UserId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="UserRole">
+    <End Type="BatonezasModel.Role" Role="Role" Multiplicity="*" />
+    <End Type="BatonezasModel.User" Role="User" Multiplicity="*" />
+  </Association>
 </Schema>

@@ -1,4 +1,5 @@
 ﻿using Batonezas.WebApi.Models.PlaceModels;
+using Batonezas.WebApi.Models.TagModels;
 
 namespace Batonezas.WebApi.Models.DishReviewModels
 {
@@ -11,6 +12,8 @@ namespace Batonezas.WebApi.Models.DishReviewModels
         public string DishName { get; set; }
 
         public int[] TagIdList { get; set; }
+
+        public TagEditModel[] Tags { get; set; }
 
         public string Review { get; set; }
 
