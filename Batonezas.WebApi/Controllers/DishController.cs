@@ -1,8 +1,11 @@
-﻿using System.Web.Http;
+﻿using System.Web;
+using System.Web.Http;
 using Batonezas.WebApi.BusinessRules.DishCommands;
 using Batonezas.WebApi.Infrastructure;
+using Batonezas.WebApi.Infrastructure.Helpers;
 using Batonezas.WebApi.Models.DishModels;
 using Batonezas.WebApi.Services;
+using Microsoft.AspNet.Identity;
 
 namespace Batonezas.WebApi.Controllers
 {
@@ -24,9 +27,12 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IHttpActionResult GetAll(DishListFilterModel filter)
         {
             var model = dishService.GetList(filter);
+
+            var userId = UserHelper.GetCurrentUserId();
 
             return Ok(model);
         }

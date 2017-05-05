@@ -266,6 +266,7 @@
     <Compile Include="Infrastructure\Extensions\MappingExpressionExtensions.cs" />
     <Compile Include="Infrastructure\Extensions\ModelStateExtension.cs" />
     <Compile Include="Infrastructure\Helpers\StringHelper.cs" />
+    <Compile Include="Infrastructure\Helpers\UserHelper.cs" />
     <Compile Include="Infrastructure\ObjectMappings\AutoMapperConfiguration.cs" />
     <Compile Include="Infrastructure\ObjectMappings\AutoMapperModelsProfile.cs" />
     <Compile Include="Infrastructure\RulesException.cs" />
@@ -280,6 +281,9 @@
     <Compile Include="Models\PlaceModels\PlaceEditModel.cs" />
     <Compile Include="Models\PlaceModels\PlaceListFilterModel.cs" />
     <Compile Include="Models\PlaceModels\PlaceListItemModel.cs" />
+    <Compile Include="Models\PlaceReviewListFilter.cs" />
+    <Compile Include="Models\PlaceReviewModels\GroupedPlaceReviewListItemModel.cs" />
+    <Compile Include="Models\PlaceReviewModels\PlaceSearchPageModel.cs" />
     <Compile Include="Models\ReviewModels\ReviewEditModel.cs" />
     <Compile Include="Models\ReviewModels\ReviewListItemModel.cs" />
     <Compile Include="Models\ReviewModels\ReviewListFilterModel.cs" />
@@ -289,6 +293,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DishTagRepository.cs" />
     <Compile Include="Repositories\IImageRepository.cs" />
+    <Compile Include="Repositories\IPlaceReviewRepository.cs" />
     <Compile Include="Repositories\ITagRepository.cs" />
     <Compile Include="Repositories\IDishReviewRepository.cs" />
     <Compile Include="Repositories\IPlaceRepository.cs" />

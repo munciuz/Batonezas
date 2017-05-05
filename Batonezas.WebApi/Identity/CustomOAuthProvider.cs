@@ -18,7 +18,7 @@ namespace Batonezas.WebApi.Identity
 
         public CustomOAuthProvider()
         {
-            userRepository = new UserRepository(new RoleRepository());
+            userRepository = new UserRepository();
             batonezasUserStore = new BatonezasUserStore();
         }
 
@@ -53,7 +53,7 @@ namespace Batonezas.WebApi.Identity
             identity.AddClaim(new Claim(ClaimTypes.Name, context.UserName));
             identity.AddClaim(new Claim("sub", context.UserName));
             
-            var urep = new UserRepository(new RoleRepository());
+            var urep = new UserRepository();
             var userRoles = urep.GetRoles(user.Id);
 
             //var userRoles = context.OwinContext.Get<BatonezasUserManager>().GetRoles(user.Id);

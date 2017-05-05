@@ -1,7 +1,6 @@
 ﻿using System.Web.Http;
-using Batonezas.WebApi.BusinessRules.ReviewCommands;
 using Batonezas.WebApi.Infrastructure;
-using Batonezas.WebApi.Models.ReviewModels;
+using Batonezas.WebApi.Models;
 using Batonezas.WebApi.Services;
 
 namespace Batonezas.WebApi.Controllers
@@ -18,6 +17,22 @@ namespace Batonezas.WebApi.Controllers
         public IHttpActionResult GetPlace(int id)
         {
             var model = placeReviewService.GetPlace(id);
+
+            return Ok(model);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetGroupedList(PlaceReviewListFilterModel filter)
+        {
+            var model = placeReviewService.GetGroupedList(filter);
+
+            return Ok(model);
+        }
+
+        [HttpGet]
+        public IHttpActionResult GetPageModel()
+        {
+            var model = placeReviewService.GetPageModel();
 
             return Ok(model);
         }

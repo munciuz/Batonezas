@@ -24,6 +24,7 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpGet]
+        [Authorize(Roles = "Admin")]
         public IHttpActionResult GetAll(TagListFilterModel filter)
         {
             var model = dishService.GetList(filter);
