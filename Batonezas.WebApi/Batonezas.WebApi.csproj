@@ -229,10 +229,11 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BusinessRules\CommandBase.cs" />
+    <Compile Include="BusinessRules\PlaceReviewCommands\CreatePlaceReviewCommand.cs" />
     <Compile Include="BusinessRules\DishReviewCommands\CreateDishReviewCommand.cs" />
-    <Compile Include="BusinessRules\PlaceCommands\CreatePlaceCommand.cs" />
-    <Compile Include="BusinessRules\PlaceCommands\DeletePlaceCommand.cs" />
     <Compile Include="BusinessRules\PlaceCommands\EditPlaceCommand.cs" />
+    <Compile Include="BusinessRules\PlaceCommands\DeletePlaceCommand.cs" />
+    <Compile Include="BusinessRules\PlaceCommands\CreatePlaceCommand.cs" />
     <Compile Include="BusinessRules\ReviewCommands\CreateReviewCommand.cs" />
     <Compile Include="BusinessRules\ReviewCommands\DeleteReviewCommand.cs" />
     <Compile Include="BusinessRules\ReviewCommands\EditReviewCommand.cs" />
@@ -281,8 +282,10 @@
     <Compile Include="Models\PlaceModels\PlaceEditModel.cs" />
     <Compile Include="Models\PlaceModels\PlaceListFilterModel.cs" />
     <Compile Include="Models\PlaceModels\PlaceListItemModel.cs" />
-    <Compile Include="Models\PlaceReviewListFilter.cs" />
+    <Compile Include="Models\PlaceReviewModels\PlaceReviewListItemModel.cs" />
+    <Compile Include="Models\PlaceReviewModels\PlaceReviewListFilterModel.cs" />
     <Compile Include="Models\PlaceReviewModels\GroupedPlaceReviewListItemModel.cs" />
+    <Compile Include="Models\PlaceReviewModels\PlaceReviewEditModel.cs" />
     <Compile Include="Models\PlaceReviewModels\PlaceSearchPageModel.cs" />
     <Compile Include="Models\ReviewModels\ReviewEditModel.cs" />
     <Compile Include="Models\ReviewModels\ReviewListItemModel.cs" />

@@ -3,6 +3,7 @@ using Batonezas.DataAccess;
 using Batonezas.WebApi.Infrastructure.Extensions;
 using Batonezas.WebApi.Models.DishModels;
 using Batonezas.WebApi.Models.PlaceModels;
+using Batonezas.WebApi.Models.PlaceReviewModels;
 using Batonezas.WebApi.Models.TagModels;
 
 namespace Batonezas.WebApi.Infrastructure.ObjectMappings
@@ -14,6 +15,7 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
             CreateDishMappings();
             CreateTagMappings();
             CreatePlaceMappings();
+            CreatePlaceReviewMappings();
         }
 
         private void CreateDishMappings()
@@ -72,7 +74,7 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
                 .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
         }
 
-        public void CreatePlaceMappings()
+        private void CreatePlaceMappings()
         {
             CreateMap<PlaceEditModel, Place>()
                 .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
@@ -83,6 +85,14 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
                 .ForMember(d => d.Lng, o => o.MapFrom(s => s.Lng))
                 .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
                 .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
+        }
+
+        private void CreatePlaceReviewMappings()
+        {
+            CreateMap<PlaceReviewEditModel, Review>()
+                .Ignore(d => d.Id)
+                .ForMember(d => d.Rating, o => o.MapFrom(s => s.Rating))
+                .ForMember(d => d.Text, o => o.MapFrom(s => s.Review));
         }
     }
 }

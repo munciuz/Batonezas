@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using Batonezas.DataAccess;
+using Batonezas.WebApi.Infrastructure.Helpers;
 using Batonezas.WebApi.Models.DishModels;
+using Batonezas.WebApi.Models.TagModels;
 using Batonezas.WebApi.Repositories;
 
 namespace Batonezas.WebApi.Services
@@ -22,12 +24,18 @@ namespace Batonezas.WebApi.Services
     {
         private readonly IDishRepository dishRepository;
         private readonly IDishTagRepository dishTagRepository;
+        private readonly ITagRepository tagRepository;
+        private readonly ITagService tagService;
 
         public DishService(IDishRepository dishRepository, 
-            IDishTagRepository dishTagRepository)
+            IDishTagRepository dishTagRepository, 
+            ITagRepository tagRepository,
+            ITagService tagService)
         {
             this.dishRepository = dishRepository;
             this.dishTagRepository = dishTagRepository;
+            this.tagRepository = tagRepository;
+            this.tagService = tagService;
         }
 
         public DishEditModel Get(int id)
@@ -35,6 +43,18 @@ namespace Batonezas.WebApi.Services
             var entity = dishRepository.Get(id);
 
             var model = Mapper.Map<DishEditModel>(entity);
+
+            model.SelectedTags = entity.DishTag.Select(x => new TagListItemModel
+            {
+                Id = x.Tag.Id,
+                Name = x.Tag.Name
+            }).ToArray();
+
+            model.AllTags = tagRepository.CreateQuery().Where(x => x.IsValid).OrderBy(x => x.Name).Select(x => new TagListItemModel
+            {
+                Id = x.Id,
+                Name = x.Name
+            }).ToArray();
 
             return model;
         }
@@ -61,13 +81,17 @@ namespace Batonezas.WebApi.Services
         {
             var entity = Mapper.Map<Dish>(model);
 
-            entity.CreatedByUserId = model.CreatedByUserId;
+            entity.CreatedByUserId = UserHelper.GetCurrentUserId();
             entity.CreatedDateTime = DateTime.Now;
             entity.IsValid = true;
 
             dishRepository.Insert(entity);
 
             model.Id = entity.Id;
+
+            var dishTagIds = model.SelectedTags.Select(x => x.Id).ToArray();
+
+            CreateDishTags(dishTagIds, entity.Id);
         }
 
         public void Edit(DishEditModel model)
@@ -79,6 +103,12 @@ namespace Batonezas.WebApi.Services
             entity.IsConfirmed = model.IsConfirmed;
 
             dishRepository.Update(entity);
+
+            var dishTagIds = model.SelectedTags.Select(x => x.Id).ToArray();
+
+            tagService.DeleteTagsForDish(model.Id);
+
+            CreateDishTags(dishTagIds, model.Id);
         }
 
         public void Delete(int id)

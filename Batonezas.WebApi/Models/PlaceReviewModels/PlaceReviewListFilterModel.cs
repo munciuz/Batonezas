@@ -1,4 +1,4 @@
-﻿namespace Batonezas.WebApi.Models
+﻿namespace Batonezas.WebApi.Models.PlaceReviewModels
 {
     public class PlaceReviewListFilterModel
     {

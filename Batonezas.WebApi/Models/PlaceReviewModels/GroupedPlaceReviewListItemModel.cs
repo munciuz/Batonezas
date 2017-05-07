@@ -1,4 +1,4 @@
-﻿namespace Batonezas.WebApi.Models.DishReviewModels
+﻿namespace Batonezas.WebApi.Models.PlaceReviewModels
 {
     public class GroupedPlaceReviewListItemModel
     {

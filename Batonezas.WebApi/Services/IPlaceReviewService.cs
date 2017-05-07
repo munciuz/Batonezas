@@ -1,5 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using AutoMapper;
+using Batonezas.DataAccess;
+using Batonezas.WebApi.Infrastructure.Helpers;
 using Batonezas.WebApi.Models;
 using Batonezas.WebApi.Models.DishReviewModels;
 using Batonezas.WebApi.Models.PlaceModels;
@@ -12,19 +16,27 @@ namespace Batonezas.WebApi.Services
     {
         PlaceEditModel GetPlace(int id);
         PlaceSearchPageModel GetPageModel();
+        IList<PlaceReviewListItemModel> GetList(PlaceReviewListFilterModel filter);
         IList<GroupedPlaceReviewListItemModel> GetGroupedList(PlaceReviewListFilterModel filter);
+        void Create(PlaceReviewEditModel model);
     }
 
     public class PlaceReviewService : IPlaceReviewService
     {
         private readonly IPlaceRepository placeRepository;
         private readonly IPlaceReviewRepository placeReviewRepository;
+        private readonly IPlaceService placeService;
+        private readonly IReviewRepository reviewRepository;
 
-        public PlaceReviewService(IPlaceRepository placeRepository, 
-            IPlaceReviewRepository placeReviewRepository)
+        public PlaceReviewService(IPlaceRepository placeRepository,
+            IPlaceReviewRepository placeReviewRepository,
+            IPlaceService placeService,
+            IReviewRepository reviewRepository)
         {
             this.placeRepository = placeRepository;
             this.placeReviewRepository = placeReviewRepository;
+            this.placeService = placeService;
+            this.reviewRepository = reviewRepository;
         }
 
         public PlaceEditModel GetPlace(int id)
@@ -69,6 +81,48 @@ namespace Batonezas.WebApi.Services
             };
 
             return result;
+        }
+
+        public void Create(PlaceReviewEditModel model)
+        {
+            var placeId = placeService.GetPlaceId(model.Place);
+
+            var review = new Review
+            {
+                Text = model.Review,
+                Rating = model.Rating,
+                CreatedByUserId = UserHelper.GetCurrentUserId(),
+                CreatedDateTime = DateTime.Now,
+                PlaceId = placeId,
+                IsValid = true
+            };
+
+            reviewRepository.Insert(review);
+
+            var placeReview = new PlaceReview
+            {
+                ReviewId = review.Id
+            };
+
+            placeReviewRepository.Insert(placeReview);
+
+            model.Id = placeReview.Id;
+        }
+
+        public IList<PlaceReviewListItemModel> GetList(PlaceReviewListFilterModel filter)
+        {
+            var reviews = placeReviewRepository.CreateQuery().Where(x => x.Review.PlaceId == filter.PlaceId).ToList();
+
+            var result = reviews.Select(x => new PlaceReviewListItemModel
+            {
+                Id = x.Id,
+                GId = x.Review.Place.GId,
+                Review = x.Review.Text,
+                Rating = x.Review.Rating,
+                ReviewedBy = x.Review.User.UserName
+            });
+
+            return result.ToList();
         }
     }
 }

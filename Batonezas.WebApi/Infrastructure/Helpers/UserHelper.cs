@@ -20,7 +20,9 @@ namespace Batonezas.WebApi.Infrastructure.Helpers
 
         public static int GetCurrentUserId()
         {
-            return GetCurrentUser().Id;
+            var user = GetCurrentUser();
+
+            return user?.Id ?? 1;
         }
     }
 }

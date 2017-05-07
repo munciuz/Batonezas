@@ -15,15 +15,19 @@ namespace Batonezas.WebApi.Services
         void Create(TagEditModel model);
         void Edit(TagEditModel model);
         void Delete(int id);
+        void DeleteTagsForDish(int dishId);
     }
 
     public class TagService : ITagService
     {
         private readonly ITagRepository tagRepository;
+        private readonly IDishTagRepository dishTagRepository;
 
-        public TagService(ITagRepository tagRepository)
+        public TagService(ITagRepository tagRepository,
+            IDishTagRepository dishTagRepository)
         {
             this.tagRepository = tagRepository;
+            this.dishTagRepository = dishTagRepository;
         }
 
         public TagEditModel Get(int id)
@@ -79,6 +83,16 @@ namespace Batonezas.WebApi.Services
         public void Delete(int id)
         {
             tagRepository.Delete(id);
+        }
+
+        public void DeleteTagsForDish(int dishId)
+        {
+            var dishTags = dishTagRepository.CreateQuery().Where(x => x.DishId == dishId);
+
+            foreach (var dishTag in dishTags)
+            {
+                dishTagRepository.Delete(dishTag);
+            }
         }
     }
 }

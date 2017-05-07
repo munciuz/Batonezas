@@ -1,4 +1,5 @@
 ﻿using System;
+using Batonezas.WebApi.Models.TagModels;
 
 namespace Batonezas.WebApi.Models.DishModels
 {
@@ -7,6 +8,10 @@ namespace Batonezas.WebApi.Models.DishModels
         public int Id { get; set; }
 
         public string Name { get; set; }
+
+        public TagListItemModel[] SelectedTags { get; set; }
+
+        public TagListItemModel[] AllTags { get; set; }
 
         public bool IsValid { get; set; }
 

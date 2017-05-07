@@ -27,12 +27,10 @@ namespace Batonezas.WebApi.Controllers
         }
 
         [HttpGet]
-        [Authorize]
+        //[Authorize]
         public IHttpActionResult GetAll(DishListFilterModel filter)
         {
             var model = dishService.GetList(filter);
-
-            var userId = UserHelper.GetCurrentUserId();
 
             return Ok(model);
         }

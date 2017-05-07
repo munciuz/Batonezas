@@ -3,11 +3,11 @@ using Batonezas.WebApi.Services;
 
 namespace Batonezas.WebApi.BusinessRules.PlaceCommands
 {
-    public class EditPlaceCommand : CommandBase
+    public class CreatePlaceCommand : CommandBase
     {
         private readonly IPlaceService placeService;
 
-        public EditPlaceCommand(IPlaceService placeService)
+        public CreatePlaceCommand(IPlaceService placeService)
         {
             this.placeService = placeService;
         }
@@ -16,7 +16,7 @@ namespace Batonezas.WebApi.BusinessRules.PlaceCommands
 
         protected override void ExecuteCommand()
         {
-            placeService.Edit(Model);
+            placeService.Create(Model);
         }
     }
 }

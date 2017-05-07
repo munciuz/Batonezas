@@ -8,26 +8,26 @@ namespace Batonezas.WebApi.Controllers
 {
     public class TagController : ApiControllerBase
     {
-        private readonly ITagService dishService;
+        private readonly ITagService tagService;
 
-        public TagController(ITagService dishService)
+        public TagController(ITagService tagService)
         {
-            this.dishService = dishService;
+            this.tagService = tagService;
         }
 
         [HttpGet]
         public IHttpActionResult Get(int id)
         {
-            var model = dishService.Get(id);
+            var model = tagService.Get(id);
 
             return Ok(model);
         }
 
         [HttpGet]
-        [Authorize(Roles = "Admin")]
+        //[Authorize(Roles = "Admin")]
         public IHttpActionResult GetAll(TagListFilterModel filter)
         {
-            var model = dishService.GetList(filter);
+            var model = tagService.GetList(filter);
 
             return Ok(model);
         }
