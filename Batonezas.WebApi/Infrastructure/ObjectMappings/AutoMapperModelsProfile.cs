@@ -5,6 +5,7 @@ using Batonezas.WebApi.Models.DishModels;
 using Batonezas.WebApi.Models.PlaceModels;
 using Batonezas.WebApi.Models.PlaceReviewModels;
 using Batonezas.WebApi.Models.TagModels;
+using Batonezas.WebApi.Models.UserModels;
 
 namespace Batonezas.WebApi.Infrastructure.ObjectMappings
 {
@@ -12,10 +13,24 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
     {
         public AutoMapperModelsProfile()
         {
+            CreateUserMappings();
             CreateDishMappings();
             CreateTagMappings();
             CreatePlaceMappings();
             CreatePlaceReviewMappings();
+        }
+
+        private void CreateUserMappings()
+        {
+            CreateMap<User, UserEditModel>()
+                   .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
+                   .ForMember(d => d.Username, o => o.MapFrom(s => s.UserName))
+                   .ForMember(d => d.Email, o => o.MapFrom(s => s.Email));
+
+            CreateMap<User, UserListItemModel>()
+                   .ForMember(d => d.Id, o => o.MapFrom(s => s.Id))
+                   .ForMember(d => d.Username, o => o.MapFrom(s => s.UserName))
+                   .ForMember(d => d.Email, o => o.MapFrom(s => s.Email));
         }
 
         private void CreateDishMappings()
@@ -33,7 +48,7 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
                    .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
                    .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
                    .ForMember(d => d.IsConfirmed, o => o.MapFrom(s => s.IsConfirmed))
-                   //.ForMember(d => d.CreatedByUser, o => o.MapFrom(s => s.User.UserName))
+                   .ForMember(d => d.CreatedByUser, o => o.MapFrom(s => s.User.UserName))
                    .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
 
             CreateMap<DishEditModel, Dish>()

@@ -70,5 +70,10 @@ namespace Batonezas.WebApi.Repositories
         {
             context.SaveChanges();
         }
+
+        public BatonezasContext GetContext()
+        {
+            return context;
+        }
     }
 }

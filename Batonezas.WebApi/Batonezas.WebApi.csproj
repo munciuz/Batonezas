@@ -241,11 +241,14 @@
     <Compile Include="BusinessRules\DishCommands\DeleteDishCommand.cs" />
     <Compile Include="BusinessRules\DishCommands\EditDishCommand.cs" />
     <Compile Include="BusinessRules\ICommand.cs" />
+    <Compile Include="BusinessRules\UserCommand\EditUserCommand.cs" />
     <Compile Include="BusinessRules\TagCommands\CreateTagCommand.cs" />
     <Compile Include="BusinessRules\TagCommands\DeleteTagCommand.cs" />
     <Compile Include="BusinessRules\TagCommands\EditTagCommand.cs" />
     <Compile Include="Controllers\ImageController.cs" />
     <Compile Include="Controllers\PlaceReviewController.cs" />
+    <Compile Include="Controllers\RoleController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Controllers\DishReviewController.cs" />
     <Compile Include="Controllers\PlaceController.cs" />
@@ -271,6 +274,10 @@
     <Compile Include="Infrastructure\ObjectMappings\AutoMapperConfiguration.cs" />
     <Compile Include="Infrastructure\ObjectMappings\AutoMapperModelsProfile.cs" />
     <Compile Include="Infrastructure\RulesException.cs" />
+    <Compile Include="Models\RoleModels\RoleEditModel.cs" />
+    <Compile Include="Models\UserModels\UserEditModel.cs" />
+    <Compile Include="Models\UserModels\UserListFilterModel.cs" />
+    <Compile Include="Models\UserModels\UserListItemModel.cs" />
     <Compile Include="Models\DishModels\DishListFilterModel.cs" />
     <Compile Include="Models\DishModels\DishListItemModel.cs" />
     <Compile Include="Models\DishModels\DishEditModel.cs" />
@@ -309,6 +316,8 @@
     <Compile Include="Services\IDishReviewService.cs" />
     <Compile Include="Services\IPlaceReviewService.cs" />
     <Compile Include="Services\IImageService.cs" />
+    <Compile Include="Services\IRoleService.cs" />
+    <Compile Include="Services\IUserService.cs" />
     <Compile Include="Services\ITagService.cs" />
     <Compile Include="Services\IPlaceService.cs" />
     <Compile Include="Services\IReviewService.cs" />
