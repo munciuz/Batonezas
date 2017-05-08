@@ -13,13 +13,6 @@ namespace Batonezas.WebApi.Repositories
 
     public class UserRepository : Repository<User>, IUserRepository
     {
-        private readonly IRoleRepository roleRepository;
-
-        public UserRepository()
-        {
-            this.roleRepository = new RoleRepository();
-        }
-
         public IList<string> GetRoles(int userId)
         {
             var user = Get(userId);

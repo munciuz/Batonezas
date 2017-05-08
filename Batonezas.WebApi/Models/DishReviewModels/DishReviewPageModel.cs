@@ -1,4 +1,5 @@
-﻿using Batonezas.WebApi.Models.TagModels;
+﻿using Batonezas.WebApi.Models.DishModels;
+using Batonezas.WebApi.Models.TagModels;
 
 namespace Batonezas.WebApi.Models.DishReviewModels
 {
@@ -7,5 +8,7 @@ namespace Batonezas.WebApi.Models.DishReviewModels
         public GroupedDishReviewListItemModel[] DishReviewList { get; set; }
         
         public TagListItemModel[] TagList { get; set; }
+
+        public DishListItemModel[] DishList { get; set; }
     }
 }

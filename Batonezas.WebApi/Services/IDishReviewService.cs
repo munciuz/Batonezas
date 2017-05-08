@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Batonezas.DataAccess;
+using Batonezas.WebApi.Models.DishModels;
 using Batonezas.WebApi.Models.DishReviewModels;
 using Batonezas.WebApi.Models.TagModels;
 using Batonezas.WebApi.Repositories;
@@ -161,10 +162,13 @@ namespace Batonezas.WebApi.Services
 
             var tags = tagsseService.GetList(new TagListFilterModel());
 
+            var dishes = dishService.GetList(new DishListFilterModel());
+
             return new DishReviewPageModel
             {
                 DishReviewList = reviews.ToArray(),
-                TagList = tags.ToArray()
+                TagList = tags.ToArray(),
+                DishList = dishes.ToArray()
             };
         }
 

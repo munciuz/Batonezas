@@ -61,15 +61,15 @@ namespace Batonezas.WebApi.Services
 
         public IList<DishListItemModel> GetList(DishListFilterModel filter)
         {
-            var query = dishRepository.CreateQuery();
+            var query = dishRepository.CreateQuery().Where(x => x.IsValid).OrderBy(x => x.Name);
 
             if (filter != null)
             {
-                if (filter.IsValid) query = query.Where(x => x.IsValid);
+                //if (filter.IsValid) query = query.Where(x => x.IsValid);
 
                 //if (!string.IsNullOrEmpty(filter.Name)) query = query.Where(x => StringHelper.Contains(x.Name, filter.Name));
 
-                if (filter.CreatedDateTime.HasValue) query = query.Where(x => x.CreatedDateTime > filter.CreatedDateTime.Value);
+                //if (filter.CreatedDateTime.HasValue) query = query.Where(x => x.CreatedDateTime > filter.CreatedDateTime.Value);
             }
 
             var list = query.AsEnumerable().Select(Mapper.Map<DishListItemModel>).ToList();
