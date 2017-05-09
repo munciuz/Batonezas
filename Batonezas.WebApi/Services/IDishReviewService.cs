@@ -139,8 +139,8 @@ namespace Batonezas.WebApi.Services
 
         public IList<GroupedDishReviewListItemModel> GetGroupedList(DishReviewListFilterModel filter)
         {
-            var reviews = from dr in dishReviewRepository.CreateQuery()
-                group dr by new {dr.DishId, dr.Review.PlaceId};
+            var reviews = (from dr in dishReviewRepository.CreateQuery()
+                group dr by new {dr.DishId, dr.Review.PlaceId}).ToList();
 
             var result = reviews.Select(x => new GroupedDishReviewListItemModel
             {
@@ -150,8 +150,9 @@ namespace Batonezas.WebApi.Services
                 PlaceName = x.FirstOrDefault().Review.Place.Name,
                 GId = x.FirstOrDefault().Review.Place.GId,
                 RatingAverage = x.Average(y => y.Review.Rating),
-                ReviewCount = x.Count()
-            }).ToList();
+                ReviewCount = x.Count(),
+                TagsIds = x.FirstOrDefault().Dish.DishTag.Select(y => y.TagId).ToArray()
+            }).OrderByDescending(x => x.RatingAverage).ToList();
 
             return result;
         }

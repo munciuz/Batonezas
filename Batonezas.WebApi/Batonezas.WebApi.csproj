@@ -266,6 +266,7 @@
     <Compile Include="Identity\CustomJwtFormat.cs" />
     <Compile Include="Identity\CustomOAuthProvider.cs" />
     <Compile Include="Infrastructure\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Constants\BatonezasConstants.cs" />
     <Compile Include="Infrastructure\ErrorInfo.cs" />
     <Compile Include="Infrastructure\Extensions\MappingExpressionExtensions.cs" />
     <Compile Include="Infrastructure\Extensions\ModelStateExtension.cs" />
