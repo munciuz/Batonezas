@@ -15,7 +15,6 @@ namespace Batonezas.WebApi.Controllers
         [HttpGet]
         public IHttpActionResult Get()
         {
-            imageService.CreateImage("");
             return Ok(1);
         }
     }

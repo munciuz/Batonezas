@@ -48,7 +48,7 @@ namespace Batonezas.WebApi.Infrastructure.ObjectMappings
                    .ForMember(d => d.Name, o => o.MapFrom(s => s.Name))
                    .ForMember(d => d.IsValid, o => o.MapFrom(s => s.IsValid))
                    .ForMember(d => d.IsConfirmed, o => o.MapFrom(s => s.IsConfirmed))
-                   .ForMember(d => d.CreatedByUser, o => o.MapFrom(s => s.User.UserName))
+                   //.ForMember(d => d.CreatedByUser, o => o.MapFrom(s => s.User.UserName))
                    .ForMember(d => d.CreatedDateTime, o => o.MapFrom(s => s.CreatedDateTime));
 
             CreateMap<DishEditModel, Dish>()

@@ -17,7 +17,7 @@ namespace Batonezas.WebApi.Services
     {
         int CreateImage(string imageUri);
         void CreateImageFile(int id, byte[] bytes);
-        string GetImagePath(int id);
+        string GetImagePath(int? id);
     }
 
     public class ImageService : IImageService
@@ -51,9 +51,18 @@ namespace Batonezas.WebApi.Services
             return image.Id;
         }
 
-        public string GetImagePath(int id)
+        public string GetImagePath(int? id)
         {
-            var path = BatonezasConstants.BaseUrl + BatonezasConstants.PhotoPath + "/" + id + ".jpeg";
+            var path = string.Empty;
+
+            if (id.HasValue)
+            {
+                path = $"{BatonezasConstants.BaseUrl}{BatonezasConstants.PhotoPath}/{id}.jpeg";
+            }
+            else
+            {
+                path = BatonezasConstants.DefaultPhotoPath;
+            }
 
             return path;
         }
