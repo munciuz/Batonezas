@@ -24,7 +24,7 @@ namespace Batonezas.WebApi.Identity
 
         public override Task GrantResourceOwnerCredentials(OAuthGrantResourceOwnerCredentialsContext context)
         {
-            context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
+            //context.OwinContext.Response.Headers.Add("Access-Control-Allow-Origin", new[] { "*" });
 
             var user = context.OwinContext.Get<BatonezasContext>().Users.FirstOrDefault(u => u.UserName == context.UserName);
 
@@ -61,9 +61,6 @@ namespace Batonezas.WebApi.Identity
             {
                 identity.AddClaim(new Claim(ClaimTypes.Role, role));
             }
-
-            var a = 2;
-            var b = 3;
 
             return identity;
         }

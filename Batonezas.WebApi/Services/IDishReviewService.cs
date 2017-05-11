@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Batonezas.DataAccess;
+using Batonezas.WebApi.Infrastructure.Helpers;
 using Batonezas.WebApi.Models.DishModels;
 using Batonezas.WebApi.Models.DishReviewModels;
 using Batonezas.WebApi.Models.TagModels;
@@ -75,7 +76,7 @@ namespace Batonezas.WebApi.Services
             {
                 var newDish = new Dish
                 {
-                    CreatedByUserId = 1,
+                    CreatedByUserId = UserHelper.GetCurrentUserId(),
                     CreatedDateTime = DateTime.Now,
                     Name = model.DishName,
                     IsConfirmed = false,
@@ -96,7 +97,7 @@ namespace Batonezas.WebApi.Services
 
             var review = new Review
             {
-                CreatedByUserId = 1,
+                CreatedByUserId = UserHelper.GetCurrentUserId(),
                 CreatedDateTime = DateTime.Now,
                 Text = model.Review,
                 PlaceId = placeId,

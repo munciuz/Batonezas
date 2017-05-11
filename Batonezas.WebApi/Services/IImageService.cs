@@ -54,14 +54,25 @@ namespace Batonezas.WebApi.Services
         public string GetImagePath(int? id)
         {
             var path = string.Empty;
+            var serverUrl = "http://munciuz-001-site1.etempurl.com";
+
+            var absoluteUri = HttpContext.Current.Request.Url.AbsoluteUri;
+            var absolutePath = HttpContext.Current.Request.Url.AbsolutePath;
+
+            var index = absoluteUri.IndexOf(absolutePath);
+
+            if (index != default(Int32))
+            {
+                serverUrl = absoluteUri.Remove(index);
+            }
 
             if (id.HasValue)
             {
-                path = $"{BatonezasConstants.BaseUrl}{BatonezasConstants.PhotoPath}/{id}.jpeg";
+                path = $"{serverUrl}{BatonezasConstants.PhotoPath}/{id}.jpeg";
             }
             else
             {
-                path = BatonezasConstants.DefaultPhotoPath;
+                path = $"{serverUrl}{BatonezasConstants.DefaultPhotoPath}";
             }
 
             return path;

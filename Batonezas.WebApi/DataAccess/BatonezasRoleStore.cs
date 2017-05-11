@@ -12,7 +12,6 @@ namespace Batonezas.WebApi.DataAccess
     {
         public void Dispose()
         {
-            var a = 2;
             //throw new NotImplementedException();
         }
 

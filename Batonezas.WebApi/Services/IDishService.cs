@@ -128,7 +128,7 @@ namespace Batonezas.WebApi.Services
                     {
                         DishId = dishId,
                         TagId = tagId,
-                        CreatedByUserId = 1,
+                        CreatedByUserId = UserHelper.GetCurrentUserId(),
                         CreatedDateTime = DateTime.Now
                     };
 

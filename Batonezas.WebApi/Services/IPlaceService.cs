@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using Batonezas.DataAccess;
+using Batonezas.WebApi.Infrastructure.Helpers;
 using Batonezas.WebApi.Models.PlaceModels;
 using Batonezas.WebApi.Repositories;
 
@@ -64,7 +65,7 @@ namespace Batonezas.WebApi.Services
 
             var entity = Mapper.Map<Place>(model);
 
-            entity.CreatedByUserId = 1;
+            entity.CreatedByUserId = UserHelper.GetCurrentUserId();
             entity.CreatedDateTime = DateTime.Now;
             entity.IsValid = true;
 

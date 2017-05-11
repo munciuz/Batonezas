@@ -1,6 +1,7 @@
 ﻿using System.Web.Http;
 using Batonezas.WebApi.BusinessRules.DishReviewCommands;
 using Batonezas.WebApi.Infrastructure;
+using Batonezas.WebApi.Infrastructure.Helpers;
 using Batonezas.WebApi.Models.DishReviewModels;
 using Batonezas.WebApi.Services;
 
@@ -51,6 +52,8 @@ namespace Batonezas.WebApi.Controllers
         public IHttpActionResult GetPageModel()
         {
             var model = dishReviewService.GetPageModel();
+
+            var userId = UserHelper.GetCurrentUser();
 
             return Ok(model);
         }
