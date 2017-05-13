@@ -12,28 +12,18 @@ namespace Batonezas.DataAccess
     using System;
     using System.Collections.Generic;
     
-    public partial class Place
+    public partial class PlaceType
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Place()
+        public PlaceType()
         {
-            this.Review = new HashSet<Review>();
             this.PlacePlaceType = new HashSet<PlacePlaceType>();
         }
     
         public int Id { get; set; }
-        public string GId { get; set; }
         public string Name { get; set; }
-        public string Address { get; set; }
-        public string Lat { get; set; }
-        public string Lng { get; set; }
-        public bool IsValid { get; set; }
-        public int CreatedByUserId { get; set; }
-        public System.DateTime CreatedDateTime { get; set; }
+        public string GName { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Review> Review { get; set; }
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<PlacePlaceType> PlacePlaceType { get; set; }
     }

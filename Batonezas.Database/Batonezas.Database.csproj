@@ -56,6 +56,9 @@
     <Content Include="Scripts\up\000050_Create_UserLogin.sql" />
     <Content Include="Scripts\up\000060_Create_FK.sql" />
     <Content Include="Scripts\up\000150_Create_DishTag.sql" />
+    <Content Include="Scripts\up\000181_Insert_PlaceType.sql" />
+    <Content Include="Scripts\up\000190_Create_PlacePlaceType.sql" />
+    <Content Include="Scripts\up\000180_Create_PlaceType.sql" />
     <Content Include="Scripts\up\000170_Alter_User.sql" />
     <Content Include="Scripts\up\000160_Alter_User.sql" />
     <Content Include="Scripts\up\000140_Create_Tag.sql" />

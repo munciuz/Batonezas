@@ -307,6 +307,8 @@
     <Compile Include="Repositories\DishTagRepository.cs" />
     <Compile Include="Repositories\IImageRepository.cs" />
     <Compile Include="Repositories\IPlaceReviewRepository.cs" />
+    <Compile Include="Repositories\IPlacePlaceTypeRepository.cs" />
+    <Compile Include="Repositories\IPlaceTypeRepository.cs" />
     <Compile Include="Repositories\ITagRepository.cs" />
     <Compile Include="Repositories\IDishReviewRepository.cs" />
     <Compile Include="Repositories\IPlaceRepository.cs" />
@@ -317,6 +319,7 @@
     <Compile Include="Repositories\IUserRepository.cs" />
     <Compile Include="Repositories\Repository.cs" />
     <Compile Include="Services\IDishReviewService.cs" />
+    <Compile Include="Services\IPlaceTypeService.cs" />
     <Compile Include="Services\IPlaceReviewService.cs" />
     <Compile Include="Services\IImageService.cs" />
     <Compile Include="Services\IRoleService.cs" />

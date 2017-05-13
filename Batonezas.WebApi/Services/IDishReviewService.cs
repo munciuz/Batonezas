@@ -28,6 +28,7 @@ namespace Batonezas.WebApi.Services
         private readonly IPlaceService placeService;
         private readonly IDishService dishService;
         private readonly IImageService imageService;
+        private readonly IPlaceTypeService placeTypeService;
 
         public DishReviewService(IDishReviewRepository dishReviewRepository,
             IReviewRepository reviewRepository,
@@ -35,7 +36,8 @@ namespace Batonezas.WebApi.Services
             ITagService tagsseService,
             IPlaceService placeService,
             IDishService dishService, 
-            IImageService imageService)
+            IImageService imageService, 
+            IPlaceTypeService placeTypeService)
         {
             this.dishReviewRepository = dishReviewRepository;
             this.reviewRepository = reviewRepository;
@@ -44,6 +46,7 @@ namespace Batonezas.WebApi.Services
             this.placeService = placeService;
             this.dishService = dishService;
             this.imageService = imageService;
+            this.placeTypeService = placeTypeService;
         }
 
         public DishReviewEditModel Get(int id)
@@ -71,6 +74,8 @@ namespace Batonezas.WebApi.Services
         {
             int dishId = model.DishId ?? 0;
             int placeId = placeService.GetPlaceId(model.Place);
+
+            placeTypeService.CreatePlaceTypesForPlace(placeId, model.Place.GTypes);
 
             if (!model.DishId.HasValue)
             {

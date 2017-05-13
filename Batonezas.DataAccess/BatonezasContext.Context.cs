@@ -39,5 +39,7 @@ namespace Batonezas.DataAccess
         public virtual DbSet<UserClaim> UserClaim { get; set; }
         public virtual DbSet<UserLogin> UserLogin { get; set; }
         public virtual DbSet<User> User { get; set; }
+        public virtual DbSet<PlacePlaceType> PlacePlaceType { get; set; }
+        public virtual DbSet<PlaceType> PlaceType { get; set; }
     }
 }

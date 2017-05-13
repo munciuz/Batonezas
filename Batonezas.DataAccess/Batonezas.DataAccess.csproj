@@ -87,6 +87,8 @@
     <Compile Include="Image.cs">
       <DependentUpon>BatonezasContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="Partials\PlacePlaceType.cs" />
+    <Compile Include="Partials\PlaceType.cs" />
     <Compile Include="Partials\PlaceReview.cs" />
     <Compile Include="Partials\Image.cs" />
     <Compile Include="Partials\DishTag.cs" />
@@ -102,7 +104,13 @@
     <Compile Include="Place.cs">
       <DependentUpon>BatonezasContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="PlacePlaceType.cs">
+      <DependentUpon>BatonezasContext.tt</DependentUpon>
+    </Compile>
     <Compile Include="PlaceReview.cs">
+      <DependentUpon>BatonezasContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PlaceType.cs">
       <DependentUpon>BatonezasContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

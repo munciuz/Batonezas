@@ -21,5 +21,7 @@ namespace Batonezas.WebApi.Models.PlaceModels
         public int CreatedByUserId { get; set; }
 
         public DateTime CreatedDateTime { get; set; }
+
+        public string[] GTypes { get; set; }
     }
 }

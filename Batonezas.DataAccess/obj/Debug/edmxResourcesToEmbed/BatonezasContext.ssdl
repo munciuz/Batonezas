@@ -54,12 +54,28 @@
     <Property Name="CreatedByUserId" Type="int" Nullable="false" />
     <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />
   </EntityType>
+  <EntityType Name="PlacePlaceType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PlaceId" Type="int" Nullable="false" />
+    <Property Name="PlaceTypeId" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="PlaceReview">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="ReviewId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PlaceType">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" MaxLength="32" Nullable="false" />
+    <Property Name="GName" Type="nvarchar" MaxLength="32" Nullable="false" />
   </EntityType>
   <EntityType Name="Review">
     <Key>
@@ -222,6 +238,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_PlacePlaceType_Place">
+    <End Role="Place" Type="Self.Place" Multiplicity="1" />
+    <End Role="PlacePlaceType" Type="Self.PlacePlaceType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Place">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlacePlaceType">
+        <PropertyRef Name="PlaceId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PlacePlaceType_PlaceType">
+    <End Role="PlaceType" Type="Self.PlaceType" Multiplicity="1" />
+    <End Role="PlacePlaceType" Type="Self.PlacePlaceType" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PlaceType">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PlacePlaceType">
+        <PropertyRef Name="PlaceTypeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_PlaceReview_Review">
     <End Role="Review" Type="Self.Review" Multiplicity="1" />
     <End Role="PlaceReview" Type="Self.PlaceReview" Multiplicity="*" />
@@ -344,7 +384,9 @@
     <EntitySet Name="DishTag" EntityType="Self.DishTag" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Place" EntityType="Self.Place" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlacePlaceType" EntityType="Self.PlacePlaceType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PlaceReview" EntityType="Self.PlaceReview" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PlaceType" EntityType="Self.PlaceType" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Role" EntityType="Self.Role" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Tag" EntityType="Self.Tag" Schema="dbo" store:Type="Tables" />
@@ -379,6 +421,14 @@
     <AssociationSet Name="FK_Place_User" Association="Self.FK_Place_User">
       <End Role="User" EntitySet="User" />
       <End Role="Place" EntitySet="Place" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlacePlaceType_Place" Association="Self.FK_PlacePlaceType_Place">
+      <End Role="Place" EntitySet="Place" />
+      <End Role="PlacePlaceType" EntitySet="PlacePlaceType" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PlacePlaceType_PlaceType" Association="Self.FK_PlacePlaceType_PlaceType">
+      <End Role="PlaceType" EntitySet="PlaceType" />
+      <End Role="PlacePlaceType" EntitySet="PlacePlaceType" />
     </AssociationSet>
     <AssociationSet Name="FK_PlaceReview_Review" Association="Self.FK_PlaceReview_Review">
       <End Role="Review" EntitySet="Review" />

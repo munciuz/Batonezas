@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Web.Http;
 using AutoMapper;
 using Batonezas.DataAccess;
 using Batonezas.WebApi.Infrastructure.Helpers;
@@ -27,16 +28,19 @@ namespace Batonezas.WebApi.Services
         private readonly IPlaceReviewRepository placeReviewRepository;
         private readonly IPlaceService placeService;
         private readonly IReviewRepository reviewRepository;
+        private readonly IPlaceTypeService placeTypeService;
 
         public PlaceReviewService(IPlaceRepository placeRepository,
             IPlaceReviewRepository placeReviewRepository,
             IPlaceService placeService,
-            IReviewRepository reviewRepository)
+            IReviewRepository reviewRepository, 
+            IPlaceTypeService placeTypeService)
         {
             this.placeRepository = placeRepository;
             this.placeReviewRepository = placeReviewRepository;
             this.placeService = placeService;
             this.reviewRepository = reviewRepository;
+            this.placeTypeService = placeTypeService;
         }
 
         public PlaceEditModel GetPlace(int id)
@@ -83,9 +87,12 @@ namespace Batonezas.WebApi.Services
             return result;
         }
 
+        [HttpPost]
         public void Create(PlaceReviewEditModel model)
         {
             var placeId = placeService.GetPlaceId(model.Place);
+
+            placeTypeService.CreatePlaceTypesForPlace(placeId, model.Place.GTypes);
 
             var review = new Review
             {

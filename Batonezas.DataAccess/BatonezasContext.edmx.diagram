@@ -32,6 +32,10 @@
         <AssociationConnector Association="BatonezasModel.FK_UserClaim_User_UserId" />
         <AssociationConnector Association="BatonezasModel.FK_UserLogin_User_UserId" />
         <AssociationConnector Association="BatonezasModel.UserRole" />
+        <EntityTypeShape EntityType="BatonezasModel.PlacePlaceType" Width="1.5" PointX="7.5" PointY="4.625" />
+        <EntityTypeShape EntityType="BatonezasModel.PlaceType" Width="1.5" PointX="5.25" PointY="20.75" />
+        <AssociationConnector Association="BatonezasModel.FK_PlacePlaceType_Place" />
+        <AssociationConnector Association="BatonezasModel.FK_PlacePlaceType_PlaceType" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

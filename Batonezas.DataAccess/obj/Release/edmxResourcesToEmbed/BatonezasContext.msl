@@ -149,5 +149,23 @@
         <ScalarProperty Name="Id" ColumnName="RoleId" />
       </EndProperty>
     </AssociationSetMapping>
+    <EntitySetMapping Name="PlacePlaceType">
+      <EntityTypeMapping TypeName="BatonezasModel.PlacePlaceType">
+        <MappingFragment StoreEntitySet="PlacePlaceType">
+          <ScalarProperty Name="PlaceTypeId" ColumnName="PlaceTypeId" />
+          <ScalarProperty Name="PlaceId" ColumnName="PlaceId" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PlaceType">
+      <EntityTypeMapping TypeName="BatonezasModel.PlaceType">
+        <MappingFragment StoreEntitySet="PlaceType">
+          <ScalarProperty Name="GName" ColumnName="GName" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
