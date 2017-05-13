@@ -108,6 +108,8 @@
     <Property Name="AccessFailedCount" Type="int" Nullable="false" />
     <Property Name="UserName" Type="nvarchar" MaxLength="256" Nullable="false" />
     <Property Name="Discriminator" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="ImageId" Type="int" />
+    <Property Name="Description" Type="nvarchar" MaxLength="256" />
   </EntityType>
   <EntityType Name="UserClaim">
     <Key>
@@ -268,6 +270,18 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_User_Image">
+    <End Role="Image" Type="Self.Image" Multiplicity="0..1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Image">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="ImageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_UserClaim_User_UserId">
     <End Role="User" Type="Self.User" Multiplicity="1">
       <OnDelete Action="Cascade" />
@@ -381,6 +395,10 @@
     <AssociationSet Name="FK_Review_User" Association="Self.FK_Review_User">
       <End Role="User" EntitySet="User" />
       <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK_User_Image" Association="Self.FK_User_Image">
+      <End Role="Image" EntitySet="Image" />
+      <End Role="User" EntitySet="User" />
     </AssociationSet>
     <AssociationSet Name="FK_UserClaim_User_UserId" Association="Self.FK_UserClaim_User_UserId">
       <End Role="User" EntitySet="User" />

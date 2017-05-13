@@ -14,19 +14,20 @@
         <EntityTypeShape EntityType="BatonezasModel.Review" Width="1.5" PointX="7.5" PointY="8.125" />
         <EntityTypeShape EntityType="BatonezasModel.Role" Width="1.5" PointX="0.75" PointY="9.625" />
         <EntityTypeShape EntityType="BatonezasModel.Tag" Width="1.5" PointX="5.25" PointY="17.75" />
-        <EntityTypeShape EntityType="BatonezasModel.User" Width="1.5" PointX="3" PointY="8" />
         <EntityTypeShape EntityType="BatonezasModel.UserClaim" Width="1.5" PointX="5.25" PointY="14.375" />
         <EntityTypeShape EntityType="BatonezasModel.UserLogin" Width="1.5" PointX="5.25" PointY="4.5" />
-        <AssociationConnector Association="BatonezasModel.FK_Dish_User" />
         <AssociationConnector Association="BatonezasModel.FK_DishReview_Dish" />
         <AssociationConnector Association="BatonezasModel.FK_DishTag_Dish" />
         <AssociationConnector Association="BatonezasModel.FK_DishReview_Review" />
         <AssociationConnector Association="BatonezasModel.FK_DishTag_Tag" />
-        <AssociationConnector Association="BatonezasModel.FK_DishTag_User" />
         <AssociationConnector Association="BatonezasModel.FK_Review_Image" />
-        <AssociationConnector Association="BatonezasModel.FK_Place_User" />
         <AssociationConnector Association="BatonezasModel.FK_Review_Place" />
         <AssociationConnector Association="BatonezasModel.FK_PlaceReview_Review" />
+        <EntityTypeShape EntityType="BatonezasModel.User" Width="1.5" PointX="2.75" PointY="4.25" />
+        <AssociationConnector Association="BatonezasModel.FK_Dish_User" />
+        <AssociationConnector Association="BatonezasModel.FK_DishTag_User" />
+        <AssociationConnector Association="BatonezasModel.FK_User_Image" />
+        <AssociationConnector Association="BatonezasModel.FK_Place_User" />
         <AssociationConnector Association="BatonezasModel.FK_Review_User" />
         <AssociationConnector Association="BatonezasModel.FK_UserClaim_User_UserId" />
         <AssociationConnector Association="BatonezasModel.FK_UserLogin_User_UserId" />

@@ -241,6 +241,7 @@
     <Compile Include="BusinessRules\DishCommands\DeleteDishCommand.cs" />
     <Compile Include="BusinessRules\DishCommands\EditDishCommand.cs" />
     <Compile Include="BusinessRules\ICommand.cs" />
+    <Compile Include="BusinessRules\UserCommand\EditUserProfileCommand.cs" />
     <Compile Include="BusinessRules\UserCommand\EditUserCommand.cs" />
     <Compile Include="BusinessRules\TagCommands\CreateTagCommand.cs" />
     <Compile Include="BusinessRules\TagCommands\DeleteTagCommand.cs" />
@@ -276,6 +277,7 @@
     <Compile Include="Infrastructure\ObjectMappings\AutoMapperModelsProfile.cs" />
     <Compile Include="Infrastructure\RulesException.cs" />
     <Compile Include="Models\RoleModels\RoleEditModel.cs" />
+    <Compile Include="Models\UserModels\UserProfileEditModel.cs" />
     <Compile Include="Models\UserModels\UserEditModel.cs" />
     <Compile Include="Models\UserModels\UserListFilterModel.cs" />
     <Compile Include="Models\UserModels\UserListItemModel.cs" />
@@ -350,6 +352,9 @@
       <Project>{e9f33942-f954-43f4-a458-74a890e03b45}</Project>
       <Name>Batonezas.DataAccess</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

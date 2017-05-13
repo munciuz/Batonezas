@@ -42,5 +42,25 @@ namespace Batonezas.WebApi.Controllers
                 },
                 cmd => Ok(cmd.Model.Id));
         }
+
+        [HttpGet]
+        [Authorize]
+        public IHttpActionResult GetUserProfile()
+        {
+            var model = userService.GetUserProfile();
+
+            return Ok(model);
+        }
+
+        [HttpPost]
+        public IHttpActionResult EditUserProfile(UserProfileEditModel model)
+        {
+            return Command<EditUserProfileCommand>(
+                cmd =>
+                {
+                    cmd.Model = model;
+                },
+                cmd => Ok(cmd.Model.Id));
+        }
     }
 }

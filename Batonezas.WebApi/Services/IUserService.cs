@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using AutoMapper;
+using Batonezas.WebApi.Infrastructure.Helpers;
 using Batonezas.WebApi.Models.RoleModels;
 using Batonezas.WebApi.Models.UserModels;
 using Batonezas.WebApi.Repositories;
@@ -12,18 +12,24 @@ namespace Batonezas.WebApi.Services
         UserEditModel Get(int id);
         IList<UserListItemModel> GetList(UserListFilterModel filter);
         void Edit(UserEditModel model);
+
+        UserProfileEditModel GetUserProfile();
+        int EditUserProfile(UserProfileEditModel model);
     }
 
     public class UserService : IUserService
     {
         private readonly IUserRepository userRepository;
         private readonly IRoleRepository roleRepository;
+        private readonly IImageService imageService;
 
-        public UserService(IUserRepository userRepository, 
-            IRoleRepository roleRepository)
+        public UserService(IUserRepository userRepository,
+            IRoleRepository roleRepository,
+            IImageService imageService)
         {
             this.userRepository = userRepository;
             this.roleRepository = roleRepository;
+            this.imageService = imageService;
         }
 
         public UserEditModel Get(int id)
@@ -79,6 +85,49 @@ namespace Batonezas.WebApi.Services
             userRepository.DeleteRoles(model.Id);
 
             userRepository.CreateUserRole(model.Id, model.Role.Id);
+        }
+
+        public UserProfileEditModel GetUserProfile()
+        {
+            var user = UserHelper.GetCurrentUser();
+
+            var model = new UserProfileEditModel
+            {
+                Id = user.Id,
+                Username = user.UserName,
+                Email = user.Email,
+                Description = user.Description
+            };
+
+            if (user.ImageId.HasValue)
+            {
+                model.ImageUrl = imageService.GetImagePath(user.ImageId);
+            }
+
+            return model;
+        }
+
+        public int EditUserProfile(UserProfileEditModel model)
+        {
+            var userId = UserHelper.GetCurrentUserId();
+
+            var user = userRepository.Get(userId);
+
+            user.Description = model.Description;
+
+            if (!string.IsNullOrEmpty(model.ImageUri))
+            {
+                if (user.ImageId.HasValue)
+                {
+                    imageService.DeleteImage(user.ImageId.Value);
+                }
+
+                user.ImageId = imageService.CreateImage(model.ImageUri);
+            }
+
+            userRepository.Update(user);
+
+            return user.Id;
         }
     }
 }

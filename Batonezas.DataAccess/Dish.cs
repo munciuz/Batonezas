@@ -28,10 +28,10 @@ namespace Batonezas.DataAccess
         public int CreatedByUserId { get; set; }
         public System.DateTime CreatedDateTime { get; set; }
     
-        public virtual User User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DishReview> DishReview { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DishTag> DishTag { get; set; }
+        public virtual User User { get; set; }
     }
 }

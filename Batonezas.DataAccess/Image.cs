@@ -18,6 +18,7 @@ namespace Batonezas.DataAccess
         public Image()
         {
             this.Review = new HashSet<Review>();
+            this.User = new HashSet<User>();
         }
     
         public int Id { get; set; }
@@ -29,5 +30,7 @@ namespace Batonezas.DataAccess
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Review> Review { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> User { get; set; }
     }
 }

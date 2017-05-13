@@ -18,6 +18,7 @@ namespace Batonezas.WebApi.Services
         int CreateImage(string imageUri);
         void CreateImageFile(int id, byte[] bytes);
         string GetImagePath(int? id);
+        void DeleteImage(int id);
     }
 
     public class ImageService : IImageService
@@ -96,6 +97,18 @@ namespace Batonezas.WebApi.Services
             if (!Directory.Exists(path))
             {
                 Directory.CreateDirectory(path);
+            }
+        }
+
+        public void DeleteImage(int id)
+        {
+            var path = HttpContext.Current.Server.MapPath(BatonezasConstants.PhotoUploadPath);
+            path += $"/{id}.jpeg";
+
+
+            if (File.Exists(path))
+            {
+                File.Delete(path);
             }
         }
     }
