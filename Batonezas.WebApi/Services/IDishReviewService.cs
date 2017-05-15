@@ -136,7 +136,7 @@ namespace Batonezas.WebApi.Services
                 Name = x.Dish.Name,
                 Review = x.Review.Text,
                 Rating = x.Review.Rating,
-                ImageUri = GetImageUri(x.Review.Image?.Original),
+                ImageUri = imageService.GetImagePath(x.Review.ImageId),
                 ReviewedBy = x.Review.User.UserName
             });
 
@@ -158,7 +158,9 @@ namespace Batonezas.WebApi.Services
                 RatingAverage = x.Average(y => y.Review.Rating),
                 ReviewCount = x.Count(),
                 TagsIds = x.FirstOrDefault().Dish.DishTag.Select(y => y.TagId).ToArray(),
-                ImageUri = imageService.GetImagePath(x.FirstOrDefault().Review.ImageId)
+                ImageUri = imageService.GetImagePath(x.FirstOrDefault().Review.ImageId),
+                Lat = Convert.ToDouble(x.FirstOrDefault().Review.Place.Lat),
+                Lng = Convert.ToDouble(x.FirstOrDefault().Review.Place.Lng)
             }).OrderByDescending(x => x.RatingAverage).ToList();
 
             return result;

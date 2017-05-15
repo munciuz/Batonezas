@@ -347,6 +347,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <Content Include="ClassDiagram1.cd" />
     <None Include="Project_Readme.html" />
     <None Include="Properties\PublishProfiles\Default Settings.pubxml" />
   </ItemGroup>

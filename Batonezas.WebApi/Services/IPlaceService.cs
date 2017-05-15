@@ -32,7 +32,18 @@ namespace Batonezas.WebApi.Services
         {
             var entity = placeRepository.Get(id);
 
-            var model = Mapper.Map<PlaceEditModel>(entity);
+            //var model = Mapper.Map<PlaceEditModel>(entity);
+
+            var model = new PlaceEditModel
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Address = entity.Address,
+                GId = entity.GId,
+                Lat = entity.Lat,
+                Lng = entity.Lng,
+                IsValid = entity.IsValid
+            };
 
             return model;
         }
