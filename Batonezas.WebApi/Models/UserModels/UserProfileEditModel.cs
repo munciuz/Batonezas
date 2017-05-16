@@ -13,5 +13,7 @@
         public string ImageUrl { get; set; }
 
         public string ImageUri { get; set; }
+
+        public int RoleId { get; set; }
     }
 }

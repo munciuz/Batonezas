@@ -96,7 +96,8 @@ namespace Batonezas.WebApi.Services
                 Id = user.Id,
                 Username = user.UserName,
                 Email = user.Email,
-                Description = user.Description
+                Description = user.Description,
+                RoleId = user.Role.FirstOrDefault()?.Id ?? 0
             };
 
             if (user.ImageId.HasValue)

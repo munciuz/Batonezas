@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batonezas.DataAccess", "Bat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batonezas.Database", "Batonezas.Database\Batonezas.Database.csproj", "{FF04F700-DCEE-4818-9AEC-16BAE290825C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Batonezas.Tests", "Batonezas.Tests\Batonezas.Tests.csproj", "{601A4956-8C16-49B1-866E-BFE142009F59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{FF04F700-DCEE-4818-9AEC-16BAE290825C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FF04F700-DCEE-4818-9AEC-16BAE290825C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FF04F700-DCEE-4818-9AEC-16BAE290825C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{601A4956-8C16-49B1-866E-BFE142009F59}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{601A4956-8C16-49B1-866E-BFE142009F59}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{601A4956-8C16-49B1-866E-BFE142009F59}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{601A4956-8C16-49B1-866E-BFE142009F59}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
