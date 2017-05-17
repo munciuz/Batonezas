@@ -33,18 +33,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Image">
-      <EntityTypeMapping TypeName="BatonezasModel.Image">
-        <MappingFragment StoreEntitySet="Image">
-          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
-          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
-          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
-          <ScalarProperty Name="Preview" ColumnName="Preview" />
-          <ScalarProperty Name="Original" ColumnName="Original" />
-          <ScalarProperty Name="Id" ColumnName="Id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="Place">
       <EntityTypeMapping TypeName="BatonezasModel.Place">
         <MappingFragment StoreEntitySet="Place">
@@ -163,6 +151,17 @@
         <MappingFragment StoreEntitySet="PlaceType">
           <ScalarProperty Name="GName" ColumnName="GName" />
           <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Image">
+      <EntityTypeMapping TypeName="BatonezasModel.Image">
+        <MappingFragment StoreEntitySet="Image">
+          <ScalarProperty Name="CreatedDateTime" ColumnName="CreatedDateTime" />
+          <ScalarProperty Name="CreatedByUserId" ColumnName="CreatedByUserId" />
+          <ScalarProperty Name="IsValid" ColumnName="IsValid" />
+          <ScalarProperty Name="Original" ColumnName="Original" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
       </EntityTypeMapping>

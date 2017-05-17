@@ -1,0 +1,2 @@
+ALTER TABLE [Image] 
+DROP COLUMN Preview

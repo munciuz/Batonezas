@@ -1,0 +1,983 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Batonezas.WebApi.FilterConfig">
+    <Position X="44.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\FilterConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Startup">
+    <Position X="44.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\Startup.OAuth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.UnityConfig">
+    <Position X="42.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAQAAAAAAAAAAAAAIAAAAAAAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>App_Start\UnityConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.WebApiConfig">
+    <Position X="42.75" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\WebApiConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.PreflightRequestsHandler">
+    <Position X="44.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App_Start\WebApiConfig.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.WebApiApplication">
+    <Position X="41" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAA=</HashCode>
+      <FileName>Global.asax.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.CommandBase">
+    <Position X="17.5" Y="27.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAiAAQQAAAAAAAAAAAAAAIAAAAAAAAAgAAA=</HashCode>
+      <FileName>BusinessRules\CommandBase.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.DishCommands.CreateDishCommand">
+    <Position X="18.5" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\DishCommands\CreateDishCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.DishCommands.DeleteDishCommand">
+    <Position X="23" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\DishCommands\DeleteDishCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.DishCommands.EditDishCommand">
+    <Position X="27.5" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\DishCommands\EditDishCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.DishReviewCommands.CreateDishReviewCommand">
+    <Position X="32" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAgAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\DishReviewCommands\CreateDishReviewCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.PlaceCommands.CreatePlaceCommand">
+    <Position X="0.5" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\PlaceCommands\CreatePlaceCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.PlaceCommands.DeletePlaceCommand">
+    <Position X="2.75" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\PlaceCommands\DeletePlaceCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.PlaceCommands.EditPlaceCommand">
+    <Position X="5" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\PlaceCommands\EditPlaceCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.PlaceReviewCommands.CreatePlaceReviewCommand">
+    <Position X="7.25" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\PlaceReviewCommands\CreatePlaceReviewCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.ReviewCommands.EditReviewCommand">
+    <Position X="9.5" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAA=</HashCode>
+      <FileName>BusinessRules\ReviewCommands\CreateReviewCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.ReviewCommands.DeleteReviewCommand">
+    <Position X="11.75" Y="25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAA=</HashCode>
+      <FileName>BusinessRules\ReviewCommands\DeleteReviewCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.ReviewCommands.CreateReviewCommand">
+    <Position X="14" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAIAAA=</HashCode>
+      <FileName>BusinessRules\ReviewCommands\EditReviewCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.TagCommands.CreateTagCommand">
+    <Position X="16.25" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\TagCommands\CreateTagCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.TagCommands.DeleteTagCommand">
+    <Position X="20.75" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\TagCommands\DeleteTagCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.TagCommands.EditTagCommand">
+    <Position X="25.25" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\TagCommands\EditTagCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.UserCommand.EditUserCommand">
+    <Position X="29.75" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\UserCommand\EditUserCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.BusinessRules.UserCommand.EditUserProfileCommand">
+    <Position X="34.25" Y="25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEgAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\UserCommand\EditUserProfileCommand.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Controllers.DishController">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAABAAAAAAAAAAAEAAEACAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\DishController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Controllers.DishReviewController">
+    <Position X="8" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAEAEEACAwIAAAAAAAI=</HashCode>
+      <FileName>Controllers\DishReviewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Controllers.ImageController">
+    <Position X="10.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAEAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ImageController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Controllers.PlaceController">
+    <Position X="12.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAABAAAAAAAAAAAEAAEACAAAAAAAAAAI=</HashCode>
+      <FileName>Controllers\PlaceController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Controllers.PlaceReviewController">
+    <Position X="14.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AABAAAAAAAAAAAAARAAAAAAAAAAAAEAAAQIAAAAAAAA=</HashCode>
+      <FileName>Controllers\PlaceReviewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Controllers.ReviewController">
+    <Position X="17" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAEAAEACAAAAAAAIAAI=</HashCode>
+      <FileName>Controllers\ReviewController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Controllers.RoleController">
+    <Position X="19.25" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\RoleController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Controllers.StatusController">
+    <Position X="46.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\StatusController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Controllers.TagController">
+    <Position X="21.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAIAAABAAAAAAAAAAAEAAEACAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\TagController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Controllers.UserController">
+    <Position X="23.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAADAAAAAJAAAAAAAAAACAgAAAAAAAAA=</HashCode>
+      <FileName>Controllers\UserController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.DataAccess.BatonezasRoleManager">
+    <Position X="42.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataAccess\BatonezasRoleManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.DataAccess.BatonezasRoleStore" BaseTypeListCollapsed="true">
+    <Position X="44.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAAAAAAAAAAIAAAAAAACAgAAAAAAIAAAIA=</HashCode>
+      <FileName>DataAccess\BatonezasRoleStore.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.DataAccess.BatonezasSignInManager">
+    <Position X="46.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataAccess\BatonezasSignInManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.DataAccess.BatonezasUserManager">
+    <Position X="48" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataAccess\BatonezasUserManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.DataAccess.BatonezasUserStore" BaseTypeListCollapsed="true">
+    <Position X="49.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAACACAAAEQAAAAAoAAEAAAACAiABAAAQIAAAIA=</HashCode>
+      <FileName>DataAccess\BatonezasUserStore.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Identity.CustomJwtFormat" BaseTypeListCollapsed="true">
+    <Position X="37.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgAAAAAAAAAAAAAAAAFAAAAAAAAAAAIAAAAAAAAAAAA=</HashCode>
+      <FileName>Identity\CustomJwtFormat.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Identity.CustomOAuthProvider">
+    <Position X="39.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAACAAAAAAAAAAAAgAAAAIAAAAAAAIACAAA=</HashCode>
+      <FileName>Identity\CustomOAuthProvider.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Infrastructure.ApiControllerBase">
+    <Position X="14.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\ApiControllerBase.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Infrastructure.ErrorInfo">
+    <Position X="42.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAA=</HashCode>
+      <FileName>Infrastructure\ErrorInfo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Infrastructure.RulesException">
+    <Position X="42.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>Infrastructure\RulesException.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Infrastructure.Constants.BatonezasConstants">
+    <Position X="41" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAgAAAAAAAAAgAAAIAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Constants\BatonezasConstants.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Infrastructure.Extensions.MappingExpressionExtensions">
+    <Position X="37.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Extensions\MappingExpressionExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Infrastructure.Extensions.ModelStateExtension">
+    <Position X="39.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Infrastructure\Extensions\ModelStateExtension.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Infrastructure.Helpers.StringHelper">
+    <Position X="48" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAA=</HashCode>
+      <FileName>Infrastructure\Helpers\StringHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Infrastructure.Helpers.UserHelper">
+    <Position X="46.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAACAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Helpers\UserHelper.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Infrastructure.ObjectMappings.AutoMapperConfiguration">
+    <Position X="37.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\ObjectMappings\AutoMapperConfiguration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Infrastructure.ObjectMappings.AutoMapperModelsProfile">
+    <Position X="39.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAABAAAAAAgAAEBACAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\ObjectMappings\AutoMapperModelsProfile.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.DishModels.DishEditModel">
+    <Position X="41" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAgAAAQAAAAAAIAAAAggAAAKAAA=</HashCode>
+      <FileName>Models\DishModels\DishEditModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.DishModels.DishListFilterModel">
+    <Position X="42.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DishModels\DishListFilterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.DishModels.DishListItemModel">
+    <Position X="44.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAgAAAQAAAAAAIBAAAAgAAAAAAA=</HashCode>
+      <FileName>Models\DishModels\DishListItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.DishReviewModels.DishReviewEditModel">
+    <Position X="46.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAACAAAAAAAAAAAAAAEAAAEkAAECAAAAAAQA=</HashCode>
+      <FileName>Models\DishReviewModels\DishReviewEditModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.DishReviewModels.DishReviewListFilterModel">
+    <Position X="48" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Models\DishReviewModels\DishReviewListFilterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.DishReviewModels.DishReviewListItemModel">
+    <Position X="49.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAACEAAAAAAAAAAAAAAAAAQAAEAAAAkAAACAAAAAAAA=</HashCode>
+      <FileName>Models\DishReviewModels\DishReviewListItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.DishReviewModels.DishReviewPageModel">
+    <Position X="37.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAAAAEAAAAAAAAAAAAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\DishReviewModels\DishReviewPageModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.DishReviewModels.GroupedDishReviewListItemModel">
+    <Position X="46.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQAAEAAAACKAAAAAAAAAAAACAEAAAAgAAAAAAAAABAA=</HashCode>
+      <FileName>Models\DishReviewModels\GroupedDishReviewListItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.PlaceModels.PlaceEditModel">
+    <Position X="41" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BQACAAAAACAAAAAAAAgAAAQAAAAAAIACAAgAAAAEAAA=</HashCode>
+      <FileName>Models\PlaceModels\PlaceEditModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.PlaceModels.PlaceListFilterModel">
+    <Position X="42.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAADAAAAAAAAgAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PlaceModels\PlaceListFilterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.PlaceModels.PlaceListItemModel">
+    <Position X="44.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QQAAAAAAADAAAAAAAAgAAAQAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PlaceModels\PlaceListItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.PlaceReviewModels.GroupedPlaceReviewListItemModel">
+    <Position X="48" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAAAEAAAAAIAAAAAAAAAAAACAAAAAAgAAAAAAAAABAA=</HashCode>
+      <FileName>Models\PlaceReviewModels\GroupedPlaceReviewListItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.PlaceReviewModels.PlaceReviewEditModel">
+    <Position X="46.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAkAAECAAAAAAAA=</HashCode>
+      <FileName>Models\PlaceReviewModels\PlaceReviewEditModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.PlaceReviewModels.PlaceReviewListFilterModel">
+    <Position X="48" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAA=</HashCode>
+      <FileName>Models\PlaceReviewModels\PlaceReviewListFilterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.PlaceReviewModels.PlaceReviewListItemModel">
+    <Position X="49.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>hAACEAAAAAAAAAAAAAAAAAAAAAAAAAkAAACAAAAAAAA=</HashCode>
+      <FileName>Models\PlaceReviewModels\PlaceReviewListItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.PlaceReviewModels.PlaceSearchPageModel">
+    <Position X="39.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\PlaceReviewModels\PlaceSearchPageModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.ReviewModels.ReviewEditModel">
+    <Position X="46.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAgAAAAAAAAAAIEAAAgACAAABAA=</HashCode>
+      <FileName>Models\ReviewModels\ReviewEditModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.ReviewModels.ReviewListFilterModel">
+    <Position X="48" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ReviewModels\ReviewListFilterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.ReviewModels.ReviewListItemModel">
+    <Position X="49.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ReviewModels\ReviewListItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.RoleModels.RoleEditModel">
+    <Position X="39.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\RoleModels\RoleEditModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.TagModels.TagEditModel">
+    <Position X="49.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAgAAAQAAAAAAIAAAAgAAAAAAAA=</HashCode>
+      <FileName>Models\TagModels\TagEditModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.TagModels.TagListFilterModel">
+    <Position X="37.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAgAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TagModels\TagListFilterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.TagModels.TagListItemModel">
+    <Position X="39.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAgAAAQAAAAAAIBAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\TagModels\TagListItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.UserModels.UserEditModel">
+    <Position X="44.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAEQAAEAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserModels\UserEditModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.UserModels.UserListFilterModel">
+    <Position X="48" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserModels\UserListFilterModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.UserModels.UserListItemModel">
+    <Position X="49.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserModels\UserListItemModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Models.UserModels.UserProfileEditModel">
+    <Position X="37.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACQAIAACAgAAAAAQAAAAAAAAAAAAgAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\UserModels\UserProfileEditModel.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.DishTagRepository">
+    <Position X="14.25" Y="33.25" Width="1.75" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="32.5" />
+        <Point X="15.875" Y="32.5" />
+        <Point X="15.875" Y="33.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\DishTagRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.DishRepository">
+    <Position X="12.25" Y="30.75" Width="1.5" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="32.5" />
+        <Point X="12.938" Y="32.5" />
+        <Point X="12.938" Y="31.747" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IDishRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.DishReviewRepository">
+    <Position X="16.5" Y="30.75" Width="1.75" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="32.5" />
+        <Point X="17.375" Y="32.5" />
+        <Point X="17.375" Y="31.747" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IDishReviewRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.ImageRepository">
+    <Position X="6.25" Y="30.75" Width="1.5" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="32.375" />
+        <Point X="7" Y="32.375" />
+        <Point X="7" Y="31.747" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IImageRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.PlacePlaceTypeRepository">
+    <Position X="3.5" Y="33.5" Width="2" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="32.375" />
+        <Point X="5.438" Y="32.375" />
+        <Point X="5.438" Y="33.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IPlacePlaceTypeRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.PlaceRepository">
+    <Position X="7.75" Y="33.5" Width="1.5" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="32.375" />
+        <Point X="9.125" Y="32.375" />
+        <Point X="9.125" Y="33.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IPlaceRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.PlaceReviewRepository">
+    <Position X="16.25" Y="33.25" Width="2" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="32.5" />
+        <Point X="18.062" Y="32.5" />
+        <Point X="18.062" Y="33.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IPlaceReviewRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.PlaceTypeRepository">
+    <Position X="14.25" Y="30.75" Width="1.75" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="32.5" />
+        <Point X="15.125" Y="32.5" />
+        <Point X="15.125" Y="31.747" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IPlaceTypeRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.ReviewRepository">
+    <Position X="4.5" Y="30.75" Width="1.5" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="32.375" />
+        <Point X="5.312" Y="32.375" />
+        <Point X="5.312" Y="31.747" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IReviewRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.RoleRepository">
+    <Position X="8" Y="30.75" Width="1.5" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="32.375" />
+        <Point X="8.812" Y="32.375" />
+        <Point X="8.812" Y="31.747" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IRoleRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.TagRepository">
+    <Position X="5.75" Y="33.5" Width="1.5" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="10" Y="32.375" />
+        <Point X="7.125" Y="32.375" />
+        <Point X="7.125" Y="33.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ITagRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.UserRepository">
+    <Position X="12.25" Y="33.25" Width="1.5" />
+    <InheritanceLine Type="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="11.5" Y="32.5" />
+        <Point X="13.625" Y="32.5" />
+        <Point X="13.625" Y="33.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgACAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Repositories\IUserRepository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Repositories.Repository&lt;TEntity&gt;">
+    <Position X="10" Y="31" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAMAQAAAAAABAAAAAAACAAAEAAAAACCAAAAAAAAA=</HashCode>
+      <FileName>Repositories\Repository.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Services.DishReviewService" BaseTypeListCollapsed="true">
+    <Position X="39.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAAYAAQAIABAAAAEBAAAAAAAAEAAAQKAAAIAAAI=</HashCode>
+      <FileName>Services\IDishReviewService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Services.DishService" BaseTypeListCollapsed="true">
+    <Position X="41" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAIAAARAAAAEAAAACAEAAEACAAAAAAAAAAI=</HashCode>
+      <FileName>Services\IDishService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Services.ImageService" BaseTypeListCollapsed="true">
+    <Position X="49.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAQAAAAAEACAAAAAAAAAIAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Services\IImageService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Services.PlaceReviewService" BaseTypeListCollapsed="true">
+    <Position X="37.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAIAAAAAAAABAAABAAAAAAAIEAAAQIAAAIAAAI=</HashCode>
+      <FileName>Services\IPlaceReviewService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Services.PlaceService" BaseTypeListCollapsed="true">
+    <Position X="41" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAEAAAAAAAAAABABAAAAAAAAAEAAEACAAAAAAAAAAI=</HashCode>
+      <FileName>Services\IPlaceService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Services.PlaceTypeService" BaseTypeListCollapsed="true">
+    <Position X="42.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAACAAQAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Services\IPlaceTypeService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Services.ReviewService" BaseTypeListCollapsed="true">
+    <Position X="37.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAABAAAAAEAAEACAAAAAAAAAAI=</HashCode>
+      <FileName>Services\IReviewService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Services.RoleService" BaseTypeListCollapsed="true">
+    <Position X="41" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Services\IRoleService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Services.TagService" BaseTypeListCollapsed="true">
+    <Position X="41" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAACAAAAARAAAAAIAAAAAEAAEACAAAAAAAAAAI=</HashCode>
+      <FileName>Services\ITagService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Batonezas.WebApi.Services.UserService" BaseTypeListCollapsed="true">
+    <Position X="39.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgIABAAAAAJAAAAAAAAAACAAAAAIAAAAI=</HashCode>
+      <FileName>Services\IUserService.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Interface Name="Batonezas.WebApi.BusinessRules.ICommand">
+    <Position X="37.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BusinessRules\ICommand.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IDishTagRepository">
+    <Position X="13.25" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\DishTagRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IDishRepository">
+    <Position X="17.75" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IDishRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IDishReviewRepository">
+    <Position X="22.25" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IDishReviewRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IImageRepository">
+    <Position X="9" Y="37.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IImageRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IPlacePlaceTypeRepository">
+    <Position X="5" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IPlacePlaceTypeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IPlaceRepository">
+    <Position X="10.25" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IPlaceRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IPlaceReviewRepository">
+    <Position X="15.5" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IPlaceReviewRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IPlaceTypeRepository">
+    <Position X="20" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IPlaceTypeRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IRepository&lt;TEntity&gt;">
+    <Position X="11.75" Y="37.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAMAQAAAAAABAAAAAAACAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IReviewRepository">
+    <Position X="24.5" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IReviewRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IRoleRepository">
+    <Position X="2.75" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\IRoleRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.ITagRepository">
+    <Position X="7.25" Y="40.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repositories\ITagRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Repositories.IUserRepository">
+    <Position X="11.25" Y="43.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAgACAAAAAAAAAAAAAAAAAAAg=</HashCode>
+      <FileName>Repositories\IUserRepository.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Services.IDishReviewService">
+    <Position X="39.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAAAAEAAAQIAAAAAAAI=</HashCode>
+      <FileName>Services\IDishReviewService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Services.IDishService">
+    <Position X="41" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAACAEAAEACAAAAAAAAAAI=</HashCode>
+      <FileName>Services\IDishService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Services.IImageService">
+    <Position X="42.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAQAAAAAAACAAAAAAAAAIAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Services\IImageService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Services.IPlaceReviewService">
+    <Position X="44.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAABAAAAAAAAAAAAEAAAQIAAAAAAAI=</HashCode>
+      <FileName>Services\IPlaceReviewService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Services.IPlaceService">
+    <Position X="46.25" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABABAAAAAAAAAEAAEACAAAAAAAAAAI=</HashCode>
+      <FileName>Services\IPlaceService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Services.IPlaceTypeService">
+    <Position X="48" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <FileName>Services\IPlaceTypeService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Services.IReviewService">
+    <Position X="49.75" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAAAAAAAEAAEACAAAAAAAAAAI=</HashCode>
+      <FileName>Services\IReviewService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Services.IRoleService">
+    <Position X="37.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAI=</HashCode>
+      <FileName>Services\IRoleService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Services.ITagService">
+    <Position X="39.25" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAIAAAAAEAAEACAAAAAAAAAAI=</HashCode>
+      <FileName>Services\ITagService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="Batonezas.WebApi.Services.IUserService">
+    <Position X="41" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAABAAAAAJAAAAAAAAAACAAAAAAAAAAI=</HashCode>
+      <FileName>Services\IUserService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

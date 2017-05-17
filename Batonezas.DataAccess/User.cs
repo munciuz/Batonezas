@@ -46,7 +46,6 @@ namespace Batonezas.DataAccess
         public virtual ICollection<Dish> Dish { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DishTag> DishTag { get; set; }
-        public virtual Image Image { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Place> Place { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -57,5 +56,6 @@ namespace Batonezas.DataAccess
         public virtual ICollection<UserLogin> UserLogin { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Role> Role { get; set; }
+        public virtual Image Image { get; set; }
     }
 }

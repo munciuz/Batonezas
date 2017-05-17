@@ -8,7 +8,6 @@
         <EntityTypeShape EntityType="BatonezasModel.Dish" Width="1.5" PointX="5.25" PointY="10.875" />
         <EntityTypeShape EntityType="BatonezasModel.DishReview" Width="1.5" PointX="9.75" PointY="9.875" />
         <EntityTypeShape EntityType="BatonezasModel.DishTag" Width="1.5" PointX="7.5" PointY="12.5" />
-        <EntityTypeShape EntityType="BatonezasModel.Image" Width="1.5" PointX="5.25" PointY="0.75" />
         <EntityTypeShape EntityType="BatonezasModel.Place" Width="1.5" PointX="5.25" PointY="7" />
         <EntityTypeShape EntityType="BatonezasModel.PlaceReview" Width="1.5" PointX="9.75" PointY="7.125" />
         <EntityTypeShape EntityType="BatonezasModel.Review" Width="1.5" PointX="7.5" PointY="8.125" />
@@ -20,13 +19,11 @@
         <AssociationConnector Association="BatonezasModel.FK_DishTag_Dish" />
         <AssociationConnector Association="BatonezasModel.FK_DishReview_Review" />
         <AssociationConnector Association="BatonezasModel.FK_DishTag_Tag" />
-        <AssociationConnector Association="BatonezasModel.FK_Review_Image" />
         <AssociationConnector Association="BatonezasModel.FK_Review_Place" />
         <AssociationConnector Association="BatonezasModel.FK_PlaceReview_Review" />
         <EntityTypeShape EntityType="BatonezasModel.User" Width="1.5" PointX="2.75" PointY="4.25" />
         <AssociationConnector Association="BatonezasModel.FK_Dish_User" />
         <AssociationConnector Association="BatonezasModel.FK_DishTag_User" />
-        <AssociationConnector Association="BatonezasModel.FK_User_Image" />
         <AssociationConnector Association="BatonezasModel.FK_Place_User" />
         <AssociationConnector Association="BatonezasModel.FK_Review_User" />
         <AssociationConnector Association="BatonezasModel.FK_UserClaim_User_UserId" />
@@ -36,6 +33,9 @@
         <EntityTypeShape EntityType="BatonezasModel.PlaceType" Width="1.5" PointX="5.25" PointY="20.75" />
         <AssociationConnector Association="BatonezasModel.FK_PlacePlaceType_Place" />
         <AssociationConnector Association="BatonezasModel.FK_PlacePlaceType_PlaceType" />
+        <EntityTypeShape EntityType="BatonezasModel.Image" Width="1.5" PointX="0.75" PointY="5.75" />
+        <AssociationConnector Association="BatonezasModel.FK_Review_Image" />
+        <AssociationConnector Association="BatonezasModel.FK_User_Image" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

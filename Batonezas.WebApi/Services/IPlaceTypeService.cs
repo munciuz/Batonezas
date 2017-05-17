@@ -23,6 +23,8 @@ namespace Batonezas.WebApi.Services
 
         public void CreatePlaceTypesForPlace(int placeId, string[] gTypes)
         {
+            if (gTypes == null) return;
+
             foreach (var gType in gTypes)
             {
                 var placeType = placeTypeRepository.CreateQuery().SingleOrDefault(x => x.GName == gType);

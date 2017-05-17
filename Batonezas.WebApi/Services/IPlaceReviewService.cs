@@ -29,18 +29,21 @@ namespace Batonezas.WebApi.Services
         private readonly IPlaceService placeService;
         private readonly IReviewRepository reviewRepository;
         private readonly IPlaceTypeService placeTypeService;
+        private readonly IImageService imageService;
 
         public PlaceReviewService(IPlaceRepository placeRepository,
             IPlaceReviewRepository placeReviewRepository,
             IPlaceService placeService,
             IReviewRepository reviewRepository, 
-            IPlaceTypeService placeTypeService)
+            IPlaceTypeService placeTypeService, 
+            IImageService imageService)
         {
             this.placeRepository = placeRepository;
             this.placeReviewRepository = placeReviewRepository;
             this.placeService = placeService;
             this.reviewRepository = reviewRepository;
             this.placeTypeService = placeTypeService;
+            this.imageService = imageService;
         }
 
         public PlaceEditModel GetPlace(int id)
@@ -62,8 +65,8 @@ namespace Batonezas.WebApi.Services
 
         public IList<GroupedPlaceReviewListItemModel> GetGroupedList(PlaceReviewListFilterModel filter)
         {
-            var reviews = from pr in placeReviewRepository.CreateQuery()
-                          group pr by new { pr.Review.PlaceId };
+            var reviews = (from pr in placeReviewRepository.CreateQuery()
+                          group pr by new { pr.Review.PlaceId }).ToList();
 
             var result = reviews.Select(x => new GroupedPlaceReviewListItemModel
             {
@@ -71,7 +74,8 @@ namespace Batonezas.WebApi.Services
                 PlaceName = x.FirstOrDefault().Review.Place.Name,
                 GId = x.FirstOrDefault().Review.Place.GId,
                 RatingAverage = x.Average(y => y.Review.Rating),
-                ReviewCount = x.Count()
+                ReviewCount = x.Count(),
+                ImageUri = imageService.GetImagePath(x.FirstOrDefault().Review.ImageId),
             }).ToList();
 
             return result;
@@ -94,6 +98,13 @@ namespace Batonezas.WebApi.Services
 
             placeTypeService.CreatePlaceTypesForPlace(placeId, model.Place.GTypes);
 
+            int? imageId = null;
+
+            if (!string.IsNullOrEmpty(model.ImageUri))
+            {
+                imageId = imageService.CreateImage(model.ImageUri);
+            }
+
             var review = new Review
             {
                 Text = model.Review,
@@ -101,7 +112,8 @@ namespace Batonezas.WebApi.Services
                 CreatedByUserId = UserHelper.GetCurrentUserId(),
                 CreatedDateTime = DateTime.Now,
                 PlaceId = placeId,
-                IsValid = true
+                IsValid = true,
+                ImageId = imageId
             };
 
             reviewRepository.Insert(review);
@@ -126,7 +138,9 @@ namespace Batonezas.WebApi.Services
                 GId = x.Review.Place.GId,
                 Review = x.Review.Text,
                 Rating = x.Review.Rating,
-                ReviewedBy = x.Review.User.UserName
+                ReviewedBy = x.Review.User.UserName,
+                ImageUri = imageService.GetImagePath(x.Review.ImageId),
+                PlaceName = x.Review.Place.Name
             });
 
             return result.ToList();

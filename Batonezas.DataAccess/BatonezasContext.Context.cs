@@ -30,7 +30,6 @@ namespace Batonezas.DataAccess
         public virtual DbSet<Dish> Dish { get; set; }
         public virtual DbSet<DishReview> DishReview { get; set; }
         public virtual DbSet<DishTag> DishTag { get; set; }
-        public virtual DbSet<Image> Image { get; set; }
         public virtual DbSet<Place> Place { get; set; }
         public virtual DbSet<PlaceReview> PlaceReview { get; set; }
         public virtual DbSet<Review> Review { get; set; }
@@ -41,5 +40,6 @@ namespace Batonezas.DataAccess
         public virtual DbSet<User> User { get; set; }
         public virtual DbSet<PlacePlaceType> PlacePlaceType { get; set; }
         public virtual DbSet<PlaceType> PlaceType { get; set; }
+        public virtual DbSet<Image> Image { get; set; }
     }
 }

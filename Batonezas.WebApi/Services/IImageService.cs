@@ -39,7 +39,6 @@ namespace Batonezas.WebApi.Services
             var image = new Image
             {
                 Original = bytes,
-                Preview = bytes,
                 CreatedDateTime = DateTime.Now,
                 CreatedByUserId = UserHelper.GetCurrentUserId(),
                 IsValid = true

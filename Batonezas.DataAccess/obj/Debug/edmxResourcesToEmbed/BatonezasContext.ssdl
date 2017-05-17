@@ -35,7 +35,6 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Original" Type="varbinary(max)" />
-    <Property Name="Preview" Type="varbinary(max)" />
     <Property Name="IsValid" Type="bit" Nullable="false" />
     <Property Name="CreatedByUserId" Type="int" Nullable="false" />
     <Property Name="CreatedDateTime" Type="datetime" Nullable="false" />

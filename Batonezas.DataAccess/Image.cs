@@ -23,7 +23,6 @@ namespace Batonezas.DataAccess
     
         public int Id { get; set; }
         public byte[] Original { get; set; }
-        public byte[] Preview { get; set; }
         public bool IsValid { get; set; }
         public int CreatedByUserId { get; set; }
         public System.DateTime CreatedDateTime { get; set; }
