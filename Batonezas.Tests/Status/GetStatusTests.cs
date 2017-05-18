@@ -15,7 +15,7 @@ namespace Batonezas.Tests.Status
             var result = controller.Get();
             var contentResult = result as OkNegotiatedContentResult<int>;
 
-            Assert.AreEqual(1, contentResult);
+            Assert.AreEqual(1, contentResult.Content);
         }
     }
 }

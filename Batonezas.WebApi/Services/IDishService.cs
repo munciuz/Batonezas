@@ -61,7 +61,7 @@ namespace Batonezas.WebApi.Services
 
         public IList<DishListItemModel> GetList(DishListFilterModel filter)
         {
-            var query = dishRepository.CreateQuery().Where(x => x.IsValid).OrderBy(x => x.Name);
+            var query = dishRepository.CreateQuery().Where(x => x.IsValid).OrderBy(x => x.Name).ToList();
 
             if (filter != null)
             {
@@ -72,9 +72,19 @@ namespace Batonezas.WebApi.Services
                 //if (filter.CreatedDateTime.HasValue) query = query.Where(x => x.CreatedDateTime > filter.CreatedDateTime.Value);
             }
 
-            var list = query.AsEnumerable().Select(Mapper.Map<DishListItemModel>).ToList();
+            var list = query.Select(x => new DishListItemModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                CreatedDateTime = x.CreatedDateTime,
+                IsValid = x.IsValid,
+                IsConfirmed = x.IsConfirmed,
+                CreatedByUser = x.User.UserName
+            });
 
-            return list;
+            //var list = query.AsEnumerable().Select(Mapper.Map<DishListItemModel>).ToList();
+
+            return list.ToList();
         }
 
         public void Create(DishEditModel model)

@@ -1,0 +1,1 @@
+EXEC FK 'Tag', 'CreatedByUserId', 'User'

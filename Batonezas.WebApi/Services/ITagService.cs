@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AutoMapper;
 using Batonezas.DataAccess;
+using Batonezas.WebApi.Infrastructure.Helpers;
 using Batonezas.WebApi.Models.TagModels;
 using Batonezas.WebApi.Repositories;
 
@@ -22,12 +23,15 @@ namespace Batonezas.WebApi.Services
     {
         private readonly ITagRepository tagRepository;
         private readonly IDishTagRepository dishTagRepository;
+        private readonly IUserRepository userRepository;
 
         public TagService(ITagRepository tagRepository,
-            IDishTagRepository dishTagRepository)
+            IDishTagRepository dishTagRepository, 
+            IUserRepository userRepository)
         {
             this.tagRepository = tagRepository;
             this.dishTagRepository = dishTagRepository;
+            this.userRepository = userRepository;
         }
 
         public TagEditModel Get(int id)
@@ -41,7 +45,7 @@ namespace Batonezas.WebApi.Services
 
         public IList<TagListItemModel> GetList(TagListFilterModel filter)
         {
-            var query = tagRepository.CreateQuery().OrderBy(x => x.Name);
+            var query = tagRepository.CreateQuery().OrderBy(x => x.Name).ToList();
 
             if (filter != null)
             {
@@ -52,16 +56,32 @@ namespace Batonezas.WebApi.Services
                 //if (filter.CreatedDateTime.HasValue) query = query.Where(x => x.CreatedDateTime > filter.CreatedDateTime.Value);
             }
 
-            var list = query.AsEnumerable().Select(Mapper.Map<TagListItemModel>).ToList();
+            var list = query.Select(x => new TagListItemModel
+            {
+                Id = x.Id,
+                Name = x.Name,
+                CreatedDateTime = x.CreatedDateTime,
+                IsValid = x.IsValid,
+                CreatedByUser = GetUserName(x.CreatedByUserId)
+            });
 
-            return list;
+            //var list = query.AsEnumerable().Select(Mapper.Map<TagListItemModel>).ToList();
+
+            return list.ToList();
+        }
+
+        private string GetUserName(int id)
+        {
+            var user = userRepository.Get(id);
+
+            return user.UserName;
         }
 
         public void Create(TagEditModel model)
         {
             var entity = Mapper.Map<Tag>(model);
 
-            entity.CreatedByUserId = model.CreatedByUserId;
+            entity.CreatedByUserId = UserHelper.GetCurrentUserId();
             entity.CreatedDateTime = DateTime.Now;
             entity.IsValid = true;
 

@@ -1,4 +1,8 @@
-﻿using Batonezas.WebApi.Models.TagModels;
+﻿using System.Collections.Generic;
+using System.Web.Http.Results;
+using Batonezas.WebApi.Controllers;
+using Batonezas.WebApi.Infrastructure.ObjectMappings;
+using Batonezas.WebApi.Models.TagModels;
 using Batonezas.WebApi.Repositories;
 using Batonezas.WebApi.Services;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -9,17 +13,29 @@ namespace Batonezas.Tests.Tags
     [TestClass]
     public class TagTests
     {
-        [TestMethod]
-        public void TestMethod1()
-        {
-            var mockTagRepository = new Mock<ITagRepository>();
-            var mockTagService = new Mock<ITagService>(mockTagRepository);
+        //private readonly TagController tagController;
 
+        //public TagTests()
+        //{
+        //    AutoMapperConfiguration.Configure();
 
-            //mockTagService.Setup(m => m.GetList(new TagListFilterModel())).Returns(ColorData.GetAll());
-            //mockColorRespository.Setup(m => m.Get(2)).Returns(ColorData.Get(2));
+        //    var mockTagRepository = new Mock<ITagRepository>();
+        //    mockTagRepository.Setup(m => m.CreateQuery()).Returns(TagData.CreateQuery);
 
-            //colorController = new ColorController(new ColorService(mockColorRespository.Object));
-        }
+        //    var mockDishTagRepository = new Mock<IDishTagRepository>();
+        //    //var mockTagService = new Mock<ITagService>(mockTagRepository);
+
+        //    //tagController = new TagController(new TagService(mockTagRepository.Object, mockDishTagRepository.Object));
+        //}
+
+        //[TestMethod]
+        //public void GetAllSuccess()
+        //{
+        //    //var result = tagController.GetAll(new TagListFilterModel());
+
+        //    //var castedResult = result as OkNegotiatedContentResult<IList<TagListItemModel>>;
+        //    //var resultItems = castedResult.Content;
+        //    //Assert.AreEqual(4, resultItems.Count);
+        //}
     }
 }

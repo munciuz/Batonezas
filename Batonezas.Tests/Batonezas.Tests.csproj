@@ -74,6 +74,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Status\GetStatusTests.cs" />
+    <Compile Include="Dishes\DishData.cs" />
+    <Compile Include="Dishes\DishTests.cs" />
     <Compile Include="Tags\TagData.cs" />
     <Compile Include="UnitTest1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

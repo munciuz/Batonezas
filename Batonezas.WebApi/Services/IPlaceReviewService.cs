@@ -76,7 +76,7 @@ namespace Batonezas.WebApi.Services
                 RatingAverage = x.Average(y => y.Review.Rating),
                 ReviewCount = x.Count(),
                 ImageUri = imageService.GetImagePath(x.FirstOrDefault().Review.ImageId),
-            }).ToList();
+            }).OrderByDescending(x => x.RatingAverage).ToList();
 
             return result;
         }

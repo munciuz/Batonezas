@@ -53,8 +53,6 @@ namespace Batonezas.WebApi.Controllers
         {
             var model = dishReviewService.GetPageModel();
 
-            var userId = UserHelper.GetCurrentUser();
-
             return Ok(model);
         }
 
