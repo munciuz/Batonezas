@@ -21,7 +21,6 @@ C:\Web\Batonezas\Batonezas.Tests\bin\Debug\Moq.dll
 C:\Web\Batonezas\Batonezas.Tests\bin\Debug\Newtonsoft.Json.dll
 C:\Web\Batonezas\Batonezas.Tests\bin\Debug\System.Net.Http.Formatting.dll
 C:\Web\Batonezas\Batonezas.Tests\bin\Debug\System.Web.Http.dll
-C:\Web\Batonezas\Batonezas.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 C:\Web\Batonezas\Batonezas.Tests\bin\Debug\EntityFramework.dll
 C:\Web\Batonezas\Batonezas.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 C:\Web\Batonezas\Batonezas.Tests\bin\Debug\Microsoft.Owin.dll

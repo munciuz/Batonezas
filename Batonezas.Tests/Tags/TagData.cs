@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Batonezas.DataAccess;
 
 namespace Batonezas.Tests.Tags
@@ -22,5 +20,15 @@ namespace Batonezas.Tests.Tags
 
             return query;
         }
+
+        public static Tag Tag => new Tag
+        {
+            CreatedByUserId = 1,
+            CreatedDateTime = DateTime.Now,
+            IsValid = true,
+            Name = "Test"
+        };
+
+        public static Tag Get() => CreateQuery().First();
     }
 }

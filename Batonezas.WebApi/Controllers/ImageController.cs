@@ -1,12 +1,6 @@
-﻿using System;
-using System.IO;
-using System.Net;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using Batonezas.WebApi.Infrastructure;
 using Batonezas.WebApi.Repositories;
-using Microsoft.AspNet.Identity;
 
 namespace Batonezas.WebApi.Controllers
 {

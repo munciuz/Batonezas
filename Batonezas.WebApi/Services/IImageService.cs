@@ -1,14 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Runtime.Remoting.Channels;
 using System.Web;
-using AutoMapper;
 using Batonezas.DataAccess;
 using Batonezas.WebApi.Infrastructure.Constants;
 using Batonezas.WebApi.Infrastructure.Helpers;
-using Batonezas.WebApi.Models.TagModels;
 using Batonezas.WebApi.Repositories;
 
 namespace Batonezas.WebApi.Services

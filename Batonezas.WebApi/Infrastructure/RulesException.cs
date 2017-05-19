@@ -27,12 +27,6 @@ namespace Batonezas.WebApi.Infrastructure
             Errors = new[] { new ErrorInfo(propertyName, errorMessage) };
         }
 
-        public override string Message
-        {
-            get
-            {
-                return Errors.Any() ? Errors.First().ErrorMessage : base.Message;
-            }
-        }
+        public override string Message => Errors.Any() ? Errors.First().ErrorMessage : base.Message;
     }
 }

@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 using Batonezas.DataAccess;
 using Batonezas.WebApi.Repositories;
 using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Batonezas.WebApi.DataAccess
 {

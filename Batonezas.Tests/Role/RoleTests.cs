@@ -13,13 +13,13 @@ using Moq;
 namespace Batonezas.Tests.Tags
 {
     [TestClass]
-    public class TagTests
+    public class RoleTests
     {
         private readonly TagController tagController;
 
         ITagService tagService;
 
-        public TagTests()
+        public RoleTests()
         {
             AutoMapperConfiguration.Configure();
 

@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
-using AutoMapper;
 using Batonezas.DataAccess;
 using Batonezas.WebApi.Infrastructure.Helpers;
-using Batonezas.WebApi.Models;
-using Batonezas.WebApi.Models.DishReviewModels;
 using Batonezas.WebApi.Models.PlaceModels;
 using Batonezas.WebApi.Models.PlaceReviewModels;
 using Batonezas.WebApi.Repositories;

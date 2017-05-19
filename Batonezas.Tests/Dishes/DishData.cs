@@ -11,16 +11,17 @@ namespace Batonezas.Tests.Tags
     {
         public static IQueryable<Dish> CreateQuery()
         {
-            IList<Dish> tags = new List<Dish>
+            IList<Dish> dishes = new List<Dish>
             {
-                new Dish { Id = 1, Name = "Vistiena", CreatedDateTime = new DateTime(2017, 05, 15), CreatedByUserId = 1, IsValid = true },
-                new Dish { Id = 2, Name = "Kiauliena", CreatedDateTime = new DateTime(2017, 05, 15), CreatedByUserId = 1, IsValid = true },
-                new Dish { Id = 3, Name = "Mesainis", CreatedDateTime = new DateTime(2017, 05, 15), CreatedByUserId = 1, IsValid = true },
-                new Dish { Id = 4, Name = "Sriuba", CreatedDateTime = new DateTime(2017, 05, 15), CreatedByUserId = 1, IsValid = true }};
+                new Dish { Id = 1, Name = "Lasisos kepsnys", CreatedDateTime = new DateTime(2017, 05, 15), CreatedByUserId = 1, IsValid = true, User = new User {UserName = "administrator"} },
+                new Dish { Id = 2, Name = "karbonadas", CreatedDateTime = new DateTime(2017, 05, 15), CreatedByUserId = 1, IsValid = true, User = new User {UserName = "administrator"} },
+                new Dish { Id = 3, Name = "snicelis", CreatedDateTime = new DateTime(2017, 05, 15), CreatedByUserId = 1, IsValid = true, User = new User {UserName = "administrator"} }};
 
-            var query = tags.AsQueryable();
+            var query = dishes.AsQueryable();
 
             return query;
         }
+
+        public static Dish Get() => CreateQuery().First();
     }
 }
