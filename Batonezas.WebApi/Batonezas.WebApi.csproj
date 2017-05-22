@@ -229,11 +229,13 @@
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="BusinessRules\CommandBase.cs" />
+    <Compile Include="BusinessRules\DishReviewCommands\DeleteDishReviewCommand.cs" />
     <Compile Include="BusinessRules\PlaceReviewCommands\CreatePlaceReviewCommand.cs" />
     <Compile Include="BusinessRules\DishReviewCommands\CreateDishReviewCommand.cs" />
     <Compile Include="BusinessRules\PlaceCommands\EditPlaceCommand.cs" />
     <Compile Include="BusinessRules\PlaceCommands\DeletePlaceCommand.cs" />
     <Compile Include="BusinessRules\PlaceCommands\CreatePlaceCommand.cs" />
+    <Compile Include="BusinessRules\PlaceReviewCommands\DeletePlaceReviewCommand.cs" />
     <Compile Include="BusinessRules\ReviewCommands\CreateReviewCommand.cs" />
     <Compile Include="BusinessRules\ReviewCommands\DeleteReviewCommand.cs" />
     <Compile Include="BusinessRules\ReviewCommands\EditReviewCommand.cs" />
@@ -276,6 +278,7 @@
     <Compile Include="Infrastructure\ObjectMappings\AutoMapperConfiguration.cs" />
     <Compile Include="Infrastructure\ObjectMappings\AutoMapperModelsProfile.cs" />
     <Compile Include="Infrastructure\RulesException.cs" />
+    <Compile Include="Models\PlaceTypeModels\PlaceTypeListItemModel.cs" />
     <Compile Include="Models\RoleModels\RoleEditModel.cs" />
     <Compile Include="Models\UserModels\UserProfileEditModel.cs" />
     <Compile Include="Models\UserModels\UserEditModel.cs" />

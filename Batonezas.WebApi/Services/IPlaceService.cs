@@ -5,6 +5,7 @@ using AutoMapper;
 using Batonezas.DataAccess;
 using Batonezas.WebApi.Infrastructure.Helpers;
 using Batonezas.WebApi.Models.PlaceModels;
+using Batonezas.WebApi.Models.PlaceTypeModels;
 using Batonezas.WebApi.Repositories;
 
 namespace Batonezas.WebApi.Services
@@ -17,15 +18,19 @@ namespace Batonezas.WebApi.Services
         void Create(PlaceEditModel model);
         void Edit(PlaceEditModel model);
         void Delete(int id);
+        IList<PlaceTypeListItemModel> GetPlaceTypes();
     }
 
     public class PlaceService : IPlaceService
     {
         private readonly IPlaceRepository placeRepository;
+        private readonly IPlaceTypeRepository placeTypeRepository;
 
-        public PlaceService(IPlaceRepository placeRepository)
+        public PlaceService(IPlaceRepository placeRepository, 
+            IPlaceTypeRepository placeTypeRepository)
         {
             this.placeRepository = placeRepository;
+            this.placeTypeRepository = placeTypeRepository;
         }
 
         public PlaceEditModel Get(int id)
@@ -46,6 +51,17 @@ namespace Batonezas.WebApi.Services
             };
 
             return model;
+        }
+
+        public IList<PlaceTypeListItemModel> GetPlaceTypes()
+        {
+            var result = placeTypeRepository.CreateQuery().Select(x => new PlaceTypeListItemModel
+            {
+                Id = x.Id,
+                Name = x.Name
+            });
+
+            return result.ToList();
         }
 
         public IList<PlaceListItemModel> GetList(PlaceListFilterModel filter)

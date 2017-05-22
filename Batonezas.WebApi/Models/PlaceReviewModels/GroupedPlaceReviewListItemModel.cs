@@ -13,5 +13,11 @@
         public int ReviewCount { get; set; }
 
         public string ImageUri { get; set; }
+
+        public double Lat { get; set; }
+
+        public double Lng { get; set; }
+
+        public int[] PlaceTypeIds { get; set; }
     }
 }

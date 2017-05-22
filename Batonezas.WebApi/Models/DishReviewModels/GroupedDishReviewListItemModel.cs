@@ -23,5 +23,7 @@
         public double Lat { get; set; }
 
         public double Lng { get; set; }
+
+        public bool IsVegetarian { get; set; }
     }
 }

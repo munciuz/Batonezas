@@ -1,11 +1,8 @@
-﻿using System.Web;
-using System.Web.Http;
+﻿using System.Web.Http;
 using Batonezas.WebApi.BusinessRules.DishCommands;
 using Batonezas.WebApi.Infrastructure;
-using Batonezas.WebApi.Infrastructure.Helpers;
 using Batonezas.WebApi.Models.DishModels;
 using Batonezas.WebApi.Services;
-using Microsoft.AspNet.Identity;
 
 namespace Batonezas.WebApi.Controllers
 {

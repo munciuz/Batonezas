@@ -14,6 +14,7 @@ namespace Batonezas.WebApi.Services
     {
         DishReviewEditModel Get(int id);
         void Create(DishReviewEditModel model);
+        void Delete(int id);
         IList<DishReviewListItemModel> GetList(DishReviewListFilterModel filter);
         DishReviewPageModel GetPageModel();
         IList<GroupedDishReviewListItemModel> GetGroupedList(DishReviewListFilterModel filter);
@@ -124,6 +125,11 @@ namespace Batonezas.WebApi.Services
             dishReviewRepository.Insert(dishReview);
         }
 
+        public void Delete(int id)
+        {
+            dishReviewRepository.Delete(id);
+        }
+
         public IList<DishReviewListItemModel> GetList(DishReviewListFilterModel filter)
         {
             var reviews = dishReviewRepository.CreateQuery().Where(x => x.DishId == filter.DishId && x.Review.PlaceId == filter.PlaceId).ToList();
@@ -160,7 +166,8 @@ namespace Batonezas.WebApi.Services
                 TagsIds = x.FirstOrDefault().Dish.DishTag.Select(y => y.TagId).ToArray(),
                 ImageUri = imageService.GetImagePath(x.FirstOrDefault().Review.ImageId),
                 Lat = Convert.ToDouble(x.FirstOrDefault().Review.Place.Lat),
-                Lng = Convert.ToDouble(x.FirstOrDefault().Review.Place.Lng)
+                Lng = Convert.ToDouble(x.FirstOrDefault().Review.Place.Lng),
+                IsVegetarian = x.FirstOrDefault().Dish.DishTag.Count(y => y.Tag.Name == "Vegetariškas") > 0
             }).OrderByDescending(x => x.RatingAverage).ToList();
 
             return result;

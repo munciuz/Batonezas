@@ -31,6 +31,14 @@ namespace Batonezas.WebApi.Controllers
             return Ok(model);
         }
 
+        [HttpGet]
+        public IHttpActionResult GetPlaceTypes()
+        {
+            var result = placeService.GetPlaceTypes();
+
+            return Ok(result);
+        }
+
         [HttpPost]
         public IHttpActionResult Create(PlaceEditModel model)
         {

@@ -14,6 +14,7 @@ namespace Batonezas.WebApi.Services
     {
         PlaceEditModel GetPlace(int id);
         PlaceSearchPageModel GetPageModel();
+        void Delete(int id);
         IList<PlaceReviewListItemModel> GetList(PlaceReviewListFilterModel filter);
         IList<GroupedPlaceReviewListItemModel> GetGroupedList(PlaceReviewListFilterModel filter);
         void Create(PlaceReviewEditModel model);
@@ -73,6 +74,9 @@ namespace Batonezas.WebApi.Services
                 RatingAverage = x.Average(y => y.Review.Rating),
                 ReviewCount = x.Count(),
                 ImageUri = imageService.GetImagePath(x.FirstOrDefault().Review.ImageId),
+                PlaceTypeIds = x.FirstOrDefault().Review.Place.PlacePlaceType.Select(y => y.PlaceTypeId).ToArray(),
+                Lat = Convert.ToDouble(x.FirstOrDefault().Review.Place.Lat),
+                Lng = Convert.ToDouble(x.FirstOrDefault().Review.Place.Lng),
             }).OrderByDescending(x => x.RatingAverage).ToList();
 
             return result;
@@ -88,7 +92,11 @@ namespace Batonezas.WebApi.Services
             return result;
         }
 
-        [HttpPost]
+        public void Delete(int id)
+        {
+            placeReviewRepository.Delete(id);
+        }
+        
         public void Create(PlaceReviewEditModel model)
         {
             var placeId = placeService.GetPlaceId(model.Place);

@@ -1,4 +1,5 @@
 ﻿using System.Web.Http;
+using Batonezas.WebApi.BusinessRules.DishReviewCommands;
 using Batonezas.WebApi.BusinessRules.PlaceReviewCommands;
 using Batonezas.WebApi.Infrastructure;
 using Batonezas.WebApi.Models.PlaceReviewModels;
@@ -55,6 +56,15 @@ namespace Batonezas.WebApi.Controllers
                     cmd.Model = model;
                 },
                 cmd => Ok(cmd.Model.Id));
+        }
+
+        [HttpDelete]
+        //[Authorize(Roles = "Admin")]
+        public IHttpActionResult Delete(int id)
+        {
+            return Command<DeleteDishReviewCommand>(
+                cmd => cmd.Id = id,
+                cmd => Ok(true));
         }
     }
 }
