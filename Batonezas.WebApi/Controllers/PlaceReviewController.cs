@@ -62,7 +62,7 @@ namespace Batonezas.WebApi.Controllers
         //[Authorize(Roles = "Admin")]
         public IHttpActionResult Delete(int id)
         {
-            return Command<DeleteDishReviewCommand>(
+            return Command<DeletePlaceReviewCommand>(
                 cmd => cmd.Id = id,
                 cmd => Ok(true));
         }
