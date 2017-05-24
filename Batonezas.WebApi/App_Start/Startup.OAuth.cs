@@ -37,7 +37,7 @@ namespace Batonezas.WebApi
             {
                 AllowInsecureHttp = true,
                 TokenEndpointPath = new PathString("/oauth2/token"),
-                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(60),
+                AccessTokenExpireTimeSpan = TimeSpan.FromMinutes(120),
                 Provider = new CustomOAuthProvider(),
                 AccessTokenFormat = new CustomJwtFormat(issuer)
             });

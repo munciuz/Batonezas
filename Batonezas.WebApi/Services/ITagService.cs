@@ -107,7 +107,7 @@ namespace Batonezas.WebApi.Services
 
         public void DeleteTagsForDish(int dishId)
         {
-            var dishTags = dishTagRepository.CreateQuery().Where(x => x.DishId == dishId);
+            var dishTags = dishTagRepository.CreateQuery().Where(x => x.DishId == dishId).ToList();
 
             foreach (var dishTag in dishTags)
             {
